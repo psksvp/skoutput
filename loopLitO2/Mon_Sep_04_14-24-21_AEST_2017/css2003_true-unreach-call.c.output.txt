@@ -1,0 +1,284 @@
+define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    %1 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !15
+    %2 = icmp ult i32 %1, 2, !dbg !16
+    %3 = zext i1 %2 to i32, !dbg !17
+    tail call void @__VERIFIER_assume(i32 %3) #2 , !dbg !19
+    br label %4, !dbg !20
+  
+  ; <label>:4
+    %5 = phi i32 [ %1, %0 ], [ %8, %12 ]
+    %6 = phi i32 [ 1, %0 ], [ %7, %12 ]
+    %7 = add nuw nsw i32 %6, 1, !dbg !22
+    %8 = add nsw i32 %5, -1, !dbg !23
+    %9 = add i32 %5, %6, !dbg !24
+    %10 = add i32 %9, -1, !dbg !25
+    %11 = icmp ult i32 %10, 2, !dbg !25
+    br i1 %11, label %12, label %14, !dbg !25
+  
+  ; <label>:12
+    %13 = icmp eq i32 %7, 1000000, !dbg !26
+    br i1 %13, label %15, label %4, !dbg !20, !llvm.loop !27
+  
+  ; <label>:14
+    br label %__error.14
+  
+  ; <label>:15
+    ret i32 0, !dbg !32
+  
+  __error.14: 
+    tail call void @__VERIFIER_error() #2 , !dbg !30
+    br label %12, !dbg !30
+  
+} 
+
+using predicates abs
+List(0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%1  + %7 )  >= 2 ) ,
+((%1  + %7 )  <= 3 ) ,
+(%7  <= 2 ) ,
+(%7  >= 2 ) ,
+ Not( (%7  = 1000000 ) ) ,
+(%1  >= 0 ) ,
+ Not( (2  <= %1 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%1  + %7 )  <= 3 ) ) , Not( (%7  = 1000000 ) ) ) , Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+------------
+simplify cache hit is 27 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%1  + %7 )  >= 2 ) ,
+((%1  + %7 )  <= 3 ) ,
+(%7  <= 2 ) ,
+(%7  >= 2 ) ,
+ Not( (%7  = 1000000 ) ) ,
+(%1  >= 0 ) ,
+ Not( (2  <= %1 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%1  + %7 )  <= 3 ) ) , Not( (%7  = 1000000 ) ) ) , Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false , And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+------------
+simplify cache hit is 89 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%1  + %7 )  >= 2 ) ,
+((%1  + %7 )  <= 3 ) ,
+(%7  <= 2 ) ,
+(%7  >= 2 ) ,
+ Not( (%7  = 1000000 ) ) ,
+(%1  >= 0 ) ,
+ Not( (2  <= %1 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%1  + %7 )  <= 3 ) ) , Not( (%7  = 1000000 ) ) ) , Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false , And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+------------
+simplify cache hit is 200 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%1  + %7 )  >= 2 ) ,
+((%1  + %7 )  <= 3 ) ,
+(%7  <= 2 ) ,
+(%7  >= 2 ) ,
+ Not( (%7  = 1000000 ) ) ,
+(%1  >= 0 ) ,
+ Not( (2  <= %1 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%1  + %7 )  <= 3 ) ) , Not( (%7  = 1000000 ) ) ) , Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false , And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+------------
+simplify cache hit is 380 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%1  + %7 )  >= 2 ) ,
+((%1  + %7 )  <= 3 ) ,
+(%7  <= 2 ) ,
+(%7  >= 2 ) ,
+ Not( (%7  = 1000000 ) ) ,
+(%1  >= 0 ) ,
+ Not( (2  <= %1 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%1  + %7 )  <= 3 ) ) , Not( (%7  = 1000000 ) ) ) , Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false , And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+------------
+simplify cache hit is 654 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%1  + %7 )  >= 2 ) ,
+((%1  + %7 )  <= 3 ) ,
+(%7  <= 2 ) ,
+(%7  >= 2 ) ,
+ Not( (%7  = 1000000 ) ) ,
+(%1  >= 0 ) ,
+ Not( (2  <= %1 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%1  + %7 )  <= 3 ) ) , Not( (%7  = 1000000 ) ) ) , Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false , And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+------------
+simplify cache hit is 1051 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%1  + %7 )  >= 2 ) ,
+((%1  + %7 )  <= 3 ) ,
+(%7  <= 2 ) ,
+(%7  >= 2 ) ,
+ Not( (%7  = 1000000 ) ) ,
+(%1  >= 0 ) ,
+ Not( (2  <= %1 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%1  + %7 )  <= 3 ) ) , Not( (%7  = 1000000 ) ) ) , Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false , And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+------------
+simplify cache hit is 1604 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%1  + %7 )  >= 2 ) ,
+((%1  + %7 )  <= 3 ) ,
+(%7  <= 2 ) ,
+(%7  >= 2 ) ,
+ Not( (%7  = 1000000 ) ) ,
+(%1  >= 0 ) ,
+ Not( (2  <= %1 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And( ((%1  + %7 )  >= 2 ) ,((%1  + %7 )  <= 3 ) ,(%7  <= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%1  + %7 )  <= 3 ) ) , Not( (%7  = 1000000 ) ) ) , Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) , And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) , Not( (%7  = 1000000 ) ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%7  <= 2 ) ) , Not( ((%1  + %7 )  <= 3 ) ) ,((%1  + %7 )  >= 2 ) ,(%7  >= 2 ) ,(%1  >= 0 ) , Not( (2  <= %1 ) ) ) ,false ) 
+------------
+simplify cache hit is 2350 and mis is 6
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 10 reached

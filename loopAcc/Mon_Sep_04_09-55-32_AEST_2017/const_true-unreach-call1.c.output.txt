@@ -1,0 +1,70 @@
+define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 1, i32* %x, align 4, !dbg !17
+    store i32 0, i32* %y, align 4, !dbg !18
+    br label %2, !dbg !19
+  
+  ; <label>:2
+    %3 = load i32, i32* %y, align 4, !dbg !20
+    %4 = icmp ult i32 %3, 1024, !dbg !23
+    br i1 %4, label %5, label %8, !dbg !19
+  
+  ; <label>:5
+    store i32 0, i32* %x, align 4, !dbg !24
+    %6 = load i32, i32* %y, align 4, !dbg !25
+    %7 = add i32 %6, 1, !dbg !25
+    store i32 %7, i32* %y, align 4, !dbg !25
+    br label %2, !dbg !19
+  
+  ; <label>:8
+    %9 = load i32, i32* %x, align 4, !dbg !26
+    %10 = icmp ne i32 %9, 0, !dbg !27
+    br i1 %10, label %11, label %12, !dbg !26
+  
+  ; <label>:11
+    br label %__error.11
+  
+  ; <label>:12
+    %13 = load i32, i32* %1, !dbg !29
+    ret i32 %13, !dbg !29
+  
+  __error.11: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !28
+    unreachable, !dbg !28
+  
+} 
+
+using predicates abs
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 5
+(%x  = 0 ) ,
+(1024  <= %y ) ,
+(%y  >= 0 ) ,
+(%y  <= 1023 ) ,
+ Or( (%x  <= (- 1 ) ) ,(%x  >= 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (1024  <= %y ) ) , Not( (%x  = 0 ) ) ,(%y  >= 0 ) ,(%y  <= 1023 ) , Or( (%x  <= (- 1 ) ) ,(%x  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1024  <= %y ) ) , Not( (%x  = 0 ) ) ,(%y  >= 0 ) ,(%y  <= 1023 ) , Or( (%x  <= (- 1 ) ) ,(%x  >= 1 ) ) ) , And(  Not( (1024  <= %y ) ) , Not( (%x  = 0 ) ) ,(%y  >= 0 ) ,(%y  <= 1023 ) , Or( (%x  <= (- 1 ) ) ,(%x  >= 1 ) ) ) , And(  Not(  Or( (%x  <= (- 1 ) ) ,(%x  >= 1 ) ) ) , Not( (1024  <= %y ) ) ,(%x  = 0 ) ,(%y  >= 0 ) ,(%y  <= 1023 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (1024  <= %y ) ) , Not( (%y  <= 1023 ) ) ) , Or( (1024  <= %y ) ,(%y  <= 1023 ) ) , Not(  Or( (%x  <= (- 1 ) ) ,(%x  >= 1 ) ) ) ,(%x  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not(  Or( (%x  <= (- 1 ) ) ,(%x  >= 1 ) ) ) , Not( (%y  <= 1023 ) ) ,(%x  = 0 ) ,(1024  <= %y ) ,(%y  >= 0 ) ) ,false ) 
+false 
+------------
+simplify cache hit is 12 and mis is 4
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,3))
+new backedge found from 3 to 2 with choice(1) exitValue is 0
+----------------------
+TRUE

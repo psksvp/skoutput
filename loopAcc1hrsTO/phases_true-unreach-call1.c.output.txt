@@ -1,0 +1,292 @@
+
+define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 0, i32* %x, align 4, !dbg !17
+    br label %2, !dbg !18
+  
+  ; <label>:2
+    %3 = load i32, i32* %x, align 4, !dbg !19
+    %4 = icmp ult i32 %3, 268435455, !dbg !22
+    br i1 %4, label %5, label %15, !dbg !18
+  
+  ; <label>:5
+    %6 = load i32, i32* %x, align 4, !dbg !23
+    %7 = icmp ult i32 %6, 65520, !dbg !24
+    br i1 %7, label %8, label %11, !dbg !23
+  
+  ; <label>:8
+    %9 = load i32, i32* %x, align 4, !dbg !25
+    %10 = add i32 %9, 1, !dbg !25
+    store i32 %10, i32* %x, align 4, !dbg !25
+    br label %14, !dbg !26
+  
+  ; <label>:11
+    %12 = load i32, i32* %x, align 4, !dbg !27
+    %13 = add i32 %12, 2, !dbg !27
+    store i32 %13, i32* %x, align 4, !dbg !27
+    br label %14
+  
+  ; <label>:14
+    br label %2, !dbg !18
+  
+  ; <label>:15
+    %16 = load i32, i32* %x, align 4, !dbg !28
+    %17 = urem i32 %16, 2, !dbg !29
+    %18 = icmp ne i32 %17, 0, !dbg !29
+    br i1 %18, label %19, label %20, !dbg !28
+  
+  ; <label>:19
+    br label %__error.19
+  
+  ; <label>:20
+    %21 = load i32, i32* %1, !dbg !31
+    ret i32 %21, !dbg !31
+  
+  __error.19: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !30
+    unreachable, !dbg !30
+  
+} 
+
+using predicates abs
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with input predicates: 5
+(%x  <= 268435454 ) ,
+(%x  >= 0 ) ,
+(268435455  <= %x ) ,
+(%x  <= 65519 ) ,
+((%x % 2 )  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 0, 0)
+...........
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ) 
+ Or(  And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ) 
+ Or(  And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ) 
+false 
+false 
+------------
+simplify cache hit is 877 and mis is 49
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with input predicates: 5
+(65520  <= %x ) ,
+(%x  <= 268435454 ) ,
+(%x  >= 0 ) ,
+(268435455  <= %x ) ,
+((%x % 2 )  >= 1 ) 
+I am doing the trace:List(0, 0, 1, 0, 0, 1, 0, 0)
+...
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) ,false ,false ) 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 881 and mis is 50
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with input predicates: 6
+(65520  <= %x ) ,
+(%x  <= 268435454 ) ,
+(%x  >= 0 ) ,
+(268435455  <= %x ) ,
+(%x  <= 65519 ) ,
+((%x % 2 )  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0)
+...............
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false , And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ) 
+ Or(  And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Or(  Not( (%x  <= 268435454 ) ) , Not( (268435455  <= %x ) ) ) , Or( (%x  <= 268435454 ) ,(268435455  <= %x ) ) , Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) ,(65520  <= %x ) ,(%x  >= 0 ) ) , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(65520  <= %x ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 268435454 ) ) , Not( (268435455  <= %x ) ) ) , Or( (%x  <= 268435454 ) ,(268435455  <= %x ) ) , Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) ,(65520  <= %x ) ,(%x  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 268435454 ) ) , Not( (268435455  <= %x ) ) ) , Or( (%x  <= 268435454 ) ,(268435455  <= %x ) ) , Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) ,(65520  <= %x ) ,(%x  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) , Not( (%x  <= 268435454 ) ) ,(65520  <= %x ) ,(%x  >= 0 ) ,(268435455  <= %x ) ) ,false ) 
+false 
+------------
+simplify cache hit is 989 and mis is 57
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((4,8), (2,6), (1,5), (1,9), (5,9))
+new backedge found from 8 to 5 with choice(4) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 0
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 9 to 2 with choice(1) exitValue is 0
+new backedge found from 9 to 6 with choice(5) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with input predicates: 6
+(65520  <= %x ) ,
+(%x  <= 268435454 ) ,
+(%x  >= 0 ) ,
+(268435455  <= %x ) ,
+(%x  <= 65519 ) ,
+((%x % 2 )  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+...............
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ,false , And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ,false , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) , And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) ,false , And(  Or(  Not( (%x  <= 268435454 ) ) , Not( (268435455  <= %x ) ) ) , Or( (%x  <= 268435454 ) ,(268435455  <= %x ) ) , Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) ,(65520  <= %x ) ,(%x  >= 0 ) ) , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%x  <= 65519 ) , Not( ((%x % 2 )  >= 1 ) ) ) , Or(  Not( (65520  <= %x ) ) , Not( (%x  <= 65519 ) ) ) , Or( (65520  <= %x ) ,(%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) , And(  Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ,((%x % 2 )  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(65520  <= %x ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 268435454 ) ) , Not( (268435455  <= %x ) ) ) , Or( (%x  <= 268435454 ) ,(268435455  <= %x ) ) , Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) ,(65520  <= %x ) ,(%x  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 268435454 ) ) , Not( (268435455  <= %x ) ) ) , Or( (%x  <= 268435454 ) ,(268435455  <= %x ) ) , Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) ,(65520  <= %x ) ,(%x  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (%x  <= 65519 ) ) , Not( (268435455  <= %x ) ) ,(65520  <= %x ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ) ,false ,false ) 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 1105 and mis is 57
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((3,11), (4,8), (4,12), (8,12), (2,6), (2,10), (6,10), (1,5), (1,9), (1,13), (5,9), (5,13), (9,13))
+new backedge found from 11 to 4 with choice(3) exitValue is 0
+new backedge found from 8 to 5 with choice(4) exitValue is 0
+new backedge found from 12 to 5 with choice(4) exitValue is 0
+new backedge found from 12 to 9 with choice(8) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 0
+new backedge found from 10 to 3 with choice(2) exitValue is 0
+new backedge found from 10 to 7 with choice(6) exitValue is 1
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 9 to 2 with choice(1) exitValue is 0
+new backedge found from 13 to 2 with choice(1) exitValue is 0
+new backedge found from 9 to 6 with choice(5) exitValue is 0
+new backedge found from 13 to 6 with choice(5) exitValue is 0
+new backedge found from 13 to 10 with choice(9) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with input predicates: 6
+(65520  <= %x ) ,
+(%x  <= 268435454 ) ,
+(%x  >= 0 ) ,
+(268435455  <= %x ) ,
+(%x  <= 65519 ) ,
+((%x % 2 )  >= 1 ) 
+I am doing the trace:List(0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+...
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ,false ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 1110 and mis is 57
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((4,8), (2,6), (1,5), (1,9), (5,9))
+new backedge found from 8 to 5 with choice(4) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 1
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 9 to 2 with choice(1) exitValue is 0
+new backedge found from 9 to 6 with choice(5) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with input predicates: 6
+(65520  <= %x ) ,
+(%x  <= 268435454 ) ,
+(%x  >= 0 ) ,
+(268435455  <= %x ) ,
+(%x  <= 65519 ) ,
+((%x % 2 )  >= 1 ) 
+I am doing the trace:List(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0)
+...
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ) 
+ Or(  And(  Not( ((%x % 2 )  >= 1 ) ) , Not( (268435455  <= %x ) ) , Not( (65520  <= %x ) ) ,(%x  <= 268435454 ) ,(%x  >= 0 ) ,(%x  <= 65519 ) ) ,false ,false ,false ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 1115 and mis is 57
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((3,11), (4,8), (4,12), (8,12), (2,6), (2,10), (6,10), (1,5), (1,9), (1,13), (5,9), (5,13), (9,13))
+new backedge found from 11 to 4 with choice(3) exitValue is 0
+new backedge found from 8 to 5 with choice(4) exitValue is 0
+new backedge found from 12 to 5 with choice(4) exitValue is 0
+new backedge found from 12 to 9 with choice(8) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 1
+new backedge found from 10 to 3 with choice(2) exitValue is 1
+new backedge found from 10 to 7 with choice(6) exitValue is 0
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 9 to 2 with choice(1) exitValue is 0
+new backedge found from 13 to 2 with choice(1) exitValue is 0
+new backedge found from 9 to 6 with choice(5) exitValue is 0
+new backedge found from 13 to 6 with choice(5) exitValue is 0
+new backedge found from 13 to 10 with choice(9) exitValue is 0
+----------------------
+TRUE

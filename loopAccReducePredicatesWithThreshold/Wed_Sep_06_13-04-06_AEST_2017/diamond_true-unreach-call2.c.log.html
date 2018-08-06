@@ -1,0 +1,2130 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-acceleration/diamond_true-unreach-call2.c,false,clang-3.7,10)</h3><hr>
+<pre>extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+extern unsigned int __VERIFIER_nondet_uint(void);
+
+void __VERIFIER_assert(int cond) {
+  if (!(cond)) {
+    ERROR: __VERIFIER_error();
+  }
+  return;
+}
+
+int main(void) {
+  unsigned int x = 0;
+  unsigned int y = __VERIFIER_nondet_uint();
+
+  while (x < 99) {
+    if (y % 2 == 0) x += 2;
+    else x++;
+
+    if (y % 2 == 0) x += 2;
+    else x -= 2;
+
+    if (y % 2 == 0) x += 2;
+    else x += 2;
+
+    if (y % 2 == 0) x += 2;
+    else x -= 2;
+
+    if (y % 2 == 0) x += 2;
+    else x += 2;
+
+    if (y % 2 == 0) x += 2;
+    else x -= 4;
+
+    if (y % 2 == 0) x += 2;
+    else x += 4;
+
+    if (y % 2 == 0) x += 2;
+    else x += 2;
+
+    if (y % 2 == 0) x += 2;
+    else x -= 4;
+
+    if (y % 2 == 0) x += 2;
+    else x -= 4;
+  }
+
+  //__VERIFIER_assert((x % 2) == (y % 2));
+  if(!((x % 2) == (y % 2))) __VERIFIER_error();
+}
+</pre><hr>
+<pre>define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 0, i32* %x, align 4, !dbg !17
+    %2 = call i32 @__VERIFIER_nondet_uint() , !dbg !18
+    store i32 %2, i32* %y, align 4, !dbg !19
+    br label %3, !dbg !20
+  
+  ; <label>:3
+    %4 = load i32, i32* %x, align 4, !dbg !21
+    %5 = icmp ult i32 %4, 99, !dbg !24
+    br i1 %5, label %6, label %107, !dbg !20
+  
+  ; <label>:6
+    %7 = load i32, i32* %y, align 4, !dbg !25
+    %8 = urem i32 %7, 2, !dbg !26
+    %9 = icmp eq i32 %8, 0, !dbg !27
+    br i1 %9, label %10, label %13, !dbg !25
+  
+  ; <label>:10
+    %11 = load i32, i32* %x, align 4, !dbg !28
+    %12 = add i32 %11, 2, !dbg !28
+    store i32 %12, i32* %x, align 4, !dbg !28
+    br label %16, !dbg !29
+  
+  ; <label>:13
+    %14 = load i32, i32* %x, align 4, !dbg !30
+    %15 = add i32 %14, 1, !dbg !30
+    store i32 %15, i32* %x, align 4, !dbg !30
+    br label %16
+  
+  ; <label>:16
+    %17 = load i32, i32* %y, align 4, !dbg !31
+    %18 = urem i32 %17, 2, !dbg !32
+    %19 = icmp eq i32 %18, 0, !dbg !33
+    br i1 %19, label %20, label %23, !dbg !31
+  
+  ; <label>:20
+    %21 = load i32, i32* %x, align 4, !dbg !34
+    %22 = add i32 %21, 2, !dbg !34
+    store i32 %22, i32* %x, align 4, !dbg !34
+    br label %26, !dbg !35
+  
+  ; <label>:23
+    %24 = load i32, i32* %x, align 4, !dbg !36
+    %25 = sub i32 %24, 2, !dbg !36
+    store i32 %25, i32* %x, align 4, !dbg !36
+    br label %26
+  
+  ; <label>:26
+    %27 = load i32, i32* %y, align 4, !dbg !37
+    %28 = urem i32 %27, 2, !dbg !38
+    %29 = icmp eq i32 %28, 0, !dbg !39
+    br i1 %29, label %30, label %33, !dbg !37
+  
+  ; <label>:30
+    %31 = load i32, i32* %x, align 4, !dbg !40
+    %32 = add i32 %31, 2, !dbg !40
+    store i32 %32, i32* %x, align 4, !dbg !40
+    br label %36, !dbg !41
+  
+  ; <label>:33
+    %34 = load i32, i32* %x, align 4, !dbg !42
+    %35 = add i32 %34, 2, !dbg !42
+    store i32 %35, i32* %x, align 4, !dbg !42
+    br label %36
+  
+  ; <label>:36
+    %37 = load i32, i32* %y, align 4, !dbg !43
+    %38 = urem i32 %37, 2, !dbg !44
+    %39 = icmp eq i32 %38, 0, !dbg !45
+    br i1 %39, label %40, label %43, !dbg !43
+  
+  ; <label>:40
+    %41 = load i32, i32* %x, align 4, !dbg !46
+    %42 = add i32 %41, 2, !dbg !46
+    store i32 %42, i32* %x, align 4, !dbg !46
+    br label %46, !dbg !47
+  
+  ; <label>:43
+    %44 = load i32, i32* %x, align 4, !dbg !48
+    %45 = sub i32 %44, 2, !dbg !48
+    store i32 %45, i32* %x, align 4, !dbg !48
+    br label %46
+  
+  ; <label>:46
+    %47 = load i32, i32* %y, align 4, !dbg !49
+    %48 = urem i32 %47, 2, !dbg !50
+    %49 = icmp eq i32 %48, 0, !dbg !51
+    br i1 %49, label %50, label %53, !dbg !49
+  
+  ; <label>:50
+    %51 = load i32, i32* %x, align 4, !dbg !52
+    %52 = add i32 %51, 2, !dbg !52
+    store i32 %52, i32* %x, align 4, !dbg !52
+    br label %56, !dbg !53
+  
+  ; <label>:53
+    %54 = load i32, i32* %x, align 4, !dbg !54
+    %55 = add i32 %54, 2, !dbg !54
+    store i32 %55, i32* %x, align 4, !dbg !54
+    br label %56
+  
+  ; <label>:56
+    %57 = load i32, i32* %y, align 4, !dbg !55
+    %58 = urem i32 %57, 2, !dbg !56
+    %59 = icmp eq i32 %58, 0, !dbg !57
+    br i1 %59, label %60, label %63, !dbg !55
+  
+  ; <label>:60
+    %61 = load i32, i32* %x, align 4, !dbg !58
+    %62 = add i32 %61, 2, !dbg !58
+    store i32 %62, i32* %x, align 4, !dbg !58
+    br label %66, !dbg !59
+  
+  ; <label>:63
+    %64 = load i32, i32* %x, align 4, !dbg !60
+    %65 = sub i32 %64, 4, !dbg !60
+    store i32 %65, i32* %x, align 4, !dbg !60
+    br label %66
+  
+  ; <label>:66
+    %67 = load i32, i32* %y, align 4, !dbg !61
+    %68 = urem i32 %67, 2, !dbg !62
+    %69 = icmp eq i32 %68, 0, !dbg !63
+    br i1 %69, label %70, label %73, !dbg !61
+  
+  ; <label>:70
+    %71 = load i32, i32* %x, align 4, !dbg !64
+    %72 = add i32 %71, 2, !dbg !64
+    store i32 %72, i32* %x, align 4, !dbg !64
+    br label %76, !dbg !65
+  
+  ; <label>:73
+    %74 = load i32, i32* %x, align 4, !dbg !66
+    %75 = add i32 %74, 4, !dbg !66
+    store i32 %75, i32* %x, align 4, !dbg !66
+    br label %76
+  
+  ; <label>:76
+    %77 = load i32, i32* %y, align 4, !dbg !67
+    %78 = urem i32 %77, 2, !dbg !68
+    %79 = icmp eq i32 %78, 0, !dbg !69
+    br i1 %79, label %80, label %83, !dbg !67
+  
+  ; <label>:80
+    %81 = load i32, i32* %x, align 4, !dbg !70
+    %82 = add i32 %81, 2, !dbg !70
+    store i32 %82, i32* %x, align 4, !dbg !70
+    br label %86, !dbg !71
+  
+  ; <label>:83
+    %84 = load i32, i32* %x, align 4, !dbg !72
+    %85 = add i32 %84, 2, !dbg !72
+    store i32 %85, i32* %x, align 4, !dbg !72
+    br label %86
+  
+  ; <label>:86
+    %87 = load i32, i32* %y, align 4, !dbg !73
+    %88 = urem i32 %87, 2, !dbg !74
+    %89 = icmp eq i32 %88, 0, !dbg !75
+    br i1 %89, label %90, label %93, !dbg !73
+  
+  ; <label>:90
+    %91 = load i32, i32* %x, align 4, !dbg !76
+    %92 = add i32 %91, 2, !dbg !76
+    store i32 %92, i32* %x, align 4, !dbg !76
+    br label %96, !dbg !77
+  
+  ; <label>:93
+    %94 = load i32, i32* %x, align 4, !dbg !78
+    %95 = sub i32 %94, 4, !dbg !78
+    store i32 %95, i32* %x, align 4, !dbg !78
+    br label %96
+  
+  ; <label>:96
+    %97 = load i32, i32* %y, align 4, !dbg !79
+    %98 = urem i32 %97, 2, !dbg !80
+    %99 = icmp eq i32 %98, 0, !dbg !81
+    br i1 %99, label %100, label %103, !dbg !79
+  
+  ; <label>:100
+    %101 = load i32, i32* %x, align 4, !dbg !82
+    %102 = add i32 %101, 2, !dbg !82
+    store i32 %102, i32* %x, align 4, !dbg !82
+    br label %106, !dbg !83
+  
+  ; <label>:103
+    %104 = load i32, i32* %x, align 4, !dbg !84
+    %105 = sub i32 %104, 4, !dbg !84
+    store i32 %105, i32* %x, align 4, !dbg !84
+    br label %106
+  
+  ; <label>:106
+    br label %3, !dbg !20
+  
+  ; <label>:107
+    %108 = load i32, i32* %x, align 4, !dbg !85
+    %109 = urem i32 %108, 2, !dbg !86
+    %110 = load i32, i32* %y, align 4, !dbg !87
+    %111 = urem i32 %110, 2, !dbg !88
+    %112 = icmp eq i32 %109, %111, !dbg !89
+    br i1 %112, label %114, label %113, !dbg !90
+  
+  ; <label>:113
+    br label %__error.113
+  
+  ; <label>:114
+    %115 = load i32, i32* %1, !dbg !92
+    ret i32 %115, !dbg !92
+  
+  __error.113: 
+    call void (...) @__VERIFIER_error() #3 , !dbg !91
+    unreachable, !dbg !91
+  
+} 
+
+using predicates abs
+List(0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+8 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 6
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 98 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+false 
+------------
+simplify cache hit is 322 and mis is 4
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,23))
+new backedge found from 23 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+9 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 7
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 549 and mis is 7
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,23))
+new backedge found from 23 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+9 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 7
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 1704 and mis is 7
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((15,37), (13,35), (1,23), (1,45), (23,45), (11,33), (20,42), (10,32), (14,36), (19,41), (12,34), (17,39), (16,38), (7,29), (2,24), (9,31), (18,40), (22,44), (5,27), (6,28), (8,30), (3,25), (4,26))
+new backedge found from 37 to 16 with choice(15) exitValue is 0
+new backedge found from 35 to 14 with choice(13) exitValue is 0
+new backedge found from 23 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 24 with choice(23) exitValue is 0
+new backedge found from 33 to 12 with choice(11) exitValue is 0
+new backedge found from 42 to 21 with choice(20) exitValue is 0
+new backedge found from 32 to 11 with choice(10) exitValue is 0
+new backedge found from 36 to 15 with choice(14) exitValue is 0
+new backedge found from 41 to 20 with choice(19) exitValue is 0
+new backedge found from 34 to 13 with choice(12) exitValue is 0
+new backedge found from 39 to 18 with choice(17) exitValue is 0
+new backedge found from 38 to 17 with choice(16) exitValue is 0
+new backedge found from 29 to 8 with choice(7) exitValue is 0
+new backedge found from 24 to 3 with choice(2) exitValue is 0
+new backedge found from 31 to 10 with choice(9) exitValue is 0
+new backedge found from 40 to 19 with choice(18) exitValue is 0
+new backedge found from 44 to 23 with choice(22) exitValue is 0
+new backedge found from 27 to 6 with choice(5) exitValue is 0
+new backedge found from 28 to 7 with choice(6) exitValue is 0
+new backedge found from 30 to 9 with choice(8) exitValue is 0
+new backedge found from 25 to 4 with choice(3) exitValue is 0
+new backedge found from 26 to 5 with choice(4) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+9 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 7
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 2859 and mis is 7
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((15,37), (15,59), (37,59), (13,35), (13,57), (35,57), (1,23), (1,45), (1,67), (23,45), (23,67), (45,67), (11,33), (11,55), (33,55), (20,42), (20,64), (42,64), (10,32), (10,54), (32,54), (14,36), (14,58), (36,58), (19,41), (19,63), (41,63), (12,34), (12,56), (34,56), (17,39), (17,61), (39,61), (16,38), (16,60), (38,60), (7,29), (7,51), (29,51), (2,24), (2,46), (24,46), (9,31), (9,53), (31,53), (18,40), (18,62), (40,62), (22,44), (22,66), (44,66), (21,65), (5,27), (5,49), (27,49), (6,28), (6,50), (28,50), (8,30), (8,52), (30,52), (3,25), (3,47), (25,47), (4,26), (4,48), (26,48))
+new backedge found from 37 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 38 with choice(37) exitValue is 0
+new backedge found from 35 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 36 with choice(35) exitValue is 0
+new backedge found from 23 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 2 with choice(1) exitValue is 0
+new backedge found from 67 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 46 with choice(45) exitValue is 0
+new backedge found from 33 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 34 with choice(33) exitValue is 0
+new backedge found from 42 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 43 with choice(42) exitValue is 1
+new backedge found from 32 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 33 with choice(32) exitValue is 0
+new backedge found from 36 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 37 with choice(36) exitValue is 0
+new backedge found from 41 to 20 with choice(19) exitValue is 0
+new backedge found from 63 to 20 with choice(19) exitValue is 0
+new backedge found from 63 to 42 with choice(41) exitValue is 0
+new backedge found from 34 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 35 with choice(34) exitValue is 0
+new backedge found from 39 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 40 with choice(39) exitValue is 0
+new backedge found from 38 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 39 with choice(38) exitValue is 0
+new backedge found from 29 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 30 with choice(29) exitValue is 0
+new backedge found from 24 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 25 with choice(24) exitValue is 0
+new backedge found from 31 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 32 with choice(31) exitValue is 0
+new backedge found from 40 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 41 with choice(40) exitValue is 0
+new backedge found from 44 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 45 with choice(44) exitValue is 0
+new backedge found from 65 to 22 with choice(21) exitValue is 0
+new backedge found from 27 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 28 with choice(27) exitValue is 0
+new backedge found from 28 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 29 with choice(28) exitValue is 0
+new backedge found from 30 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 31 with choice(30) exitValue is 0
+new backedge found from 25 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 26 with choice(25) exitValue is 0
+new backedge found from 26 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 27 with choice(26) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+9 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 7
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 4014 and mis is 7
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((15,37), (15,59), (37,59), (13,35), (13,57), (35,57), (1,23), (1,45), (1,67), (23,45), (23,67), (45,67), (11,33), (11,55), (33,55), (20,42), (20,64), (42,64), (10,32), (10,54), (32,54), (14,36), (14,58), (36,58), (19,41), (12,34), (12,56), (34,56), (17,39), (17,61), (39,61), (16,38), (16,60), (38,60), (7,29), (7,51), (29,51), (2,24), (2,46), (24,46), (9,31), (9,53), (31,53), (18,40), (18,62), (40,62), (22,44), (22,66), (44,66), (21,65), (5,27), (5,49), (27,49), (6,28), (6,50), (28,50), (8,30), (8,52), (30,52), (3,25), (3,47), (25,47), (4,26), (4,48), (26,48))
+new backedge found from 37 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 38 with choice(37) exitValue is 0
+new backedge found from 35 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 36 with choice(35) exitValue is 0
+new backedge found from 23 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 2 with choice(1) exitValue is 0
+new backedge found from 67 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 46 with choice(45) exitValue is 0
+new backedge found from 33 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 34 with choice(33) exitValue is 0
+new backedge found from 42 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 43 with choice(42) exitValue is 1
+new backedge found from 32 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 33 with choice(32) exitValue is 0
+new backedge found from 36 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 37 with choice(36) exitValue is 0
+new backedge found from 41 to 20 with choice(19) exitValue is 0
+new backedge found from 34 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 35 with choice(34) exitValue is 0
+new backedge found from 39 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 40 with choice(39) exitValue is 0
+new backedge found from 38 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 39 with choice(38) exitValue is 0
+new backedge found from 29 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 30 with choice(29) exitValue is 0
+new backedge found from 24 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 25 with choice(24) exitValue is 0
+new backedge found from 31 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 32 with choice(31) exitValue is 0
+new backedge found from 40 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 41 with choice(40) exitValue is 0
+new backedge found from 44 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 45 with choice(44) exitValue is 0
+new backedge found from 65 to 22 with choice(21) exitValue is 0
+new backedge found from 27 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 28 with choice(27) exitValue is 0
+new backedge found from 28 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 29 with choice(28) exitValue is 0
+new backedge found from 30 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 31 with choice(30) exitValue is 0
+new backedge found from 25 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 26 with choice(25) exitValue is 0
+new backedge found from 26 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 27 with choice(26) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+9 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 7
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 5169 and mis is 7
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((15,37), (15,59), (15,81), (37,59), (37,81), (59,81), (13,35), (13,57), (13,79), (35,57), (35,79), (57,79), (1,23), (1,45), (1,67), (1,89), (23,45), (23,67), (23,89), (45,67), (45,89), (67,89), (11,33), (11,55), (11,77), (33,55), (33,77), (55,77), (20,42), (20,64), (20,86), (42,64), (42,86), (64,86), (10,32), (10,54), (10,76), (32,54), (32,76), (54,76), (14,36), (14,58), (14,80), (36,58), (36,80), (58,80), (19,41), (19,63), (41,63), (12,34), (12,56), (12,78), (34,56), (34,78), (56,78), (17,39), (17,61), (17,83), (39,61), (39,83), (61,83), (16,38), (16,60), (16,82), (38,60), (38,82), (60,82), (7,29), (7,51), (7,73), (29,51), (29,73), (51,73), (2,24), (2,46), (2,68), (24,46), (24,68), (46,68), (9,31), (9,53), (9,75), (31,53), (31,75), (53,75), (18,40), (18,62), (18,84), (40,62), (40,84), (62,84), (22,44), (22,66), (22,88), (44,66), (44,88), (66,88), (21,65), (21,87), (65,87), (5,27), (5,49), (5,71), (27,49), (27,71), (49,71), (6,28), (6,50), (6,72), (28,50), (28,72), (50,72), (8,30), (8,52), (8,74), (30,52), (30,74), (52,74), (3,25), (3,47), (3,69), (25,47), (25,69), (47,69), (4,26), (4,48), (4,70), (26,48), (26,70), (48,70))
+new backedge found from 37 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 16 with choice(15) exitValue is 0
+new backedge found from 81 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 38 with choice(37) exitValue is 0
+new backedge found from 81 to 38 with choice(37) exitValue is 0
+new backedge found from 81 to 60 with choice(59) exitValue is 0
+new backedge found from 35 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 14 with choice(13) exitValue is 0
+new backedge found from 79 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 36 with choice(35) exitValue is 0
+new backedge found from 79 to 36 with choice(35) exitValue is 0
+new backedge found from 79 to 58 with choice(57) exitValue is 0
+new backedge found from 23 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 2 with choice(1) exitValue is 0
+new backedge found from 67 to 2 with choice(1) exitValue is 0
+new backedge found from 89 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 24 with choice(23) exitValue is 0
+new backedge found from 89 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 46 with choice(45) exitValue is 0
+new backedge found from 89 to 46 with choice(45) exitValue is 0
+new backedge found from 89 to 68 with choice(67) exitValue is 0
+new backedge found from 33 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 12 with choice(11) exitValue is 0
+new backedge found from 77 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 34 with choice(33) exitValue is 0
+new backedge found from 77 to 34 with choice(33) exitValue is 0
+new backedge found from 77 to 56 with choice(55) exitValue is 0
+new backedge found from 42 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 21 with choice(20) exitValue is 0
+new backedge found from 86 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 43 with choice(42) exitValue is 1
+new backedge found from 86 to 43 with choice(42) exitValue is 1
+new backedge found from 86 to 65 with choice(64) exitValue is 0
+new backedge found from 32 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 11 with choice(10) exitValue is 0
+new backedge found from 76 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 33 with choice(32) exitValue is 0
+new backedge found from 76 to 33 with choice(32) exitValue is 0
+new backedge found from 76 to 55 with choice(54) exitValue is 0
+new backedge found from 36 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 15 with choice(14) exitValue is 0
+new backedge found from 80 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 37 with choice(36) exitValue is 0
+new backedge found from 80 to 37 with choice(36) exitValue is 0
+new backedge found from 80 to 59 with choice(58) exitValue is 0
+new backedge found from 41 to 20 with choice(19) exitValue is 0
+new backedge found from 63 to 20 with choice(19) exitValue is 0
+new backedge found from 63 to 42 with choice(41) exitValue is 0
+new backedge found from 34 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 13 with choice(12) exitValue is 0
+new backedge found from 78 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 35 with choice(34) exitValue is 0
+new backedge found from 78 to 35 with choice(34) exitValue is 0
+new backedge found from 78 to 57 with choice(56) exitValue is 0
+new backedge found from 39 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 18 with choice(17) exitValue is 0
+new backedge found from 83 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 40 with choice(39) exitValue is 0
+new backedge found from 83 to 40 with choice(39) exitValue is 0
+new backedge found from 83 to 62 with choice(61) exitValue is 0
+new backedge found from 38 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 17 with choice(16) exitValue is 0
+new backedge found from 82 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 39 with choice(38) exitValue is 0
+new backedge found from 82 to 39 with choice(38) exitValue is 0
+new backedge found from 82 to 61 with choice(60) exitValue is 0
+new backedge found from 29 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 8 with choice(7) exitValue is 0
+new backedge found from 73 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 30 with choice(29) exitValue is 0
+new backedge found from 73 to 30 with choice(29) exitValue is 0
+new backedge found from 73 to 52 with choice(51) exitValue is 0
+new backedge found from 24 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 3 with choice(2) exitValue is 0
+new backedge found from 68 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 25 with choice(24) exitValue is 0
+new backedge found from 68 to 25 with choice(24) exitValue is 0
+new backedge found from 68 to 47 with choice(46) exitValue is 0
+new backedge found from 31 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 10 with choice(9) exitValue is 0
+new backedge found from 75 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 32 with choice(31) exitValue is 0
+new backedge found from 75 to 32 with choice(31) exitValue is 0
+new backedge found from 75 to 54 with choice(53) exitValue is 0
+new backedge found from 40 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 19 with choice(18) exitValue is 0
+new backedge found from 84 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 41 with choice(40) exitValue is 0
+new backedge found from 84 to 41 with choice(40) exitValue is 0
+new backedge found from 84 to 63 with choice(62) exitValue is 0
+new backedge found from 44 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 23 with choice(22) exitValue is 0
+new backedge found from 88 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 45 with choice(44) exitValue is 0
+new backedge found from 88 to 45 with choice(44) exitValue is 0
+new backedge found from 88 to 67 with choice(66) exitValue is 0
+new backedge found from 65 to 22 with choice(21) exitValue is 0
+new backedge found from 87 to 22 with choice(21) exitValue is 0
+new backedge found from 87 to 66 with choice(65) exitValue is 0
+new backedge found from 27 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 6 with choice(5) exitValue is 0
+new backedge found from 71 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 28 with choice(27) exitValue is 0
+new backedge found from 71 to 28 with choice(27) exitValue is 0
+new backedge found from 71 to 50 with choice(49) exitValue is 0
+new backedge found from 28 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 7 with choice(6) exitValue is 0
+new backedge found from 72 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 29 with choice(28) exitValue is 0
+new backedge found from 72 to 29 with choice(28) exitValue is 0
+new backedge found from 72 to 51 with choice(50) exitValue is 0
+new backedge found from 30 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 9 with choice(8) exitValue is 0
+new backedge found from 74 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 31 with choice(30) exitValue is 0
+new backedge found from 74 to 31 with choice(30) exitValue is 0
+new backedge found from 74 to 53 with choice(52) exitValue is 0
+new backedge found from 25 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 4 with choice(3) exitValue is 0
+new backedge found from 69 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 26 with choice(25) exitValue is 0
+new backedge found from 69 to 26 with choice(25) exitValue is 0
+new backedge found from 69 to 48 with choice(47) exitValue is 0
+new backedge found from 26 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 5 with choice(4) exitValue is 0
+new backedge found from 70 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 27 with choice(26) exitValue is 0
+new backedge found from 70 to 27 with choice(26) exitValue is 0
+new backedge found from 70 to 49 with choice(48) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+9 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 7
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 6324 and mis is 7
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((15,37), (15,59), (15,81), (15,103), (37,59), (37,81), (37,103), (59,81), (59,103), (81,103), (13,35), (13,57), (13,79), (13,101), (35,57), (35,79), (35,101), (57,79), (57,101), (79,101), (1,23), (1,45), (1,67), (1,89), (1,111), (23,45), (23,67), (23,89), (23,111), (45,67), (45,89), (45,111), (67,89), (67,111), (89,111), (11,33), (11,55), (11,77), (11,99), (33,55), (33,77), (33,99), (55,77), (55,99), (77,99), (20,42), (20,64), (20,86), (20,108), (42,64), (42,86), (42,108), (64,86), (64,108), (86,108), (10,32), (10,54), (10,76), (10,98), (32,54), (32,76), (32,98), (54,76), (54,98), (76,98), (14,36), (14,58), (14,80), (14,102), (36,58), (36,80), (36,102), (58,80), (58,102), (80,102), (19,41), (19,63), (19,107), (41,63), (41,107), (63,107), (12,34), (12,56), (12,78), (12,100), (34,56), (34,78), (34,100), (56,78), (56,100), (78,100), (17,39), (17,61), (17,83), (17,105), (39,61), (39,83), (39,105), (61,83), (61,105), (83,105), (16,38), (16,60), (16,82), (16,104), (38,60), (38,82), (38,104), (60,82), (60,104), (82,104), (7,29), (7,51), (7,73), (7,95), (29,51), (29,73), (29,95), (51,73), (51,95), (73,95), (2,24), (2,46), (2,68), (2,90), (24,46), (24,68), (24,90), (46,68), (46,90), (68,90), (9,31), (9,53), (9,75), (9,97), (31,53), (31,75), (31,97), (53,75), (53,97), (75,97), (18,40), (18,62), (18,84), (18,106), (40,62), (40,84), (40,106), (62,84), (62,106), (84,106), (22,44), (22,66), (22,88), (22,110), (44,66), (44,88), (44,110), (66,88), (66,110), (88,110), (21,65), (21,87), (21,109), (65,87), (65,109), (87,109), (5,27), (5,49), (5,71), (5,93), (27,49), (27,71), (27,93), (49,71), (49,93), (71,93), (6,28), (6,50), (6,72), (6,94), (28,50), (28,72), (28,94), (50,72), (50,94), (72,94), (8,30), (8,52), (8,74), (8,96), (30,52), (30,74), (30,96), (52,74), (52,96), (74,96), (3,25), (3,47), (3,69), (3,91), (25,47), (25,69), (25,91), (47,69), (47,91), (69,91), (4,26), (4,48), (4,70), (4,92), (26,48), (26,70), (26,92), (48,70), (48,92), (70,92))
+new backedge found from 37 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 16 with choice(15) exitValue is 0
+new backedge found from 81 to 16 with choice(15) exitValue is 0
+new backedge found from 103 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 38 with choice(37) exitValue is 0
+new backedge found from 81 to 38 with choice(37) exitValue is 0
+new backedge found from 103 to 38 with choice(37) exitValue is 0
+new backedge found from 81 to 60 with choice(59) exitValue is 0
+new backedge found from 103 to 60 with choice(59) exitValue is 0
+new backedge found from 103 to 82 with choice(81) exitValue is 0
+new backedge found from 35 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 14 with choice(13) exitValue is 0
+new backedge found from 79 to 14 with choice(13) exitValue is 0
+new backedge found from 101 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 36 with choice(35) exitValue is 0
+new backedge found from 79 to 36 with choice(35) exitValue is 0
+new backedge found from 101 to 36 with choice(35) exitValue is 0
+new backedge found from 79 to 58 with choice(57) exitValue is 0
+new backedge found from 101 to 58 with choice(57) exitValue is 0
+new backedge found from 101 to 80 with choice(79) exitValue is 0
+new backedge found from 23 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 2 with choice(1) exitValue is 0
+new backedge found from 67 to 2 with choice(1) exitValue is 0
+new backedge found from 89 to 2 with choice(1) exitValue is 0
+new backedge found from 111 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 24 with choice(23) exitValue is 0
+new backedge found from 89 to 24 with choice(23) exitValue is 0
+new backedge found from 111 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 46 with choice(45) exitValue is 0
+new backedge found from 89 to 46 with choice(45) exitValue is 0
+new backedge found from 111 to 46 with choice(45) exitValue is 0
+new backedge found from 89 to 68 with choice(67) exitValue is 0
+new backedge found from 111 to 68 with choice(67) exitValue is 0
+new backedge found from 111 to 90 with choice(89) exitValue is 0
+new backedge found from 33 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 12 with choice(11) exitValue is 0
+new backedge found from 77 to 12 with choice(11) exitValue is 0
+new backedge found from 99 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 34 with choice(33) exitValue is 0
+new backedge found from 77 to 34 with choice(33) exitValue is 0
+new backedge found from 99 to 34 with choice(33) exitValue is 0
+new backedge found from 77 to 56 with choice(55) exitValue is 0
+new backedge found from 99 to 56 with choice(55) exitValue is 0
+new backedge found from 99 to 78 with choice(77) exitValue is 0
+new backedge found from 42 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 21 with choice(20) exitValue is 0
+new backedge found from 86 to 21 with choice(20) exitValue is 0
+new backedge found from 108 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 43 with choice(42) exitValue is 1
+new backedge found from 86 to 43 with choice(42) exitValue is 1
+new backedge found from 108 to 43 with choice(42) exitValue is 1
+new backedge found from 86 to 65 with choice(64) exitValue is 0
+new backedge found from 108 to 65 with choice(64) exitValue is 0
+new backedge found from 108 to 87 with choice(86) exitValue is 0
+new backedge found from 32 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 11 with choice(10) exitValue is 0
+new backedge found from 76 to 11 with choice(10) exitValue is 0
+new backedge found from 98 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 33 with choice(32) exitValue is 0
+new backedge found from 76 to 33 with choice(32) exitValue is 0
+new backedge found from 98 to 33 with choice(32) exitValue is 0
+new backedge found from 76 to 55 with choice(54) exitValue is 0
+new backedge found from 98 to 55 with choice(54) exitValue is 0
+new backedge found from 98 to 77 with choice(76) exitValue is 0
+new backedge found from 36 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 15 with choice(14) exitValue is 0
+new backedge found from 80 to 15 with choice(14) exitValue is 0
+new backedge found from 102 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 37 with choice(36) exitValue is 0
+new backedge found from 80 to 37 with choice(36) exitValue is 0
+new backedge found from 102 to 37 with choice(36) exitValue is 0
+new backedge found from 80 to 59 with choice(58) exitValue is 0
+new backedge found from 102 to 59 with choice(58) exitValue is 0
+new backedge found from 102 to 81 with choice(80) exitValue is 0
+new backedge found from 41 to 20 with choice(19) exitValue is 0
+new backedge found from 63 to 20 with choice(19) exitValue is 0
+new backedge found from 107 to 20 with choice(19) exitValue is 0
+new backedge found from 63 to 42 with choice(41) exitValue is 0
+new backedge found from 107 to 42 with choice(41) exitValue is 0
+new backedge found from 107 to 64 with choice(63) exitValue is 0
+new backedge found from 34 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 13 with choice(12) exitValue is 0
+new backedge found from 78 to 13 with choice(12) exitValue is 0
+new backedge found from 100 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 35 with choice(34) exitValue is 0
+new backedge found from 78 to 35 with choice(34) exitValue is 0
+new backedge found from 100 to 35 with choice(34) exitValue is 0
+new backedge found from 78 to 57 with choice(56) exitValue is 0
+new backedge found from 100 to 57 with choice(56) exitValue is 0
+new backedge found from 100 to 79 with choice(78) exitValue is 0
+new backedge found from 39 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 18 with choice(17) exitValue is 0
+new backedge found from 83 to 18 with choice(17) exitValue is 0
+new backedge found from 105 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 40 with choice(39) exitValue is 0
+new backedge found from 83 to 40 with choice(39) exitValue is 0
+new backedge found from 105 to 40 with choice(39) exitValue is 0
+new backedge found from 83 to 62 with choice(61) exitValue is 0
+new backedge found from 105 to 62 with choice(61) exitValue is 0
+new backedge found from 105 to 84 with choice(83) exitValue is 0
+new backedge found from 38 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 17 with choice(16) exitValue is 0
+new backedge found from 82 to 17 with choice(16) exitValue is 0
+new backedge found from 104 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 39 with choice(38) exitValue is 0
+new backedge found from 82 to 39 with choice(38) exitValue is 0
+new backedge found from 104 to 39 with choice(38) exitValue is 0
+new backedge found from 82 to 61 with choice(60) exitValue is 0
+new backedge found from 104 to 61 with choice(60) exitValue is 0
+new backedge found from 104 to 83 with choice(82) exitValue is 0
+new backedge found from 29 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 8 with choice(7) exitValue is 0
+new backedge found from 73 to 8 with choice(7) exitValue is 0
+new backedge found from 95 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 30 with choice(29) exitValue is 0
+new backedge found from 73 to 30 with choice(29) exitValue is 0
+new backedge found from 95 to 30 with choice(29) exitValue is 0
+new backedge found from 73 to 52 with choice(51) exitValue is 0
+new backedge found from 95 to 52 with choice(51) exitValue is 0
+new backedge found from 95 to 74 with choice(73) exitValue is 0
+new backedge found from 24 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 3 with choice(2) exitValue is 0
+new backedge found from 68 to 3 with choice(2) exitValue is 0
+new backedge found from 90 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 25 with choice(24) exitValue is 0
+new backedge found from 68 to 25 with choice(24) exitValue is 0
+new backedge found from 90 to 25 with choice(24) exitValue is 0
+new backedge found from 68 to 47 with choice(46) exitValue is 0
+new backedge found from 90 to 47 with choice(46) exitValue is 0
+new backedge found from 90 to 69 with choice(68) exitValue is 0
+new backedge found from 31 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 10 with choice(9) exitValue is 0
+new backedge found from 75 to 10 with choice(9) exitValue is 0
+new backedge found from 97 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 32 with choice(31) exitValue is 0
+new backedge found from 75 to 32 with choice(31) exitValue is 0
+new backedge found from 97 to 32 with choice(31) exitValue is 0
+new backedge found from 75 to 54 with choice(53) exitValue is 0
+new backedge found from 97 to 54 with choice(53) exitValue is 0
+new backedge found from 97 to 76 with choice(75) exitValue is 0
+new backedge found from 40 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 19 with choice(18) exitValue is 0
+new backedge found from 84 to 19 with choice(18) exitValue is 0
+new backedge found from 106 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 41 with choice(40) exitValue is 0
+new backedge found from 84 to 41 with choice(40) exitValue is 0
+new backedge found from 106 to 41 with choice(40) exitValue is 0
+new backedge found from 84 to 63 with choice(62) exitValue is 0
+new backedge found from 106 to 63 with choice(62) exitValue is 0
+new backedge found from 106 to 85 with choice(84) exitValue is 1
+new backedge found from 44 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 23 with choice(22) exitValue is 0
+new backedge found from 88 to 23 with choice(22) exitValue is 0
+new backedge found from 110 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 45 with choice(44) exitValue is 0
+new backedge found from 88 to 45 with choice(44) exitValue is 0
+new backedge found from 110 to 45 with choice(44) exitValue is 0
+new backedge found from 88 to 67 with choice(66) exitValue is 0
+new backedge found from 110 to 67 with choice(66) exitValue is 0
+new backedge found from 110 to 89 with choice(88) exitValue is 0
+new backedge found from 65 to 22 with choice(21) exitValue is 0
+new backedge found from 87 to 22 with choice(21) exitValue is 0
+new backedge found from 109 to 22 with choice(21) exitValue is 0
+new backedge found from 87 to 66 with choice(65) exitValue is 0
+new backedge found from 109 to 66 with choice(65) exitValue is 0
+new backedge found from 109 to 88 with choice(87) exitValue is 0
+new backedge found from 27 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 6 with choice(5) exitValue is 0
+new backedge found from 71 to 6 with choice(5) exitValue is 0
+new backedge found from 93 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 28 with choice(27) exitValue is 0
+new backedge found from 71 to 28 with choice(27) exitValue is 0
+new backedge found from 93 to 28 with choice(27) exitValue is 0
+new backedge found from 71 to 50 with choice(49) exitValue is 0
+new backedge found from 93 to 50 with choice(49) exitValue is 0
+new backedge found from 93 to 72 with choice(71) exitValue is 0
+new backedge found from 28 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 7 with choice(6) exitValue is 0
+new backedge found from 72 to 7 with choice(6) exitValue is 0
+new backedge found from 94 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 29 with choice(28) exitValue is 0
+new backedge found from 72 to 29 with choice(28) exitValue is 0
+new backedge found from 94 to 29 with choice(28) exitValue is 0
+new backedge found from 72 to 51 with choice(50) exitValue is 0
+new backedge found from 94 to 51 with choice(50) exitValue is 0
+new backedge found from 94 to 73 with choice(72) exitValue is 0
+new backedge found from 30 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 9 with choice(8) exitValue is 0
+new backedge found from 74 to 9 with choice(8) exitValue is 0
+new backedge found from 96 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 31 with choice(30) exitValue is 0
+new backedge found from 74 to 31 with choice(30) exitValue is 0
+new backedge found from 96 to 31 with choice(30) exitValue is 0
+new backedge found from 74 to 53 with choice(52) exitValue is 0
+new backedge found from 96 to 53 with choice(52) exitValue is 0
+new backedge found from 96 to 75 with choice(74) exitValue is 0
+new backedge found from 25 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 4 with choice(3) exitValue is 0
+new backedge found from 69 to 4 with choice(3) exitValue is 0
+new backedge found from 91 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 26 with choice(25) exitValue is 0
+new backedge found from 69 to 26 with choice(25) exitValue is 0
+new backedge found from 91 to 26 with choice(25) exitValue is 0
+new backedge found from 69 to 48 with choice(47) exitValue is 0
+new backedge found from 91 to 48 with choice(47) exitValue is 0
+new backedge found from 91 to 70 with choice(69) exitValue is 0
+new backedge found from 26 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 5 with choice(4) exitValue is 0
+new backedge found from 70 to 5 with choice(4) exitValue is 0
+new backedge found from 92 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 27 with choice(26) exitValue is 0
+new backedge found from 70 to 27 with choice(26) exitValue is 0
+new backedge found from 92 to 27 with choice(26) exitValue is 0
+new backedge found from 70 to 49 with choice(48) exitValue is 0
+new backedge found from 92 to 49 with choice(48) exitValue is 0
+new backedge found from 92 to 71 with choice(70) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+9 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 7
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y % 2 )  <= 0 ) ) , Not( ((%y % 2 )  >= 1 ) ) ) , Or(  Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  >= 1 ) ) , Or( ((%y % 2 )  <= 0 ) ,(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%x  <= 98 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( ((%y % 2 )  >= 1 ) ) , Not( (let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ) ,((%y % 2 )  <= 0 ) ,(%x  >= 0 ) ,(%1  = 0 ) ,(%y  >= 0 ) ) ,false ,false ,false ,false ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 7479 and mis is 7
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((15,37), (15,59), (15,81), (15,103), (15,125), (15,147), (37,59), (37,81), (37,103), (37,125), (37,147), (59,81), (59,103), (59,125), (59,147), (81,103), (81,125), (81,147), (103,125), (103,147), (125,147), (13,35), (13,57), (13,79), (13,101), (13,123), (13,145), (35,57), (35,79), (35,101), (35,123), (35,145), (57,79), (57,101), (57,123), (57,145), (79,101), (79,123), (79,145), (101,123), (101,145), (123,145), (1,23), (1,45), (1,67), (1,89), (1,111), (1,133), (1,155), (23,45), (23,67), (23,89), (23,111), (23,133), (23,155), (45,67), (45,89), (45,111), (45,133), (45,155), (67,89), (67,111), (67,133), (67,155), (89,111), (89,133), (89,155), (111,133), (111,155), (133,155), (11,33), (11,55), (11,77), (11,99), (11,121), (11,143), (33,55), (33,77), (33,99), (33,121), (33,143), (55,77), (55,99), (55,121), (55,143), (77,99), (77,121), (77,143), (99,121), (99,143), (121,143), (20,42), (20,64), (20,86), (20,108), (20,130), (20,152), (42,64), (42,86), (42,108), (42,130), (42,152), (64,86), (64,108), (64,130), (64,152), (86,108), (86,130), (86,152), (108,130), (108,152), (130,152), (10,32), (10,54), (10,76), (10,98), (10,120), (10,142), (32,54), (32,76), (32,98), (32,120), (32,142), (54,76), (54,98), (54,120), (54,142), (76,98), (76,120), (76,142), (98,120), (98,142), (120,142), (14,36), (14,58), (14,80), (14,102), (14,124), (14,146), (36,58), (36,80), (36,102), (36,124), (36,146), (58,80), (58,102), (58,124), (58,146), (80,102), (80,124), (80,146), (102,124), (102,146), (124,146), (19,41), (19,63), (19,107), (19,129), (19,151), (41,63), (41,107), (41,129), (41,151), (63,107), (63,129), (63,151), (107,129), (107,151), (129,151), (12,34), (12,56), (12,78), (12,100), (12,122), (12,144), (34,56), (34,78), (34,100), (34,122), (34,144), (56,78), (56,100), (56,122), (56,144), (78,100), (78,122), (78,144), (100,122), (100,144), (122,144), (17,39), (17,61), (17,83), (17,105), (17,127), (39,61), (39,83), (39,105), (39,127), (61,83), (61,105), (61,127), (83,105), (83,127), (105,127), (16,38), (16,60), (16,82), (16,104), (16,126), (16,148), (38,60), (38,82), (38,104), (38,126), (38,148), (60,82), (60,104), (60,126), (60,148), (82,104), (82,126), (82,148), (104,126), (104,148), (126,148), (7,29), (7,51), (7,73), (7,95), (7,117), (7,139), (29,51), (29,73), (29,95), (29,117), (29,139), (51,73), (51,95), (51,117), (51,139), (73,95), (73,117), (73,139), (95,117), (95,139), (117,139), (2,24), (2,46), (2,68), (2,90), (2,112), (2,134), (24,46), (24,68), (24,90), (24,112), (24,134), (46,68), (46,90), (46,112), (46,134), (68,90), (68,112), (68,134), (90,112), (90,134), (112,134), (9,31), (9,53), (9,75), (9,97), (9,119), (9,141), (31,53), (31,75), (31,97), (31,119), (31,141), (53,75), (53,97), (53,119), (53,141), (75,97), (75,119), (75,141), (97,119), (97,141), (119,141), (18,40), (18,62), (18,84), (18,106), (18,128), (18,150), (40,62), (40,84), (40,106), (40,128), (40,150), (62,84), (62,106), (62,128), (62,150), (84,106), (84,128), (84,150), (106,128), (106,150), (128,150), (22,44), (22,66), (22,88), (22,110), (22,132), (22,154), (44,66), (44,88), (44,110), (44,132), (44,154), (66,88), (66,110), (66,132), (66,154), (88,110), (88,132), (88,154), (110,132), (110,154), (132,154), (21,65), (21,87), (21,131), (21,153), (65,87), (65,131), (65,153), (87,131), (87,153), (131,153), (5,27), (5,49), (5,71), (5,93), (5,115), (5,137), (27,49), (27,71), (27,93), (27,115), (27,137), (49,71), (49,93), (49,115), (49,137), (71,93), (71,115), (71,137), (93,115), (93,137), (115,137), (6,28), (6,50), (6,72), (6,94), (6,116), (6,138), (28,50), (28,72), (28,94), (28,116), (28,138), (50,72), (50,94), (50,116), (50,138), (72,94), (72,116), (72,138), (94,116), (94,138), (116,138), (43,109), (8,30), (8,52), (8,74), (8,96), (8,118), (8,140), (30,52), (30,74), (30,96), (30,118), (30,140), (52,74), (52,96), (52,118), (52,140), (74,96), (74,118), (74,140), (96,118), (96,140), (118,140), (3,25), (3,47), (3,69), (3,91), (3,113), (3,135), (25,47), (25,69), (25,91), (25,113), (25,135), (47,69), (47,91), (47,113), (47,135), (69,91), (69,113), (69,135), (91,113), (91,135), (113,135), (4,26), (4,48), (4,70), (4,92), (4,114), (4,136), (26,48), (26,70), (26,92), (26,114), (26,136), (48,70), (48,92), (48,114), (48,136), (70,92), (70,114), (70,136), (92,114), (92,136), (114,136))
+new backedge found from 37 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 16 with choice(15) exitValue is 0
+new backedge found from 81 to 16 with choice(15) exitValue is 0
+new backedge found from 103 to 16 with choice(15) exitValue is 0
+new backedge found from 125 to 16 with choice(15) exitValue is 0
+new backedge found from 147 to 16 with choice(15) exitValue is 0
+new backedge found from 59 to 38 with choice(37) exitValue is 0
+new backedge found from 81 to 38 with choice(37) exitValue is 0
+new backedge found from 103 to 38 with choice(37) exitValue is 0
+new backedge found from 125 to 38 with choice(37) exitValue is 0
+new backedge found from 147 to 38 with choice(37) exitValue is 0
+new backedge found from 81 to 60 with choice(59) exitValue is 0
+new backedge found from 103 to 60 with choice(59) exitValue is 0
+new backedge found from 125 to 60 with choice(59) exitValue is 0
+new backedge found from 147 to 60 with choice(59) exitValue is 0
+new backedge found from 103 to 82 with choice(81) exitValue is 0
+new backedge found from 125 to 82 with choice(81) exitValue is 0
+new backedge found from 147 to 82 with choice(81) exitValue is 0
+new backedge found from 125 to 104 with choice(103) exitValue is 0
+new backedge found from 147 to 104 with choice(103) exitValue is 0
+new backedge found from 147 to 126 with choice(125) exitValue is 0
+new backedge found from 35 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 14 with choice(13) exitValue is 0
+new backedge found from 79 to 14 with choice(13) exitValue is 0
+new backedge found from 101 to 14 with choice(13) exitValue is 0
+new backedge found from 123 to 14 with choice(13) exitValue is 0
+new backedge found from 145 to 14 with choice(13) exitValue is 0
+new backedge found from 57 to 36 with choice(35) exitValue is 0
+new backedge found from 79 to 36 with choice(35) exitValue is 0
+new backedge found from 101 to 36 with choice(35) exitValue is 0
+new backedge found from 123 to 36 with choice(35) exitValue is 0
+new backedge found from 145 to 36 with choice(35) exitValue is 0
+new backedge found from 79 to 58 with choice(57) exitValue is 0
+new backedge found from 101 to 58 with choice(57) exitValue is 0
+new backedge found from 123 to 58 with choice(57) exitValue is 0
+new backedge found from 145 to 58 with choice(57) exitValue is 0
+new backedge found from 101 to 80 with choice(79) exitValue is 0
+new backedge found from 123 to 80 with choice(79) exitValue is 0
+new backedge found from 145 to 80 with choice(79) exitValue is 0
+new backedge found from 123 to 102 with choice(101) exitValue is 0
+new backedge found from 145 to 102 with choice(101) exitValue is 0
+new backedge found from 145 to 124 with choice(123) exitValue is 0
+new backedge found from 23 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 2 with choice(1) exitValue is 0
+new backedge found from 67 to 2 with choice(1) exitValue is 0
+new backedge found from 89 to 2 with choice(1) exitValue is 0
+new backedge found from 111 to 2 with choice(1) exitValue is 0
+new backedge found from 133 to 2 with choice(1) exitValue is 0
+new backedge found from 155 to 2 with choice(1) exitValue is 0
+new backedge found from 45 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 24 with choice(23) exitValue is 0
+new backedge found from 89 to 24 with choice(23) exitValue is 0
+new backedge found from 111 to 24 with choice(23) exitValue is 0
+new backedge found from 133 to 24 with choice(23) exitValue is 0
+new backedge found from 155 to 24 with choice(23) exitValue is 0
+new backedge found from 67 to 46 with choice(45) exitValue is 0
+new backedge found from 89 to 46 with choice(45) exitValue is 0
+new backedge found from 111 to 46 with choice(45) exitValue is 0
+new backedge found from 133 to 46 with choice(45) exitValue is 0
+new backedge found from 155 to 46 with choice(45) exitValue is 0
+new backedge found from 89 to 68 with choice(67) exitValue is 0
+new backedge found from 111 to 68 with choice(67) exitValue is 0
+new backedge found from 133 to 68 with choice(67) exitValue is 0
+new backedge found from 155 to 68 with choice(67) exitValue is 0
+new backedge found from 111 to 90 with choice(89) exitValue is 0
+new backedge found from 133 to 90 with choice(89) exitValue is 0
+new backedge found from 155 to 90 with choice(89) exitValue is 0
+new backedge found from 133 to 112 with choice(111) exitValue is 0
+new backedge found from 155 to 112 with choice(111) exitValue is 0
+new backedge found from 155 to 134 with choice(133) exitValue is 0
+new backedge found from 33 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 12 with choice(11) exitValue is 0
+new backedge found from 77 to 12 with choice(11) exitValue is 0
+new backedge found from 99 to 12 with choice(11) exitValue is 0
+new backedge found from 121 to 12 with choice(11) exitValue is 0
+new backedge found from 143 to 12 with choice(11) exitValue is 0
+new backedge found from 55 to 34 with choice(33) exitValue is 0
+new backedge found from 77 to 34 with choice(33) exitValue is 0
+new backedge found from 99 to 34 with choice(33) exitValue is 0
+new backedge found from 121 to 34 with choice(33) exitValue is 0
+new backedge found from 143 to 34 with choice(33) exitValue is 0
+new backedge found from 77 to 56 with choice(55) exitValue is 0
+new backedge found from 99 to 56 with choice(55) exitValue is 0
+new backedge found from 121 to 56 with choice(55) exitValue is 0
+new backedge found from 143 to 56 with choice(55) exitValue is 0
+new backedge found from 99 to 78 with choice(77) exitValue is 0
+new backedge found from 121 to 78 with choice(77) exitValue is 0
+new backedge found from 143 to 78 with choice(77) exitValue is 0
+new backedge found from 121 to 100 with choice(99) exitValue is 0
+new backedge found from 143 to 100 with choice(99) exitValue is 0
+new backedge found from 143 to 122 with choice(121) exitValue is 0
+new backedge found from 42 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 21 with choice(20) exitValue is 0
+new backedge found from 86 to 21 with choice(20) exitValue is 0
+new backedge found from 108 to 21 with choice(20) exitValue is 0
+new backedge found from 130 to 21 with choice(20) exitValue is 0
+new backedge found from 152 to 21 with choice(20) exitValue is 0
+new backedge found from 64 to 43 with choice(42) exitValue is 1
+new backedge found from 86 to 43 with choice(42) exitValue is 1
+new backedge found from 108 to 43 with choice(42) exitValue is 1
+new backedge found from 130 to 43 with choice(42) exitValue is 1
+new backedge found from 152 to 43 with choice(42) exitValue is 1
+new backedge found from 86 to 65 with choice(64) exitValue is 0
+new backedge found from 108 to 65 with choice(64) exitValue is 0
+new backedge found from 130 to 65 with choice(64) exitValue is 0
+new backedge found from 152 to 65 with choice(64) exitValue is 0
+new backedge found from 108 to 87 with choice(86) exitValue is 0
+new backedge found from 130 to 87 with choice(86) exitValue is 0
+new backedge found from 152 to 87 with choice(86) exitValue is 0
+new backedge found from 130 to 109 with choice(108) exitValue is 1
+new backedge found from 152 to 109 with choice(108) exitValue is 1
+new backedge found from 152 to 131 with choice(130) exitValue is 0
+new backedge found from 32 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 11 with choice(10) exitValue is 0
+new backedge found from 76 to 11 with choice(10) exitValue is 0
+new backedge found from 98 to 11 with choice(10) exitValue is 0
+new backedge found from 120 to 11 with choice(10) exitValue is 0
+new backedge found from 142 to 11 with choice(10) exitValue is 0
+new backedge found from 54 to 33 with choice(32) exitValue is 0
+new backedge found from 76 to 33 with choice(32) exitValue is 0
+new backedge found from 98 to 33 with choice(32) exitValue is 0
+new backedge found from 120 to 33 with choice(32) exitValue is 0
+new backedge found from 142 to 33 with choice(32) exitValue is 0
+new backedge found from 76 to 55 with choice(54) exitValue is 0
+new backedge found from 98 to 55 with choice(54) exitValue is 0
+new backedge found from 120 to 55 with choice(54) exitValue is 0
+new backedge found from 142 to 55 with choice(54) exitValue is 0
+new backedge found from 98 to 77 with choice(76) exitValue is 0
+new backedge found from 120 to 77 with choice(76) exitValue is 0
+new backedge found from 142 to 77 with choice(76) exitValue is 0
+new backedge found from 120 to 99 with choice(98) exitValue is 0
+new backedge found from 142 to 99 with choice(98) exitValue is 0
+new backedge found from 142 to 121 with choice(120) exitValue is 0
+new backedge found from 36 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 15 with choice(14) exitValue is 0
+new backedge found from 80 to 15 with choice(14) exitValue is 0
+new backedge found from 102 to 15 with choice(14) exitValue is 0
+new backedge found from 124 to 15 with choice(14) exitValue is 0
+new backedge found from 146 to 15 with choice(14) exitValue is 0
+new backedge found from 58 to 37 with choice(36) exitValue is 0
+new backedge found from 80 to 37 with choice(36) exitValue is 0
+new backedge found from 102 to 37 with choice(36) exitValue is 0
+new backedge found from 124 to 37 with choice(36) exitValue is 0
+new backedge found from 146 to 37 with choice(36) exitValue is 0
+new backedge found from 80 to 59 with choice(58) exitValue is 0
+new backedge found from 102 to 59 with choice(58) exitValue is 0
+new backedge found from 124 to 59 with choice(58) exitValue is 0
+new backedge found from 146 to 59 with choice(58) exitValue is 0
+new backedge found from 102 to 81 with choice(80) exitValue is 0
+new backedge found from 124 to 81 with choice(80) exitValue is 0
+new backedge found from 146 to 81 with choice(80) exitValue is 0
+new backedge found from 124 to 103 with choice(102) exitValue is 0
+new backedge found from 146 to 103 with choice(102) exitValue is 0
+new backedge found from 146 to 125 with choice(124) exitValue is 0
+new backedge found from 41 to 20 with choice(19) exitValue is 0
+new backedge found from 63 to 20 with choice(19) exitValue is 0
+new backedge found from 107 to 20 with choice(19) exitValue is 0
+new backedge found from 129 to 20 with choice(19) exitValue is 0
+new backedge found from 151 to 20 with choice(19) exitValue is 0
+new backedge found from 63 to 42 with choice(41) exitValue is 0
+new backedge found from 107 to 42 with choice(41) exitValue is 0
+new backedge found from 129 to 42 with choice(41) exitValue is 0
+new backedge found from 151 to 42 with choice(41) exitValue is 0
+new backedge found from 107 to 64 with choice(63) exitValue is 0
+new backedge found from 129 to 64 with choice(63) exitValue is 0
+new backedge found from 151 to 64 with choice(63) exitValue is 0
+new backedge found from 129 to 108 with choice(107) exitValue is 0
+new backedge found from 151 to 108 with choice(107) exitValue is 0
+new backedge found from 151 to 130 with choice(129) exitValue is 0
+new backedge found from 34 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 13 with choice(12) exitValue is 0
+new backedge found from 78 to 13 with choice(12) exitValue is 0
+new backedge found from 100 to 13 with choice(12) exitValue is 0
+new backedge found from 122 to 13 with choice(12) exitValue is 0
+new backedge found from 144 to 13 with choice(12) exitValue is 0
+new backedge found from 56 to 35 with choice(34) exitValue is 0
+new backedge found from 78 to 35 with choice(34) exitValue is 0
+new backedge found from 100 to 35 with choice(34) exitValue is 0
+new backedge found from 122 to 35 with choice(34) exitValue is 0
+new backedge found from 144 to 35 with choice(34) exitValue is 0
+new backedge found from 78 to 57 with choice(56) exitValue is 0
+new backedge found from 100 to 57 with choice(56) exitValue is 0
+new backedge found from 122 to 57 with choice(56) exitValue is 0
+new backedge found from 144 to 57 with choice(56) exitValue is 0
+new backedge found from 100 to 79 with choice(78) exitValue is 0
+new backedge found from 122 to 79 with choice(78) exitValue is 0
+new backedge found from 144 to 79 with choice(78) exitValue is 0
+new backedge found from 122 to 101 with choice(100) exitValue is 0
+new backedge found from 144 to 101 with choice(100) exitValue is 0
+new backedge found from 144 to 123 with choice(122) exitValue is 0
+new backedge found from 39 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 18 with choice(17) exitValue is 0
+new backedge found from 83 to 18 with choice(17) exitValue is 0
+new backedge found from 105 to 18 with choice(17) exitValue is 0
+new backedge found from 127 to 18 with choice(17) exitValue is 0
+new backedge found from 61 to 40 with choice(39) exitValue is 0
+new backedge found from 83 to 40 with choice(39) exitValue is 0
+new backedge found from 105 to 40 with choice(39) exitValue is 0
+new backedge found from 127 to 40 with choice(39) exitValue is 0
+new backedge found from 83 to 62 with choice(61) exitValue is 0
+new backedge found from 105 to 62 with choice(61) exitValue is 0
+new backedge found from 127 to 62 with choice(61) exitValue is 0
+new backedge found from 105 to 84 with choice(83) exitValue is 0
+new backedge found from 127 to 84 with choice(83) exitValue is 0
+new backedge found from 127 to 106 with choice(105) exitValue is 0
+new backedge found from 38 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 17 with choice(16) exitValue is 0
+new backedge found from 82 to 17 with choice(16) exitValue is 0
+new backedge found from 104 to 17 with choice(16) exitValue is 0
+new backedge found from 126 to 17 with choice(16) exitValue is 0
+new backedge found from 148 to 17 with choice(16) exitValue is 0
+new backedge found from 60 to 39 with choice(38) exitValue is 0
+new backedge found from 82 to 39 with choice(38) exitValue is 0
+new backedge found from 104 to 39 with choice(38) exitValue is 0
+new backedge found from 126 to 39 with choice(38) exitValue is 0
+new backedge found from 148 to 39 with choice(38) exitValue is 0
+new backedge found from 82 to 61 with choice(60) exitValue is 0
+new backedge found from 104 to 61 with choice(60) exitValue is 0
+new backedge found from 126 to 61 with choice(60) exitValue is 0
+new backedge found from 148 to 61 with choice(60) exitValue is 0
+new backedge found from 104 to 83 with choice(82) exitValue is 0
+new backedge found from 126 to 83 with choice(82) exitValue is 0
+new backedge found from 148 to 83 with choice(82) exitValue is 0
+new backedge found from 126 to 105 with choice(104) exitValue is 0
+new backedge found from 148 to 105 with choice(104) exitValue is 0
+new backedge found from 148 to 127 with choice(126) exitValue is 0
+new backedge found from 29 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 8 with choice(7) exitValue is 0
+new backedge found from 73 to 8 with choice(7) exitValue is 0
+new backedge found from 95 to 8 with choice(7) exitValue is 0
+new backedge found from 117 to 8 with choice(7) exitValue is 0
+new backedge found from 139 to 8 with choice(7) exitValue is 0
+new backedge found from 51 to 30 with choice(29) exitValue is 0
+new backedge found from 73 to 30 with choice(29) exitValue is 0
+new backedge found from 95 to 30 with choice(29) exitValue is 0
+new backedge found from 117 to 30 with choice(29) exitValue is 0
+new backedge found from 139 to 30 with choice(29) exitValue is 0
+new backedge found from 73 to 52 with choice(51) exitValue is 0
+new backedge found from 95 to 52 with choice(51) exitValue is 0
+new backedge found from 117 to 52 with choice(51) exitValue is 0
+new backedge found from 139 to 52 with choice(51) exitValue is 0
+new backedge found from 95 to 74 with choice(73) exitValue is 0
+new backedge found from 117 to 74 with choice(73) exitValue is 0
+new backedge found from 139 to 74 with choice(73) exitValue is 0
+new backedge found from 117 to 96 with choice(95) exitValue is 0
+new backedge found from 139 to 96 with choice(95) exitValue is 0
+new backedge found from 139 to 118 with choice(117) exitValue is 0
+new backedge found from 24 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 3 with choice(2) exitValue is 0
+new backedge found from 68 to 3 with choice(2) exitValue is 0
+new backedge found from 90 to 3 with choice(2) exitValue is 0
+new backedge found from 112 to 3 with choice(2) exitValue is 0
+new backedge found from 134 to 3 with choice(2) exitValue is 0
+new backedge found from 46 to 25 with choice(24) exitValue is 0
+new backedge found from 68 to 25 with choice(24) exitValue is 0
+new backedge found from 90 to 25 with choice(24) exitValue is 0
+new backedge found from 112 to 25 with choice(24) exitValue is 0
+new backedge found from 134 to 25 with choice(24) exitValue is 0
+new backedge found from 68 to 47 with choice(46) exitValue is 0
+new backedge found from 90 to 47 with choice(46) exitValue is 0
+new backedge found from 112 to 47 with choice(46) exitValue is 0
+new backedge found from 134 to 47 with choice(46) exitValue is 0
+new backedge found from 90 to 69 with choice(68) exitValue is 0
+new backedge found from 112 to 69 with choice(68) exitValue is 0
+new backedge found from 134 to 69 with choice(68) exitValue is 0
+new backedge found from 112 to 91 with choice(90) exitValue is 0
+new backedge found from 134 to 91 with choice(90) exitValue is 0
+new backedge found from 134 to 113 with choice(112) exitValue is 0
+new backedge found from 31 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 10 with choice(9) exitValue is 0
+new backedge found from 75 to 10 with choice(9) exitValue is 0
+new backedge found from 97 to 10 with choice(9) exitValue is 0
+new backedge found from 119 to 10 with choice(9) exitValue is 0
+new backedge found from 141 to 10 with choice(9) exitValue is 0
+new backedge found from 53 to 32 with choice(31) exitValue is 0
+new backedge found from 75 to 32 with choice(31) exitValue is 0
+new backedge found from 97 to 32 with choice(31) exitValue is 0
+new backedge found from 119 to 32 with choice(31) exitValue is 0
+new backedge found from 141 to 32 with choice(31) exitValue is 0
+new backedge found from 75 to 54 with choice(53) exitValue is 0
+new backedge found from 97 to 54 with choice(53) exitValue is 0
+new backedge found from 119 to 54 with choice(53) exitValue is 0
+new backedge found from 141 to 54 with choice(53) exitValue is 0
+new backedge found from 97 to 76 with choice(75) exitValue is 0
+new backedge found from 119 to 76 with choice(75) exitValue is 0
+new backedge found from 141 to 76 with choice(75) exitValue is 0
+new backedge found from 119 to 98 with choice(97) exitValue is 0
+new backedge found from 141 to 98 with choice(97) exitValue is 0
+new backedge found from 141 to 120 with choice(119) exitValue is 0
+new backedge found from 40 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 19 with choice(18) exitValue is 0
+new backedge found from 84 to 19 with choice(18) exitValue is 0
+new backedge found from 106 to 19 with choice(18) exitValue is 0
+new backedge found from 128 to 19 with choice(18) exitValue is 0
+new backedge found from 150 to 19 with choice(18) exitValue is 0
+new backedge found from 62 to 41 with choice(40) exitValue is 0
+new backedge found from 84 to 41 with choice(40) exitValue is 0
+new backedge found from 106 to 41 with choice(40) exitValue is 0
+new backedge found from 128 to 41 with choice(40) exitValue is 0
+new backedge found from 150 to 41 with choice(40) exitValue is 0
+new backedge found from 84 to 63 with choice(62) exitValue is 0
+new backedge found from 106 to 63 with choice(62) exitValue is 0
+new backedge found from 128 to 63 with choice(62) exitValue is 0
+new backedge found from 150 to 63 with choice(62) exitValue is 0
+new backedge found from 106 to 85 with choice(84) exitValue is 1
+new backedge found from 128 to 85 with choice(84) exitValue is 1
+new backedge found from 150 to 85 with choice(84) exitValue is 1
+new backedge found from 128 to 107 with choice(106) exitValue is 0
+new backedge found from 150 to 107 with choice(106) exitValue is 0
+new backedge found from 150 to 129 with choice(128) exitValue is 0
+new backedge found from 44 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 23 with choice(22) exitValue is 0
+new backedge found from 88 to 23 with choice(22) exitValue is 0
+new backedge found from 110 to 23 with choice(22) exitValue is 0
+new backedge found from 132 to 23 with choice(22) exitValue is 0
+new backedge found from 154 to 23 with choice(22) exitValue is 0
+new backedge found from 66 to 45 with choice(44) exitValue is 0
+new backedge found from 88 to 45 with choice(44) exitValue is 0
+new backedge found from 110 to 45 with choice(44) exitValue is 0
+new backedge found from 132 to 45 with choice(44) exitValue is 0
+new backedge found from 154 to 45 with choice(44) exitValue is 0
+new backedge found from 88 to 67 with choice(66) exitValue is 0
+new backedge found from 110 to 67 with choice(66) exitValue is 0
+new backedge found from 132 to 67 with choice(66) exitValue is 0
+new backedge found from 154 to 67 with choice(66) exitValue is 0
+new backedge found from 110 to 89 with choice(88) exitValue is 0
+new backedge found from 132 to 89 with choice(88) exitValue is 0
+new backedge found from 154 to 89 with choice(88) exitValue is 0
+new backedge found from 132 to 111 with choice(110) exitValue is 0
+new backedge found from 154 to 111 with choice(110) exitValue is 0
+new backedge found from 154 to 133 with choice(132) exitValue is 0
+new backedge found from 65 to 22 with choice(21) exitValue is 0
+new backedge found from 87 to 22 with choice(21) exitValue is 0
+new backedge found from 131 to 22 with choice(21) exitValue is 0
+new backedge found from 153 to 22 with choice(21) exitValue is 0
+new backedge found from 87 to 66 with choice(65) exitValue is 0
+new backedge found from 131 to 66 with choice(65) exitValue is 0
+new backedge found from 153 to 66 with choice(65) exitValue is 0
+new backedge found from 131 to 88 with choice(87) exitValue is 0
+new backedge found from 153 to 88 with choice(87) exitValue is 0
+new backedge found from 153 to 132 with choice(131) exitValue is 0
+new backedge found from 27 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 6 with choice(5) exitValue is 0
+new backedge found from 71 to 6 with choice(5) exitValue is 0
+new backedge found from 93 to 6 with choice(5) exitValue is 0
+new backedge found from 115 to 6 with choice(5) exitValue is 0
+new backedge found from 137 to 6 with choice(5) exitValue is 0
+new backedge found from 49 to 28 with choice(27) exitValue is 0
+new backedge found from 71 to 28 with choice(27) exitValue is 0
+new backedge found from 93 to 28 with choice(27) exitValue is 0
+new backedge found from 115 to 28 with choice(27) exitValue is 0
+new backedge found from 137 to 28 with choice(27) exitValue is 0
+new backedge found from 71 to 50 with choice(49) exitValue is 0
+new backedge found from 93 to 50 with choice(49) exitValue is 0
+new backedge found from 115 to 50 with choice(49) exitValue is 0
+new backedge found from 137 to 50 with choice(49) exitValue is 0
+new backedge found from 93 to 72 with choice(71) exitValue is 0
+new backedge found from 115 to 72 with choice(71) exitValue is 0
+new backedge found from 137 to 72 with choice(71) exitValue is 0
+new backedge found from 115 to 94 with choice(93) exitValue is 0
+new backedge found from 137 to 94 with choice(93) exitValue is 0
+new backedge found from 137 to 116 with choice(115) exitValue is 0
+new backedge found from 28 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 7 with choice(6) exitValue is 0
+new backedge found from 72 to 7 with choice(6) exitValue is 0
+new backedge found from 94 to 7 with choice(6) exitValue is 0
+new backedge found from 116 to 7 with choice(6) exitValue is 0
+new backedge found from 138 to 7 with choice(6) exitValue is 0
+new backedge found from 50 to 29 with choice(28) exitValue is 0
+new backedge found from 72 to 29 with choice(28) exitValue is 0
+new backedge found from 94 to 29 with choice(28) exitValue is 0
+new backedge found from 116 to 29 with choice(28) exitValue is 0
+new backedge found from 138 to 29 with choice(28) exitValue is 0
+new backedge found from 72 to 51 with choice(50) exitValue is 0
+new backedge found from 94 to 51 with choice(50) exitValue is 0
+new backedge found from 116 to 51 with choice(50) exitValue is 0
+new backedge found from 138 to 51 with choice(50) exitValue is 0
+new backedge found from 94 to 73 with choice(72) exitValue is 0
+new backedge found from 116 to 73 with choice(72) exitValue is 0
+new backedge found from 138 to 73 with choice(72) exitValue is 0
+new backedge found from 116 to 95 with choice(94) exitValue is 0
+new backedge found from 138 to 95 with choice(94) exitValue is 0
+new backedge found from 138 to 117 with choice(116) exitValue is 0
+new backedge found from 109 to 44 with choice(43) exitValue is 0
+new backedge found from 30 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 9 with choice(8) exitValue is 0
+new backedge found from 74 to 9 with choice(8) exitValue is 0
+new backedge found from 96 to 9 with choice(8) exitValue is 0
+new backedge found from 118 to 9 with choice(8) exitValue is 0
+new backedge found from 140 to 9 with choice(8) exitValue is 0
+new backedge found from 52 to 31 with choice(30) exitValue is 0
+new backedge found from 74 to 31 with choice(30) exitValue is 0
+new backedge found from 96 to 31 with choice(30) exitValue is 0
+new backedge found from 118 to 31 with choice(30) exitValue is 0
+new backedge found from 140 to 31 with choice(30) exitValue is 0
+new backedge found from 74 to 53 with choice(52) exitValue is 0
+new backedge found from 96 to 53 with choice(52) exitValue is 0
+new backedge found from 118 to 53 with choice(52) exitValue is 0
+new backedge found from 140 to 53 with choice(52) exitValue is 0
+new backedge found from 96 to 75 with choice(74) exitValue is 0
+new backedge found from 118 to 75 with choice(74) exitValue is 0
+new backedge found from 140 to 75 with choice(74) exitValue is 0
+new backedge found from 118 to 97 with choice(96) exitValue is 0
+new backedge found from 140 to 97 with choice(96) exitValue is 0
+new backedge found from 140 to 119 with choice(118) exitValue is 0
+new backedge found from 25 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 4 with choice(3) exitValue is 0
+new backedge found from 69 to 4 with choice(3) exitValue is 0
+new backedge found from 91 to 4 with choice(3) exitValue is 0
+new backedge found from 113 to 4 with choice(3) exitValue is 0
+new backedge found from 135 to 4 with choice(3) exitValue is 0
+new backedge found from 47 to 26 with choice(25) exitValue is 0
+new backedge found from 69 to 26 with choice(25) exitValue is 0
+new backedge found from 91 to 26 with choice(25) exitValue is 0
+new backedge found from 113 to 26 with choice(25) exitValue is 0
+new backedge found from 135 to 26 with choice(25) exitValue is 0
+new backedge found from 69 to 48 with choice(47) exitValue is 0
+new backedge found from 91 to 48 with choice(47) exitValue is 0
+new backedge found from 113 to 48 with choice(47) exitValue is 0
+new backedge found from 135 to 48 with choice(47) exitValue is 0
+new backedge found from 91 to 70 with choice(69) exitValue is 0
+new backedge found from 113 to 70 with choice(69) exitValue is 0
+new backedge found from 135 to 70 with choice(69) exitValue is 0
+new backedge found from 113 to 92 with choice(91) exitValue is 0
+new backedge found from 135 to 92 with choice(91) exitValue is 0
+new backedge found from 135 to 114 with choice(113) exitValue is 0
+new backedge found from 26 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 5 with choice(4) exitValue is 0
+new backedge found from 70 to 5 with choice(4) exitValue is 0
+new backedge found from 92 to 5 with choice(4) exitValue is 0
+new backedge found from 114 to 5 with choice(4) exitValue is 0
+new backedge found from 136 to 5 with choice(4) exitValue is 0
+new backedge found from 48 to 27 with choice(26) exitValue is 0
+new backedge found from 70 to 27 with choice(26) exitValue is 0
+new backedge found from 92 to 27 with choice(26) exitValue is 0
+new backedge found from 114 to 27 with choice(26) exitValue is 0
+new backedge found from 136 to 27 with choice(26) exitValue is 0
+new backedge found from 70 to 49 with choice(48) exitValue is 0
+new backedge found from 92 to 49 with choice(48) exitValue is 0
+new backedge found from 114 to 49 with choice(48) exitValue is 0
+new backedge found from 136 to 49 with choice(48) exitValue is 0
+new backedge found from 92 to 71 with choice(70) exitValue is 0
+new backedge found from 114 to 71 with choice(70) exitValue is 0
+new backedge found from 136 to 71 with choice(70) exitValue is 0
+new backedge found from 114 to 93 with choice(92) exitValue is 0
+new backedge found from 136 to 93 with choice(92) exitValue is 0
+new backedge found from 136 to 115 with choice(114) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+9 predicates generated
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  = 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) ,
+(99  <= %x ) 
+running reducePredicatesToSuperSet
+running with predicates: 7
+((%y % 2 )  <= 0 ) ,
+(let ( (a!1 (((%x % 2 )  + ((- 1 )  * (%y % 2 ) ) )  <= (- 1 ) ) ) (a!2 ((((- 1 )  * (%x % 2 ) )  + (%y % 2 ) )  <= (- 1 ) ) ) )  Or( a!1 ,a!2 ) ) ,
+((%y % 2 )  >= 1 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+(%x  <= 98 ) ,
+(%y  >= 0 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)</pre><hr>
+</body>
+</html>
+      

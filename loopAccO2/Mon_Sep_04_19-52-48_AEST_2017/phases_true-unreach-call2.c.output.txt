@@ -1,0 +1,70 @@
+define i32 @main() local_unnamed_addr #0 !dbg !12 { 
+  
+    %1 = tail call i32 @__VERIFIER_nondet_uint() #4 , !dbg !13
+    %2 = icmp ne i32 %1, 0, !dbg !14
+    %3 = zext i1 %2 to i32, !dbg !14
+    tail call void @__VERIFIER_assume(i32 %3) #4 , !dbg !15
+    %4 = icmp ugt i32 %1, 1, !dbg !16
+    br i1 %4, label %5, label %15, !dbg !18
+  
+  ; <label>:5
+    br label %6, !dbg !19
+  
+  ; <label>:6
+    %7 = phi i32 [ %12, %6 ], [ 1, %5 ]
+    %8 = udiv i32 %1, %7, !dbg !19
+    %9 = icmp ult i32 %7, %8, !dbg !20
+    %10 = mul i32 %7, %7, !dbg !21
+    %11 = add i32 %7, 1, !dbg !22
+    %12 = select i1 %9, i32 %10, i32 %11, !dbg !23
+    %13 = icmp ult i32 %12, %1, !dbg !16
+    br i1 %13, label %6, label %14, !dbg !18, !llvm.loop !24
+  
+  ; <label>:14
+    br label %15, !dbg !27
+  
+  ; <label>:15
+    %16 = phi i32 [ 1, %0 ], [ %12, %14 ]
+    %17 = icmp eq i32 %16, %1, !dbg !27
+    br i1 %17, label %19, label %18, !dbg !28
+  
+  ; <label>:18
+    br label %__error.18
+  
+  ; <label>:19
+    ret i32 0, !dbg !30
+  
+  __error.18: 
+    tail call void (...) @__VERIFIER_error() #3 , !dbg !29
+    unreachable, !dbg !29
+  
+} 
+
+using predicates abs
+List(0, 0, 1, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 0, 1, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 12
+((%1  // 1 )  >= 0 ) ,
+(%12  >= 0 ) ,
+(%12  <= 1 ) ,
+(%12  >= 1 ) ,
+(exists ((x!15 Int )) (let ( (a!1 (%12  + ((- 1 )  * (((- 1 )  + x!15 )  * ((- 1 )  + x!15 ) ) ) ) ) (a!2 (((((- 1 )  + x!15 )  * ((- 1 )  + x!15 ) )  + ((- 1 )  * %12 ) )  <= 0 ) ) (a!3 (x!15  + ((- 1 )  * (%1  // ((- 1 )  + x!15 ) ) ) ) ) (a!5  And( ((%12  + ((- 1 )  * x!15 ) )  <= 0 ) ,((x!15  + ((- 1 )  * %12 ) )  <= 0 ) ,(x!15  >= 1 ) ,((%1  // ((- 1 )  + x!15 ) )  <= ((- 1 )  + x!15 ) ) ,((%1  // ((- 1 )  + x!15 ) )  >= 0 ) , Not( (%1  <= %12 ) ) ) ) ) (let ( (a!4  And( (a!1  <= 0 ) ,a!2 ,(x!15  >= 1 ) ,(a!3  <= 0 ) ,((%1  // ((- 1 )  + x!15 ) )  >= 0 ) , Not( (%1  <= %12 ) ) ) ) )  And( (%12  >= 0 ) ,(%1  >= 0 ) , Or( a!4 ,a!5 ) ) ) ) ) ,
+(exists ((x!27 Int )) (let ( (a!1 (%12  + ((- 1 )  * (((- 1 )  + x!27 )  * ((- 1 )  + x!27 ) ) ) ) ) (a!2 (((((- 1 )  + x!27 )  * ((- 1 )  + x!27 ) )  + ((- 1 )  * %12 ) )  <= 0 ) ) (a!3 (x!27  + ((- 1 )  * (%1  // ((- 1 )  + x!27 ) ) ) ) ) (a!5  And( ((%12  + ((- 1 )  * x!27 ) )  <= 0 ) ,((x!27  + ((- 1 )  * %12 ) )  <= 0 ) ,(x!27  >= 1 ) ,((%1  // ((- 1 )  + x!27 ) )  <= ((- 1 )  + x!27 ) ) ,((%1  // ((- 1 )  + x!27 ) )  >= 0 ) ,(%1  <= %12 ) ) ) ) (let ( (a!4  And( (a!1  <= 0 ) ,a!2 ,(x!27  >= 1 ) ,(a!3  <= 0 ) ,((%1  // ((- 1 )  + x!27 ) )  >= 0 ) ,(%1  <= %12 ) ) ) )  And( (%12  >= 0 ) ,(%1  >= 0 ) , Or( a!4 ,a!5 ) ) ) ) ) ,
+(%1  >= 0 ) ,
+ Not( (%1  = 0 ) ) ,
+ Not( (%1  <= 1 ) ) ,
+ Or( ((%12  + ((- 1 )  * %1 ) )  <= (- 1 ) ) ,((((- 1 )  * %12 )  + %1 )  <= (- 1 ) ) ) ,
+((%1  // 1 )  >= 2 ) ,
+ Not( (%1  <= %12 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 1, 0, 1, 0)
+UNKNOWN
+refinement failure due to exception: psksvp.satisfiableCheck of terms  And( true , Not(  Or(  Not( ((%1@1  // 1 )  >= 0 ) ) , Not(  Not( (%1@1  <= %12@0 ) ) ) , Not( ((%1@1  // 1 )  >= 2 ) ) , Not(  Or( ((%12@0  + ((- 1 )  * %1@1 ) )  <= (- 1 ) ) ,((((- 1 )  * %12@0 )  + %1@1 )  <= (- 1 ) ) ) ) , Not(  Not( (%1@1  <= 1 ) ) ) , Not(  Not( (%1@1  = 0 ) ) ) , Not( (%1@1  >= 0 ) ) ,(exists ((x!27@0 Int )) (let ( (a!1@0 (%12@0  + ((- 1 )  * (((- 1 )  + x!27@0 )  * ((- 1 )  + x!27@0 ) ) ) ) ) (a!2@0 (((((- 1 )  + x!27@0 )  * ((- 1 )  + x!27@0 ) )  + ((- 1 )  * %12@0 ) )  <= 0 ) ) (a!3@0 (x!27@0  + ((- 1 )  * (%1@1  // ((- 1 )  + x!27@0 ) ) ) ) ) (a!5@0  And( ((%12@0  + ((- 1 )  * x!27@0 ) )  <= 0 ) ,((x!27@0  + ((- 1 )  * %12@0 ) )  <= 0 ) ,(x!27@0  >= 1 ) ,((%1@1  // ((- 1 )  + x!27@0 ) )  <= ((- 1 )  + x!27@0 ) ) ,((%1@1  // ((- 1 )  + x!27@0 ) )  >= 0 ) ,(%1@1  <= %12@0 ) ) ) ) (let ( (a!4@0  And( (a!1@0  <= 0 ) ,a!2@0 ,(x!27@0  >= 1 ) ,(a!3@0  <= 0 ) ,((%1@1  // ((- 1 )  + x!27@0 ) )  >= 0 ) ,(%1@1  <= %12@0 ) ) ) )  And( (%12@0  >= 0 ) ,(%1@1  >= 0 ) , Or( a!4@0 ,a!5@0 ) ) ) ) ) ,(exists ((x!15@0 Int )) (let ( (a!1@0 (%12@0  + ((- 1 )  * (((- 1 )  + x!15@0 )  * ((- 1 )  + x!15@0 ) ) ) ) ) (a!2@0 (((((- 1 )  + x!15@0 )  * ((- 1 )  + x!15@0 ) )  + ((- 1 )  * %12@0 ) )  <= 0 ) ) (a!3@0 (x!15@0  + ((- 1 )  * (%1@1  // ((- 1 )  + x!15@0 ) ) ) ) ) (a!5@0  And( ((%12@0  + ((- 1 )  * x!15@0 ) )  <= 0 ) ,((x!15@0  + ((- 1 )  * %12@0 ) )  <= 0 ) ,(x!15@0  >= 1 ) ,((%1@1  // ((- 1 )  + x!15@0 ) )  <= ((- 1 )  + x!15@0 ) ) ,((%1@1  // ((- 1 )  + x!15@0 ) )  >= 0 ) , Not( (%1@1  <= %12@0 ) ) ) ) ) (let ( (a!4@0  And( (a!1@0  <= 0 ) ,a!2@0 ,(x!15@0  >= 1 ) ,(a!3@0  <= 0 ) ,((%1@1  // ((- 1 )  + x!15@0 ) )  >= 0 ) , Not( (%1@1  <= %12@0 ) ) ) ) )  And( (%12@0  >= 0 ) ,(%1@1  >= 0 ) , Or( a!4@0 ,a!5@0 ) ) ) ) ) ) ) ,(%1@1  >= 0 ) ,%4@1 ,(%1@1  >= 0 ) , Not( (%3@1  = 0 ) ) ,(%3@1  = (ite %2@1 1 0 ) ) ,(%2@1  =  Not( (%1@1  = 0 ) ) ) ,(%4@1  = (%1@1  > 1 ) ) ,(1  >= 0 ) )  solver returns java.util.concurrent.TimeoutException: Futures timed out after [10 seconds]

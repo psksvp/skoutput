@@ -1,0 +1,39 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/nested9_true-unreach-call.c,false,clang-4.0,20)</h3><hr>
+<pre>#include "assert.h"
+
+int __BLAST_NONDET;
+
+int main() {
+    int i,j,k,n,l,m;
+
+    n = __VERIFIER_nondet_int();
+    m = __VERIFIER_nondet_int();
+    l = __VERIFIER_nondet_int();
+    __VERIFIER_assume(-LARGE_INT < n && n < LARGE_INT);
+    __VERIFIER_assume(-LARGE_INT < m && m < LARGE_INT);
+    __VERIFIER_assume(-LARGE_INT < l && l < LARGE_INT);
+    if(3*n<=m+l); else goto END;
+    for (i=0;i<n;i++)
+        for (j = 2*i;j<3*i;j++) 
+            for (k = i; k< j; k++)
+                if(!( k-i <= 2*n )) __VERIFIER_error();
+END:
+    return 0;
+}
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/JDt6wyJ4AU.c
+maximum number of iterations 20 reached
+
+config: -e Z3 -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/JDt6wyJ4AU.c
+maximum number of iterations 20 reached
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/JDt6wyJ4AU.c
+strange solver status: Failure(java.lang.IllegalArgumentException: requirement failed: Solver could not be initialised: Cannot run program "yices-smt2": error=2, No such file or directory)</pre><hr>
+</body>
+</html>
+      

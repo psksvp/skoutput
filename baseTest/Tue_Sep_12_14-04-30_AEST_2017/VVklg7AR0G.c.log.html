@@ -1,0 +1,234 @@
+
+<html>
+<body>
+<h3>Code(/tmp/VVklg7AR0G.c,false,clang-3.7,20)</h3><hr>
+<pre>
+extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+
+int main(int argc, char** arg)
+{
+  int a = 0;
+  int i = 0;
+  while(i < 1000)
+  {
+    if(i != a) __VERIFIER_error();
+    i = i + 1;
+    a = i;  //a = a + 1;
+  }
+  if(i != 1000)  __VERIFIER_error();
+  if(a != 1000)  __VERIFIER_error();
+  return 0;
+}
+              
+</pre><hr>
+<pre>define i32 @main(i32 %argc, i8** %arg) #0  { 
+  
+    %1 = alloca i32, align 4
+    %2 = alloca i32, align 4
+    %3 = alloca i8**, align 8
+    %a = alloca i32, align 4
+    %i = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 %argc, i32* %2, align 4
+    store i8** %arg, i8*** %3, align 8
+    store i32 0, i32* %a, align 4, !dbg !9
+    store i32 0, i32* %i, align 4, !dbg !10
+    br label %4, !dbg !11
+  
+  ; <label>:4
+    %5 = load i32, i32* %i, align 4, !dbg !12
+    %6 = icmp slt i32 %5, 1000, !dbg !15
+    br i1 %6, label %7, label %16, !dbg !11
+  
+  ; <label>:7
+    %8 = load i32, i32* %i, align 4, !dbg !16
+    %9 = load i32, i32* %a, align 4, !dbg !17
+    %10 = icmp ne i32 %8, %9, !dbg !18
+    br i1 %10, label %11, label %12, !dbg !16
+  
+  ; <label>:11
+    br label %__error.11
+  
+  ; <label>:12
+    %13 = load i32, i32* %i, align 4, !dbg !20
+    %14 = add nsw i32 %13, 1, !dbg !21
+    store i32 %14, i32* %i, align 4, !dbg !22
+    %15 = load i32, i32* %i, align 4, !dbg !23
+    store i32 %15, i32* %a, align 4, !dbg !24
+    br label %4, !dbg !11
+  
+  ; <label>:16
+    %17 = load i32, i32* %i, align 4, !dbg !25
+    %18 = icmp ne i32 %17, 1000, !dbg !26
+    br i1 %18, label %19, label %20, !dbg !25
+  
+  ; <label>:19
+    br label %__error.19
+  
+  ; <label>:20
+    %21 = load i32, i32* %a, align 4, !dbg !28
+    %22 = icmp ne i32 %21, 1000, !dbg !29
+    br i1 %22, label %23, label %24, !dbg !28
+  
+  ; <label>:23
+    br label %__error.23
+  
+  ; <label>:24
+    ret i32 0, !dbg !31
+  
+  __error.11: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !19
+    unreachable, !dbg !19
+  
+  __error.19: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !27
+    unreachable, !dbg !27
+  
+  __error.23: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !30
+    unreachable, !dbg !30
+  
+} 
+
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0)
+List(0, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+using predAbs on trace: List(0, 0, 1, 0, 0, 0, 0)
+generating predicates for abstraction
+6 predicates generated
+ Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ,
+(%i  = 0 ) ,
+(%i  <= 999 ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) ,
+(%a  = 0 ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+ Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ,
+(%i  <= 999 ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) ,
+(%a  = 0 ) 
+running with predicates: 5
+ Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ,
+(%i  <= 999 ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) ,
+(%a  = 0 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ,(%a  = 0 ) ) ,false ) 
+ Or(  And(  Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ,(%a  = 0 ) ) , And(  Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ,(%a  = 0 ) ) , And(  Not( (%a  = 0 ) ) , Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ,false ) 
+ Or(  And(  Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) , And(  Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ,(%a  = 0 ) ) , And(  Not( (%a  = 0 ) ) , Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ,false ) 
+ Or(  And(  Or( (%i  <= 999 ) , Not( (%a  = 0 ) ) ) , Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) , And(  Not( (%a  = 0 ) ) , Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) , And(  Not( (%a  = 0 ) ) , Not(  Or( ((%i  + ((- 1 )  * %a ) )  <= (- 1 ) ) ,((((- 1 )  * %i )  + %a )  <= (- 1 ) ) ) ) ,(%i  <= 999 ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+false 
+------------
+simplify cache hit is 40 and mis is 4
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,4), (2,5))
+new backedge found from 4 to 2 with choice(1) exitValue is 0
+new backedge found from 5 to 3 with choice(2) exitValue is 1
+----------------------
+using predicates abs
+using predAbs on trace: List(0, 0, 1, 0, 1, 0, 0)
+generating predicates for abstraction
+7 predicates generated
+(%i  = 0 ) ,
+ Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,
+(1000  <= %i ) ,
+(%i  <= 999 ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) ,
+(%a  = 0 ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+ Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,
+(1000  <= %i ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) ,
+(%a  = 0 ) 
+running with predicates: 5
+ Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,
+(1000  <= %i ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) ,
+(%a  = 0 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (1000  <= %i ) ) , Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ,(%a  = 0 ) ) ,false ) 
+ Or(  And(  Not( (1000  <= %i ) ) , Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ,(%a  = 0 ) ) , And(  Not( (1000  <= %i ) ) , Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ,(%a  = 0 ) ) , And(  Not( (%a  = 0 ) ) , Not( (1000  <= %i ) ) , Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( (1000  <= %i ) ) , Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) , And(  Not( (1000  <= %i ) ) , Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ,(%a  = 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( (1000  <= %i ) ) , Not( (%a  = 0 ) ) ) , Or(  Not(  Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ) , Not( (1000  <= %i ) ) ) , Or( (%i  <= 999 ) ,(1000  <= %i ) ,(%i  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) , And(  Not( (%a  = 0 ) ) , Not( (1000  <= %i ) ) , Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%a  = 0 ) ) , Not(  Or( (%i  <= 999 ) ,(%i  >= 1001 ) ) ) ,(1000  <= %i ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+false 
+------------
+simplify cache hit is 72 and mis is 9
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,4))
+new backedge found from 4 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+using predAbs on trace: List(0, 0, 1, 0, 1, 1, 0, 0)
+generating predicates for abstraction
+9 predicates generated
+(%i  = 0 ) ,
+(1000  <= %i ) ,
+(%i  <= 999 ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+ Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ,
+(%i  <= 1000 ) ,
+(%i  >= 1000 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) ,
+(%a  = 0 ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+(1000  <= %i ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+ Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ,
+(%i  <= 1000 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) 
+running with predicates: 5
+(1000  <= %i ) ,
+((%i  + ((- 1 )  * %a ) )  <= 0 ) ,
+ Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ,
+(%i  <= 1000 ) ,
+((%a  + ((- 1 )  * %i ) )  <= 0 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (1000  <= %i ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) , Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ,(%i  <= 1000 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (1000  <= %i ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) , Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ,(%i  <= 1000 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ,false ) 
+ Or(  And(  Not( (1000  <= %i ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) , Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ,(%i  <= 1000 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( (1000  <= %i ) ) , Not(  Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ) ) , Or( (1000  <= %i ) ,(%a  <= 999 ) ,(%a  >= 1001 ) ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,(%i  <= 1000 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not(  Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ) ,(1000  <= %i ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,(%i  <= 1000 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not(  Or( (%a  <= 999 ) ,(%a  >= 1001 ) ) ) ,(1000  <= %i ) ,((%i  + ((- 1 )  * %a ) )  <= 0 ) ,(%i  <= 1000 ) ,((%a  + ((- 1 )  * %i ) )  <= 0 ) ) ,false ) 
+false 
+------------
+simplify cache hit is 99 and mis is 12
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,4))
+new backedge found from 4 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+using predAbs on trace: List(0, 1, 0, 0)
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+using predAbs on trace: List(0, 1, 1, 0, 0)
+List(0, 1, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+TRUE</pre><hr>
+</body>
+</html>
+      

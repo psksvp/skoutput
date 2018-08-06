@@ -1,0 +1,627 @@
+[0m[[0minfo[0m] [0mLoading project definition from /home/psksvp/workspace/skink/project/project[0m
+[0m[[0minfo[0m] [0mLoading project definition from /home/psksvp/workspace/skink/project[0m
+[0m[[0minfo[0m] [0mSet current project to skink (in build file:/home/psksvp/workspace/skink/)[0m
+[0m[[0minfo[0m] [0mRunning psksvp.ScratchPad [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mdefine i32 @main() #0  { [0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m    %1 = alloca i32, align 4[0m
+[0m[[0minfo[0m] [0m    %x = alloca i32, align 4[0m
+[0m[[0minfo[0m] [0m    %y = alloca i32, align 4[0m
+[0m[[0minfo[0m] [0m    store i32 0, i32* %1[0m
+[0m[[0minfo[0m] [0m    store i32 1, i32* %x, align 4, !dbg !9[0m
+[0m[[0minfo[0m] [0m    store i32 0, i32* %y, align 4, !dbg !10[0m
+[0m[[0minfo[0m] [0m    br label %2, !dbg !11[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m  ; <label>:2[0m
+[0m[[0minfo[0m] [0m    %3 = load i32, i32* %y, align 4, !dbg !12[0m
+[0m[[0minfo[0m] [0m    %4 = icmp slt i32 %3, 1000, !dbg !15[0m
+[0m[[0minfo[0m] [0m    br i1 %4, label %5, label %8, !dbg !16[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m  ; <label>:5[0m
+[0m[[0minfo[0m] [0m    %6 = call i32 (...) @__VERIFIER_nondet_int() , !dbg !17[0m
+[0m[[0minfo[0m] [0m    %7 = icmp ne i32 %6, 0, !dbg !16[0m
+[0m[[0minfo[0m] [0m    br label %8[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m  ; <label>:8[0m
+[0m[[0minfo[0m] [0m    %9 = phi i1 [ false, %2 ], [ %7, %5 ][0m
+[0m[[0minfo[0m] [0m    br i1 %9, label %10, label %16, !dbg !19[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m  ; <label>:10[0m
+[0m[[0minfo[0m] [0m    %11 = load i32, i32* %x, align 4, !dbg !21[0m
+[0m[[0minfo[0m] [0m    %12 = load i32, i32* %y, align 4, !dbg !22[0m
+[0m[[0minfo[0m] [0m    %13 = add nsw i32 %11, %12, !dbg !23[0m
+[0m[[0minfo[0m] [0m    store i32 %13, i32* %x, align 4, !dbg !24[0m
+[0m[[0minfo[0m] [0m    %14 = load i32, i32* %y, align 4, !dbg !25[0m
+[0m[[0minfo[0m] [0m    %15 = add nsw i32 %14, 1, !dbg !26[0m
+[0m[[0minfo[0m] [0m    store i32 %15, i32* %y, align 4, !dbg !27[0m
+[0m[[0minfo[0m] [0m    br label %2, !dbg !11[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m  ; <label>:16[0m
+[0m[[0minfo[0m] [0m    %17 = load i32, i32* %x, align 4, !dbg !28[0m
+[0m[[0minfo[0m] [0m    %18 = load i32, i32* %y, align 4, !dbg !29[0m
+[0m[[0minfo[0m] [0m    %19 = icmp sge i32 %17, %18, !dbg !30[0m
+[0m[[0minfo[0m] [0m    br i1 %19, label %22, label %20, !dbg !31[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m  ; <label>:20[0m
+[0m[[0minfo[0m] [0m    br label %__error.20[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m  ; <label>:22[0m
+[0m[[0minfo[0m] [0m    ret i32 0, !dbg !33[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m  __error.20: [0m
+[0m[[0minfo[0m] [0m    %21 = call i32 (...) @__VERIFIER_error() , !dbg !32[0m
+[0m[[0minfo[0m] [0m    br label %22, !dbg !32[0m
+[0m[[0minfo[0m] [0m  [0m
+[0m[[0minfo[0m] [0m} [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@2 ) ,(%9@1  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) , Not( %9@1 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@2 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 0[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 0, 0, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mList(0, 0, 0, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mno Repetitions, rtn linear automaton[0m
+[0m[[0minfo[0m] [0mlinear auto created and about to return[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@3 ) ,(%9@2  = %7@2 ) ,(%7@2  =  Not( (%6@2  = 0 ) ) ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) ,%4@2 ,(%4@2  = (%3@2  < 1000 ) ) , Not( %9@2 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@3 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 1[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 1 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((3,7), (2,6), (1,5))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = %7@0 ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ], (%7@1  =  Not( (%6@1  = 0 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 6 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 5 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@3 ) ,(%9@2  = false ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) , Not( %4@2 ) ,(%4@2  = (%3@2  < 1000 ) ) , Not( %9@2 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@3 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 2[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 0, 0, 0, 0, 1, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 4 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((1,5))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 5 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@4 ) ,(%9@3  = %7@2 ) ,(%7@2  =  Not( (%6@2  = 0 ) ) ) ,(%3@3  = %y@4 ) ,(%11@2  = %x@3 ) ,(%9@2  = false ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) , Not( %4@2 ) ,(%4@2  = (%3@2  < 1000 ) ) ,%9@2 ,(%y@4  = %15@2 ) ,(%15@2  = (%14@2  + 1 ) ) ,(%14@2  = %y@3 ) ,(%x@4  = %13@2 ) ,(%13@2  = (%11@2  + %12@2 ) ) ,(%12@2  = %y@3 ) ,%4@3 ,(%4@3  = (%3@3  < 1000 ) ) , Not( %9@3 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@4 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 3[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 7 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((3,10), (2,9), (4,7), (1,5), (1,8), (5,8))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = %7@0 ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 10 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ], (%7@1  =  Not( (%6@1  = 0 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 9 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 5 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 6 with choice(5) exitValue is 1[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@5 ) ,(%9@4  = %7@3 ) ,(%7@3  =  Not( (%6@3  = 0 ) ) ) ,(%3@4  = %y@5 ) ,(%11@3  = %x@4 ) ,(%9@3  = %7@2 ) ,(%7@2  =  Not( (%6@2  = 0 ) ) ) ,(%3@3  = %y@4 ) ,(%11@2  = %x@3 ) ,(%9@2  = false ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) , Not( %4@2 ) ,(%4@2  = (%3@2  < 1000 ) ) ,%9@2 ,(%y@4  = %15@2 ) ,(%15@2  = (%14@2  + 1 ) ) ,(%14@2  = %y@3 ) ,(%x@4  = %13@2 ) ,(%13@2  = (%11@2  + %12@2 ) ) ,(%12@2  = %y@3 ) ,%4@3 ,(%4@3  = (%3@3  < 1000 ) ) ,%9@3 ,(%y@5  = %15@3 ) ,(%15@3  = (%14@3  + 1 ) ) ,(%14@3  = %y@4 ) ,(%x@5  = %13@3 ) ,(%13@3  = (%11@3  + %12@3 ) ) ,(%12@3  = %y@4 ) ,%4@4 ,(%4@4  = (%3@4  < 1000 ) ) , Not( %9@4 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@5 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 4[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 10 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((3,10), (3,14), (10,14), (2,9), (2,13), (9,13), (4,7), (4,11), (7,11), (1,5), (1,8), (1,12), (5,8), (5,12), (8,12))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = %7@0 ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 10 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = %7@0 ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 14 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = %7@0 ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 14 to 11 with choice(10) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ], (%7@1  =  Not( (%6@1  = 0 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 9 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ], (%7@1  =  Not( (%6@1  = 0 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 13 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ], (%7@1  =  Not( (%6@1  = 0 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 13 to 10 with choice(9) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 8 with choice(7) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 5 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 6 with choice(5) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 6 with choice(5) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 9 with choice(8) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@5 ) ,(%9@4  = false ) ,(%3@4  = %y@5 ) ,(%11@3  = %x@4 ) ,(%9@3  = %7@2 ) ,(%7@2  =  Not( (%6@2  = 0 ) ) ) ,(%3@3  = %y@4 ) ,(%11@2  = %x@3 ) ,(%9@2  = false ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) , Not( %4@2 ) ,(%4@2  = (%3@2  < 1000 ) ) ,%9@2 ,(%y@4  = %15@2 ) ,(%15@2  = (%14@2  + 1 ) ) ,(%14@2  = %y@3 ) ,(%x@4  = %13@2 ) ,(%13@2  = (%11@2  + %12@2 ) ) ,(%12@2  = %y@3 ) ,%4@3 ,(%4@3  = (%3@3  < 1000 ) ) ,%9@3 ,(%y@5  = %15@3 ) ,(%15@3  = (%14@3  + 1 ) ) ,(%14@3  = %y@4 ) ,(%x@5  = %13@3 ) ,(%13@3  = (%11@3  + %12@3 ) ) ,(%12@3  = %y@4 ) , Not( %4@4 ) ,(%4@4  = (%3@4  < 1000 ) ) , Not( %9@4 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@5 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 5[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 13 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((3,10), (2,9), (4,7), (4,11), (7,11), (1,5), (1,8), (1,12), (5,8), (5,12), (8,12), (6,13))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = %7@0 ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 10 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ], (%7@1  =  Not( (%6@1  = 0 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 9 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 8 with choice(7) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 5 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 6 with choice(5) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 6 with choice(5) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 9 with choice(8) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = false ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 13 to 7 with choice(6) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@4 ) ,(%9@3  = false ) ,(%3@3  = %y@4 ) ,(%11@2  = %x@3 ) ,(%9@2  = false ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) , Not( %4@2 ) ,(%4@2  = (%3@2  < 1000 ) ) ,%9@2 ,(%y@4  = %15@2 ) ,(%15@2  = (%14@2  + 1 ) ) ,(%14@2  = %y@3 ) ,(%x@4  = %13@2 ) ,(%13@2  = (%11@2  + %12@2 ) ) ,(%12@2  = %y@3 ) , Not( %4@3 ) ,(%4@3  = (%3@3  < 1000 ) ) , Not( %9@3 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@4 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 6[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 16 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((4,7), (1,5), (1,8), (5,8), (6,9))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 5 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 2 with choice(1) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 6 with choice(5) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = false ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 9 to 7 with choice(6) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@2 ) ,(%9@1  = false ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) , Not( %9@1 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@2 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 7[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 1, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mList(0, 1, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mno Repetitions, rtn linear automaton[0m
+[0m[[0minfo[0m] [0mlinear auto created and about to return[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@3 ) ,(%9@2  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = false ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) ,%4@2 ,(%4@2  = (%3@2  < 1000 ) ) , Not( %9@2 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@3 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 8[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 1, 0, 0, 0, 0, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 18 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((1,4))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 4 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@4 ) ,(%9@3  = %7@2 ) ,(%7@2  =  Not( (%6@2  = 0 ) ) ) ,(%3@3  = %y@4 ) ,(%11@2  = %x@3 ) ,(%9@2  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = false ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) ,%4@2 ,(%4@2  = (%3@2  < 1000 ) ) ,%9@2 ,(%y@4  = %15@2 ) ,(%15@2  = (%14@2  + 1 ) ) ,(%14@2  = %y@3 ) ,(%x@4  = %13@2 ) ,(%13@2  = (%11@2  + %12@2 ) ) ,(%12@2  = %y@3 ) ,%4@3 ,(%4@3  = (%3@3  < 1000 ) ) , Not( %9@3 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@4 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 9[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 20 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((6,10), (5,9), (3,7), (1,4), (1,8), (4,8))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = %7@0 ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 10 to 7 with choice(6) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ], (%7@1  =  Not( (%6@1  = 0 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 9 to 6 with choice(5) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 4 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@5 ) ,(%9@4  = %7@2 ) ,(%7@2  =  Not( (%6@2  = 0 ) ) ) ,(%3@4  = %y@5 ) ,(%11@3  = %x@4 ) ,(%9@3  = false ) ,(%3@3  = %y@4 ) ,(%11@2  = %x@3 ) ,(%9@2  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = false ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) ,%4@2 ,(%4@2  = (%3@2  < 1000 ) ) ,%9@2 ,(%y@4  = %15@2 ) ,(%15@2  = (%14@2  + 1 ) ) ,(%14@2  = %y@3 ) ,(%x@4  = %13@2 ) ,(%13@2  = (%11@2  + %12@2 ) ) ,(%12@2  = %y@3 ) , Not( %4@3 ) ,(%4@3  = (%3@3  < 1000 ) ) ,%9@3 ,(%y@5  = %15@3 ) ,(%15@3  = (%14@3  + 1 ) ) ,(%14@3  = %y@4 ) ,(%x@5  = %13@3 ) ,(%13@3  = (%11@3  + %12@3 ) ) ,(%12@3  = %y@4 ) ,%4@4 ,(%4@4  = (%3@4  < 1000 ) ) , Not( %9@4 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@5 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 10[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 22 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((6,13), (5,12), (3,7), (3,10), (7,10), (1,4), (1,8), (1,11), (4,8), (4,11), (8,11), (2,9))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = %7@0 ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 13 to 7 with choice(6) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ], (%7@1  =  Not( (%6@1  = 0 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 6 with choice(5) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 10 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 10 to 8 with choice(7) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 4 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 9 with choice(8) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = false ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 9 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@4 ) ,(%9@3  = false ) ,(%3@3  = %y@4 ) ,(%11@2  = %x@3 ) ,(%9@2  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = false ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) ,%4@2 ,(%4@2  = (%3@2  < 1000 ) ) ,%9@2 ,(%y@4  = %15@2 ) ,(%15@2  = (%14@2  + 1 ) ) ,(%14@2  = %y@3 ) ,(%x@4  = %13@2 ) ,(%13@2  = (%11@2  + %12@2 ) ) ,(%12@2  = %y@3 ) , Not( %4@3 ) ,(%4@3  = (%3@3  < 1000 ) ) , Not( %9@3 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@4 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 11[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 24 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((3,7), (1,4), (1,8), (4,8), (2,9))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 4 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = false ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 9 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@5 ) ,(%9@4  = false ) ,(%3@4  = %y@5 ) ,(%11@3  = %x@4 ) ,(%9@3  = false ) ,(%3@3  = %y@4 ) ,(%11@2  = %x@3 ) ,(%9@2  = %7@1 ) ,(%7@1  =  Not( (%6@1  = 0 ) ) ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = false ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) ,%4@2 ,(%4@2  = (%3@2  < 1000 ) ) ,%9@2 ,(%y@4  = %15@2 ) ,(%15@2  = (%14@2  + 1 ) ) ,(%14@2  = %y@3 ) ,(%x@4  = %13@2 ) ,(%13@2  = (%11@2  + %12@2 ) ) ,(%12@2  = %y@3 ) , Not( %4@3 ) ,(%4@3  = (%3@3  < 1000 ) ) ,%9@3 ,(%y@5  = %15@3 ) ,(%15@3  = (%14@3  + 1 ) ) ,(%14@3  = %y@4 ) ,(%x@5  = %13@3 ) ,(%13@3  = (%11@3  + %12@3 ) ) ,(%12@3  = %y@4 ) , Not( %4@4 ) ,(%4@4  = (%3@4  < 1000 ) ) , Not( %9@4 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@5 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 12[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 26 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((3,7), (3,10), (7,10), (1,4), (1,8), (1,11), (4,8), (4,11), (8,11), (2,9), (2,12), (9,12))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 7 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 10 to 4 with choice(3) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%11@1  = %x@0 ) ,(%y@1  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@0 ) ,(%x@1  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@0 ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 10 to 8 with choice(7) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 4 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 8 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) ,%4@1 ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 5 with choice(4) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 11 to 9 with choice(8) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = false ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 9 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = false ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = false ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 12 to 10 with choice(9) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m And( true ,(%17@1  = %x@3 ) ,(%9@2  = false ) ,(%3@2  = %y@3 ) ,(%11@1  = %x@2 ) ,(%9@1  = false ) ,(%3@1  = %y@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 1 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ,%9@1 ,(%y@3  = %15@1 ) ,(%15@1  = (%14@1  + 1 ) ) ,(%14@1  = %y@2 ) ,(%x@3  = %13@1 ) ,(%13@1  = (%11@1  + %12@1 ) ) ,(%12@1  = %y@2 ) , Not( %4@2 ) ,(%4@2  = (%3@2  < 1000 ) ) , Not( %9@2 ) , Not( %19@1 ) ,(%19@1  = (%17@1  >= %18@1 ) ) ,(%18@1  = %y@3 ) ) [0m
+[0m[[0minfo[0m] [0m----------------[0m
+[0m[[0minfo[0m] [0m#############>>>>>> current iteration is 13[0m
+[0m[[0minfo[0m] [0musing predicates abs[0m
+[0m[[0minfo[0m] [0musing predAbs on trace: List(0, 1, 0, 0, 1, 1, 1, 0)[0m
+[0m[[0minfo[0m] [0mrunning with predicates: 5[0m
+[0m[[0minfo[0m] [0m(%x  = 1 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  = 0 ) ,[0m
+[0m[[0minfo[0m] [0m(%y  < 1000 ) ,[0m
+[0m[[0minfo[0m] [0m(%x  >= %y ) ,[0m
+[0m[[0minfo[0m] [0m(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mFixed point reached with Predicates ===============[0m
+[0m[[0minfo[0m] [0mtrue [0m
+[0m[[0minfo[0m] [0m Or(  And(  Not( (%x  = 1 ) ) ,(%y  < 1000 ) ,(%x  = (((%y  * %y )  // 2 )  - (%y  // 2 ) ) ) ,(%y  = 0 ) ,(%x  >= %y ) ) ,false ) [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0mfalse [0m
+[0m[[0minfo[0m] [0m------------[0m
+[0m[[0minfo[0m] [0msimplify cache hit is 28 and mis is 2[0m
+[0m[[0minfo[0m] [0mlast loc eq to false? >>>yes[0m
+[0m[[0minfo[0m] [0m------------------safeBackEdges[0m
+[0m[[0minfo[0m] [0mcandidate pairs Vector((1,4), (2,5))[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%3@1  = %y@0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  < 1000 ) ) ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 4 to 2 with choice(1) exitValue is 1[0m
+[0m[[0minfo[0m] [0mback edge checkPost [false ],  And( (%9@1  = false ) ,%9@1 ) , [false ][0m
+[0m[[0minfo[0m] [0mnew backedge found from 5 to 3 with choice(2) exitValue is 0[0m
+[0m[[0minfo[0m] [0m----------------------[0m
+[0m[[0minfo[0m] [0mTRUE[0m
+[0m[[32msuccess[0m] [0mTotal time: 13 s, completed 07/02/2018 11:58:04 AM[0m

@@ -1,0 +1,72 @@
+define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 0, i32* %x, align 4, !dbg !17
+    store i32 1, i32* %y, align 4, !dbg !18
+    br label %2, !dbg !19
+  
+  ; <label>:2
+    %3 = load i32, i32* %x, align 4, !dbg !20
+    %4 = icmp ult i32 %3, 6, !dbg !23
+    br i1 %4, label %5, label %10, !dbg !19
+  
+  ; <label>:5
+    %6 = load i32, i32* %x, align 4, !dbg !24
+    %7 = add i32 %6, 1, !dbg !24
+    store i32 %7, i32* %x, align 4, !dbg !24
+    %8 = load i32, i32* %y, align 4, !dbg !25
+    %9 = mul i32 %8, 2, !dbg !25
+    store i32 %9, i32* %y, align 4, !dbg !25
+    br label %2, !dbg !19
+  
+  ; <label>:10
+    %11 = load i32, i32* %x, align 4, !dbg !26
+    %12 = icmp ne i32 %11, 6, !dbg !27
+    br i1 %12, label %13, label %14, !dbg !26
+  
+  ; <label>:13
+    br label %__error.13
+  
+  ; <label>:14
+    %15 = load i32, i32* %1, !dbg !29
+    ret i32 %15, !dbg !29
+  
+  __error.13: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !28
+    unreachable, !dbg !28
+  
+} 
+
+using predicates abs
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 5
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (6  <= %x ) ) , Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,(%x  <= 5 ) ) ,false ) 
+ Or(  And(  Not( (6  <= %x ) ) , Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,(%x  <= 5 ) ) , And(  Not( (6  <= %x ) ) , Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,(%x  <= 5 ) ) , And(  Not( (6  <= %x ) ) ,(%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,(%x  <= 5 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (6  <= %x ) ) , Not( (%x  <= 5 ) ) ) , Or(  Not(  Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,(%x  <= 5 ) ) , Or( (6  <= %x ) ,(%x  <= 5 ) ,(%x  >= 7 ) ) ,(%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 5 ) ) , Not(  Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,(%x  >= 0 ) ,(0  = (%y % 2 ) ) ,(6  <= %x ) ) ,false ) 
+false 
+------------
+simplify cache hit is 12 and mis is 4
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,3))
+new backedge found from 3 to 2 with choice(1) exitValue is 0
+----------------------
+TRUE

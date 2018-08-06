@@ -1,0 +1,37 @@
+define i32 @main() local_unnamed_addr #0 !dbg !12 { 
+  
+    %1 = alloca [1024 x i32], align 16
+    %2 = bitcast [1024 x i32]* %1 to i8*, !dbg !13
+    call void @llvm.lifetime.start(i64 4096, i8* nonnull %2) #4 , !dbg !13
+    br label %3, !dbg !14
+  
+  ; <label>:3
+    %4 = phi i64 [ %10, %3 ], [ 0, %0 ]
+    %5 = getelementptr inbounds [1024 x i32], [1024 x i32]* %1, i64 0, i64 %4, !dbg !15
+    %6 = load i32, i32* %5, align 4, !dbg !15, !tbaa !17
+    %7 = icmp eq i32 %6, 0, !dbg !21
+    %8 = icmp sgt i64 %4, 1023, !dbg !22
+    %9 = or i1 %8, %7, !dbg !23
+    %10 = add nuw nsw i64 %4, 1, !dbg !24
+    br i1 %9, label %11, label %3, !dbg !23, !llvm.loop !26
+  
+  ; <label>:11
+    %12 = trunc i64 %4 to i32, !dbg !29
+    %13 = icmp slt i32 %12, 1025, !dbg !29
+    br i1 %13, label %15, label %14, !dbg !30
+  
+  ; <label>:14
+    br label %__error.14
+  
+  ; <label>:15
+    call void @llvm.lifetime.end(i64 4096, i8* nonnull %2) #4 , !dbg !33
+    ret i32 0, !dbg !33
+  
+  __error.14: 
+    tail call void (...) @__VERIFIER_error() #3 , !dbg !32
+    unreachable, !dbg !32
+  
+} 
+
+UNKNOWN
+refinement failure: strange solver status: Failure(java.lang.Exception: Assert failedErrorResponse(StringLiteral(line 29 column 142: ambiguous constant reference, more than one constant with the same sort, use a qualified expression (as <symbol> <sort>) to disumbiguate %1@1)))

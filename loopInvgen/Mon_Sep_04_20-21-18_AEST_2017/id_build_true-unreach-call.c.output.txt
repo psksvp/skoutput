@@ -1,0 +1,264 @@
+define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    %1 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !15
+    %2 = icmp sgt i32 %1, 0, !dbg !16
+    br i1 %2, label %3, label %15, !dbg !18
+  
+  ; <label>:3
+    %4 = add nsw i32 %1, -1
+    br label %5, !dbg !18
+  
+  ; <label>:5
+    %6 = phi i32 [ 0, %3 ], [ %44, %43 ]
+    %7 = sub i32 %4, %6
+    %8 = icmp slt i32 %7, 0
+    %9 = icmp slt i32 %7, %1
+    br i1 %8, label %10, label %11, !dbg !19
+  
+  ; <label>:10
+    br label %__error.10
+  
+  ; <label>:11
+    br i1 %9, label %13, label %12, !dbg !23
+  
+  ; <label>:12
+    br label %__error.12
+  
+  ; <label>:13
+    br i1 %8, label %16, label %17, !dbg !19
+  
+  ; <label>:14
+    br label %15, !dbg !27
+  
+  ; <label>:15
+    ret i32 0, !dbg !27
+  
+  ; <label>:16
+    br label %__error.16
+  
+  ; <label>:17
+    br i1 %9, label %19, label %18, !dbg !23
+  
+  ; <label>:18
+    br label %__error.18
+  
+  ; <label>:19
+    br i1 %8, label %20, label %21, !dbg !19
+  
+  ; <label>:20
+    br label %__error.20
+  
+  ; <label>:21
+    br i1 %9, label %23, label %22, !dbg !23
+  
+  ; <label>:22
+    br label %__error.22
+  
+  ; <label>:23
+    br i1 %8, label %24, label %25, !dbg !19
+  
+  ; <label>:24
+    br label %__error.24
+  
+  ; <label>:25
+    br i1 %9, label %27, label %26, !dbg !23
+  
+  ; <label>:26
+    br label %__error.26
+  
+  ; <label>:27
+    br i1 %8, label %28, label %29, !dbg !19
+  
+  ; <label>:28
+    br label %__error.28
+  
+  ; <label>:29
+    br i1 %9, label %31, label %30, !dbg !23
+  
+  ; <label>:30
+    br label %__error.30
+  
+  ; <label>:31
+    br i1 %8, label %32, label %33, !dbg !19
+  
+  ; <label>:32
+    br label %__error.32
+  
+  ; <label>:33
+    br i1 %9, label %35, label %34, !dbg !23
+  
+  ; <label>:34
+    br label %__error.34
+  
+  ; <label>:35
+    br i1 %8, label %36, label %37, !dbg !19
+  
+  ; <label>:36
+    br label %__error.36
+  
+  ; <label>:37
+    br i1 %9, label %39, label %38, !dbg !23
+  
+  ; <label>:38
+    br label %__error.38
+  
+  ; <label>:39
+    br i1 %8, label %40, label %41, !dbg !19
+  
+  ; <label>:40
+    br label %__error.40
+  
+  ; <label>:41
+    br i1 %9, label %43, label %42, !dbg !23
+  
+  ; <label>:42
+    br label %__error.42
+  
+  ; <label>:43
+    %44 = add nuw nsw i32 %6, 1, !dbg !28
+    %45 = icmp eq i32 %44, %1, !dbg !16
+    br i1 %45, label %14, label %5, !dbg !18, !llvm.loop !30
+  
+  __error.10: 
+    tail call void @__VERIFIER_error() #2 , !dbg !21
+    br label %11, !dbg !22
+  
+  __error.12: 
+    tail call void @__VERIFIER_error() #2 , !dbg !25
+    br label %13, !dbg !26
+  
+  __error.16: 
+    tail call void @__VERIFIER_error() #2 , !dbg !21
+    br label %17, !dbg !22
+  
+  __error.18: 
+    tail call void @__VERIFIER_error() #2 , !dbg !25
+    br label %19, !dbg !26
+  
+  __error.20: 
+    tail call void @__VERIFIER_error() #2 , !dbg !21
+    br label %21, !dbg !22
+  
+  __error.22: 
+    tail call void @__VERIFIER_error() #2 , !dbg !25
+    br label %23, !dbg !26
+  
+  __error.24: 
+    tail call void @__VERIFIER_error() #2 , !dbg !21
+    br label %25, !dbg !22
+  
+  __error.26: 
+    tail call void @__VERIFIER_error() #2 , !dbg !25
+    br label %27, !dbg !26
+  
+  __error.28: 
+    tail call void @__VERIFIER_error() #2 , !dbg !21
+    br label %29, !dbg !22
+  
+  __error.30: 
+    tail call void @__VERIFIER_error() #2 , !dbg !25
+    br label %31, !dbg !26
+  
+  __error.32: 
+    tail call void @__VERIFIER_error() #2 , !dbg !21
+    br label %33, !dbg !22
+  
+  __error.34: 
+    tail call void @__VERIFIER_error() #2 , !dbg !25
+    br label %35, !dbg !26
+  
+  __error.36: 
+    tail call void @__VERIFIER_error() #2 , !dbg !21
+    br label %37, !dbg !22
+  
+  __error.38: 
+    tail call void @__VERIFIER_error() #2 , !dbg !25
+    br label %39, !dbg !26
+  
+  __error.40: 
+    tail call void @__VERIFIER_error() #2 , !dbg !21
+    br label %41, !dbg !22
+  
+  __error.42: 
+    tail call void @__VERIFIER_error() #2 , !dbg !25
+    br label %43, !dbg !26
+  
+} 
+
+using predicates abs
+List(0, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 0, 1, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 6
+(%6  = 0 ) ,
+(%6  = %44 ) ,
+(%44  = (1  + %6 ) ) ,
+ Not( (%44  = %1 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  Not( (%1  <= 0 ) ) ,false ) 
+ Or(  Not( (%1  <= 0 ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Not( (%44  = (1  + %6 ) ) ) , Not( (%6  = 0 ) ) ,(%6  = %44 ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Not( (%44  = (1  + %6 ) ) ) , Not( (%6  = 0 ) ) ,(%6  = %44 ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or( (%6  = 0 ) ,(%6  = %44 ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Or(  Not( (%6  = %44 ) ) , Not( (%44  = (1  + %6 ) ) ) ) , Or(  Not( (%6  = %44 ) ) , Not( (%44  = %1 ) ) ) ,(%6  = 0 ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Not( (%6  = %44 ) ) ,(%44  = (1  + %6 ) ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Not( (%6  = %44 ) ) ,(%6  = 0 ) ,(%44  = (1  + %6 ) ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Not( (%44  = (1  + %6 ) ) ) ,(%6  = %44 ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Not( (%44  = (1  + %6 ) ) ) , Not( (%6  = 0 ) ) ,(%6  = %44 ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Not( (%44  = (1  + %6 ) ) ) ,(%6  = %44 ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Not( (%44  = (1  + %6 ) ) ) , Not( (%6  = 0 ) ) ,(%6  = %44 ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+ Or(  And(  Not( (%44  = (1  + %6 ) ) ) ,(%6  = %44 ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) , And(  Not( (%44  = (1  + %6 ) ) ) , Not( (%6  = 0 ) ) ,(%6  = %44 ) , Not( (%44  = %1 ) ) , Not( (%1  <= 0 ) ) ,(let ( (a!1  And( (%1  <= (((- 1 )  * %6 )  + %4 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) (a!2  And( ((((- 1 )  * %6 )  + %4 ((- 1 )  * %1 ) )  <= (- 1 ) ) ,(0  <= (((- 1 )  * %6 )  + %4 ) ) ) ) )  Or( a!1 ,a!2 ) ) ) ,false ) 
+------------
+simplify cache hit is 681 and mis is 7
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 10 reached

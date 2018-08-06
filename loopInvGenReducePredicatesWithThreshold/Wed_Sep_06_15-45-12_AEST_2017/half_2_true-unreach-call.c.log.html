@@ -1,0 +1,125 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/half_2_true-unreach-call.c,true,clang-4.0,10)</h3><hr>
+<pre>#include "assert.h"
+
+int main() {
+  int n,i,k;
+  n = __VERIFIER_nondet_int();
+  __VERIFIER_assume(n <= LARGE_INT);
+  k = n;
+  i = 0;
+  while( i < n ) {
+    k--;
+    i = i + 2;
+  }
+
+  int j = 0;
+ 
+  while( j < n/2 ) {
+    __VERIFIER_assert(k > 0);
+    k--;
+    j++;
+  }
+  return 0;
+}
+</pre><hr>
+<pre>define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    %1 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !15
+    %2 = icmp slt i32 %1, 1000001, !dbg !16
+    %3 = zext i1 %2 to i32, !dbg !16
+    tail call void @__VERIFIER_assume(i32 %3) #2 , !dbg !17
+    %4 = icmp sgt i32 %1, 0, !dbg !18
+    br i1 %4, label %5, label %22, !dbg !20
+  
+  ; <label>:5
+    %6 = add i32 %1, -1, !dbg !21
+    %7 = lshr i32 %1, 1
+    %8 = icmp eq i32 %1, 1, !dbg !22
+    br i1 %8, label %22, label %9, !dbg !23
+  
+  ; <label>:9
+    %10 = lshr i32 %6, 1, !dbg !21
+    %11 = sub i32 %6, %10, !dbg !21
+    br label %12, !dbg !24
+  
+  ; <label>:12
+    %13 = phi i32 [ %19, %17 ], [ 0, %9 ]
+    %14 = phi i32 [ %18, %17 ], [ %11, %9 ]
+    %15 = icmp sgt i32 %14, 0, !dbg !24
+    br i1 %15, label %17, label %16, !dbg !25
+  
+  ; <label>:16
+    br label %__error.16
+  
+  ; <label>:17
+    %18 = add nsw i32 %14, -1, !dbg !29
+    %19 = add nuw nsw i32 %13, 1, !dbg !30
+    %20 = icmp slt i32 %19, %7, !dbg !22
+    br i1 %20, label %12, label %21, !dbg !23, !llvm.loop !31
+  
+  ; <label>:21
+    br label %22, !dbg !34
+  
+  ; <label>:22
+    ret i32 0, !dbg !34
+  
+  __error.16: 
+    tail call void @__VERIFIER_error() #2 , !dbg !27
+    br label %17, !dbg !28
+  
+} 
+
+using predicates abs
+using predAbs on trace: List(0, 1, 0, 1, 0)
+List(0, 1, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+using predAbs on trace: List(0, 1, 0, 0, 0, 1, 0)
+List(0, 1, 0, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+using predAbs on trace: List(0, 1, 0, 0, 0, 0, 0, 1, 0)
+generating predicates for abstraction
+16 predicates generated
+(%14  = %18 ) ,
+(%13  = %19 ) ,
+(%13  = 0 ) ,
+(%14  <= 0 ) ,
+ Not( (%7  <= %19 ) ) ,
+ Not( (%14  <= 0 ) ) ,
+(%19  = (1  + %13 ) ) ,
+ Not( (1000001  <= %1 ) ) ,
+(%7  = (%1  // 2 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+ Not( (%1  = 1 ) ) ,
+(%14  = %11 ) ,
+(((%6  // 2 )  + %11 ((- 1 )  * %6 ) )  <= 0 ) ,
+((((- 1 )  * %11 )  + %6 ((- 1 )  * (%6  // 2 ) ) )  <= 0 ) ,
+(%18  = ((- 1 )  + %14 ) ) ,
+(%6  = ((- 1 )  + %1 ) ) 
+running reducePredicatesToSuperSet
+running with predicates: 16
+(%14  = %18 ) ,
+(%13  = %19 ) ,
+(%13  = 0 ) ,
+(%14  <= 0 ) ,
+ Not( (%7  <= %19 ) ) ,
+ Not( (%14  <= 0 ) ) ,
+(%19  = (1  + %13 ) ) ,
+ Not( (1000001  <= %1 ) ) ,
+(%7  = (%1  // 2 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+ Not( (%1  = 1 ) ) ,
+(%14  = %11 ) ,
+(((%6  // 2 )  + %11 ((- 1 )  * %6 ) )  <= 0 ) ,
+((((- 1 )  * %11 )  + %6 ((- 1 )  * (%6  // 2 ) ) )  <= 0 ) ,
+(%18  = ((- 1 )  + %14 ) ) ,
+(%6  = ((- 1 )  + %1 ) )</pre><hr>
+</body>
+</html>
+      

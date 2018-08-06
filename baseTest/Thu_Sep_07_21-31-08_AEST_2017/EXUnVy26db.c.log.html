@@ -1,0 +1,1167 @@
+
+<html>
+<body>
+<h3>Code(/tmp/EXUnVy26db.c,false,clang-3.7,20)</h3><hr>
+<pre>
+extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+
+int main(int argc, char** arg)
+{
+  int x = 2000;
+  while(x > 0)
+  {
+      int y = 0;
+      while(y < x) y++;
+      if(y != x) __VERIFIER_error();
+      x--;
+  }
+  if(x != 0) __VERIFIER_error();
+
+  return 0;
+}
+              
+</pre><hr>
+<pre>define i32 @main(i32 %argc, i8** %arg) #0  { 
+  
+    %1 = alloca i32, align 4
+    %2 = alloca i32, align 4
+    %3 = alloca i8**, align 8
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 %argc, i32* %2, align 4
+    store i8** %arg, i8*** %3, align 8
+    store i32 2000, i32* %x, align 4, !dbg !9
+    br label %4, !dbg !10
+  
+  ; <label>:4
+    %5 = load i32, i32* %x, align 4, !dbg !11
+    %6 = icmp sgt i32 %5, 0, !dbg !14
+    br i1 %6, label %7, label %23, !dbg !10
+  
+  ; <label>:7
+    store i32 0, i32* %y, align 4, !dbg !15
+    br label %8, !dbg !16
+  
+  ; <label>:8
+    %9 = load i32, i32* %y, align 4, !dbg !17
+    %10 = load i32, i32* %x, align 4, !dbg !19
+    %11 = icmp slt i32 %9, %10, !dbg !20
+    br i1 %11, label %12, label %15, !dbg !16
+  
+  ; <label>:12
+    %13 = load i32, i32* %y, align 4, !dbg !21
+    %14 = add nsw i32 %13, 1, !dbg !21
+    store i32 %14, i32* %y, align 4, !dbg !21
+    br label %8, !dbg !16
+  
+  ; <label>:15
+    %16 = load i32, i32* %y, align 4, !dbg !23
+    %17 = load i32, i32* %x, align 4, !dbg !24
+    %18 = icmp ne i32 %16, %17, !dbg !25
+    br i1 %18, label %19, label %20, !dbg !23
+  
+  ; <label>:19
+    br label %__error.19
+  
+  ; <label>:20
+    %21 = load i32, i32* %x, align 4, !dbg !27
+    %22 = add nsw i32 %21, -1, !dbg !27
+    store i32 %22, i32* %x, align 4, !dbg !27
+    br label %4, !dbg !10
+  
+  ; <label>:23
+    %24 = load i32, i32* %x, align 4, !dbg !28
+    %25 = icmp ne i32 %24, 0, !dbg !29
+    br i1 %25, label %26, label %27, !dbg !28
+  
+  ; <label>:26
+    br label %__error.26
+  
+  ; <label>:27
+    ret i32 0, !dbg !31
+  
+  __error.19: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !26
+    unreachable, !dbg !26
+  
+  __error.26: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !30
+    unreachable, !dbg !30
+  
+} 
+
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 1, 0, 0)
+List(0, 0, 0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 35 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 104 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 221 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 407 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 687 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 1090 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 1649 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 2401 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 3387 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 4652 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 6245 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 8219 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 10631 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 13542 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 17017 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 21125 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 25939 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 31536 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+ Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,((((- 1 )  * %y )  + %x )  <= (- 1 ) ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running filters on the generated input predicates
+running atomicTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  = 2000 ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) ,
+((((- 1 )  * %y )  + %x )  <= (- 1 ) ) 
+running reduceToSuperSetTerms
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+running with predicates: 3
+((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,
+(%x  <= %y ) ,
+(%x  >= 1 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%x  <= %y ) ) ,((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) , Not( (%x  <= %y ) ) ) , Or( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ,(%x  <= %y ) ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%y  + ((- 1 )  * %x ) )  <= (- 1 ) ) ) ,(%x  <= %y ) ,(%x  >= 1 ) ) ,false ) 
+------------
+simplify cache hit is 37997 and mis is 3
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 20 reached</pre><hr>
+</body>
+</html>
+      

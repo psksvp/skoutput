@@ -1,0 +1,27 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/nest-if3_true-unreach-call.c,false,clang-4.0,10)</h3><hr>
+<pre>#include "assert.h"
+int main() {
+  int i,k,n,l;
+
+  n = __VERIFIER_nondet_int();
+  l = __VERIFIER_nondet_int();
+  __VERIFIER_assume(l>0);
+  __VERIFIER_assume(l < LARGE_INT);
+  __VERIFIER_assume(n < LARGE_INT);
+  for (k=1;k<n;k++){
+    for (i=l;i<n;i++){  
+      __VERIFIER_assert(1<=i);
+    }
+    if(__VERIFIER_nondet_int())
+      l = l + 1;
+  }
+ }
+</pre><hr>
+<pre>UNKNOWN
+main is not verifiable, calls to the following functions were not inlined: __VERIFIER_assert</pre><hr>
+</body>
+</html>
+      

@@ -1,0 +1,137 @@
+[info] Running psksvp.ScratchPad 
+[info] 
+[info] define i32 @main() #0  { 
+[info]   
+[info]     %1 = alloca i32, align 4
+[info]     %i = alloca i32, align 4
+[info]     %j = alloca i32, align 4
+[info]     store i32 0, i32* %1
+[info]     store i32 1, i32* %i, align 4, !dbg !9
+[info]     store i32 10, i32* %j, align 4, !dbg !10
+[info]     br label %2, !dbg !11
+[info]   
+[info]   ; <label>:2
+[info]     %3 = load i32, i32* %j, align 4, !dbg !12
+[info]     %4 = load i32, i32* %i, align 4, !dbg !15
+[info]     %5 = icmp sge i32 %3, %4, !dbg !16
+[info]     br i1 %5, label %6, label %11, !dbg !11
+[info]   
+[info]   ; <label>:6
+[info]     %7 = load i32, i32* %i, align 4, !dbg !17
+[info]     %8 = add nsw i32 %7, 2, !dbg !18
+[info]     store i32 %8, i32* %i, align 4, !dbg !19
+[info]     %9 = load i32, i32* %j, align 4, !dbg !20
+[info]     %10 = add nsw i32 -1, %9, !dbg !21
+[info]     store i32 %10, i32* %j, align 4, !dbg !22
+[info]     br label %2, !dbg !11
+[info]   
+[info]   ; <label>:11
+[info]     %12 = load i32, i32* %j, align 4, !dbg !23
+[info]     %13 = icmp ne i32 %12, 6, !dbg !24
+[info]     br i1 %13, label %14, label %16, !dbg !23
+[info]   
+[info]   ; <label>:14
+[info]     br label %__error.14
+[info]   
+[info]   ; <label>:16
+[info]     ret i32 0, !dbg !26
+[info]   
+[info]   __error.14: 
+[info]     %15 = call i32 (...) @__VERIFIER_error() , !dbg !25
+[info]     br label %16, !dbg !25
+[info]   
+[info] } 
+[info] 
+[info] ----------------
+[info]  And( true ,(%12@1  = %j@2 ) ,(%3@1  = %j@2 ) ,(%1@2  = 0 ) ,(%j@2  = 10 ) ,(%i@2  = 1 ) , Not( %5@1 ) ,(%5@1  = (%3@1  >= %4@1 ) ) ,(%4@1  = %i@2 ) ,%13@1 ,(%13@1  =  Not( (%12@1  = 6 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 0
+[info] using interpolant
+[info] choices:List(0, 1, 0, 0)
+[info] Predicates are: 
+[info]  (and (= %j@2 10 ) (= %i@2 1 ) ) 
+[info] false 
+[info] new back edges is: Vector()
+[info] ----------------
+[info]  And( true ,(%12@1  = %j@3 ) ,(%3@2  = %j@3 ) ,(%7@1  = %i@2 ) ,(%3@1  = %j@2 ) ,(%1@2  = 0 ) ,(%j@2  = 10 ) ,(%i@2  = 1 ) ,%5@1 ,(%5@1  = (%3@1  >= %4@1 ) ) ,(%4@1  = %i@2 ) ,(%j@3  = %10@1 ) ,(%10@1  = ((- 1 )  + %9@1 ) ) ,(%9@1  = %j@2 ) ,(%i@3  = %8@1 ) ,(%8@1  = (%7@1  + 2 ) ) , Not( %5@2 ) ,(%5@2  = (%3@2  >= %4@2 ) ) ,(%4@2  = %i@3 ) ,%13@1 ,(%13@1  =  Not( (%12@1  = 6 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 1
+[info] using interpolant
+[info] choices:List(0, 0, 0, 1, 0, 0)
+[info] Predicates are: 
+[info]  (and (= %i@2 1 ) (= %j@2 10 ) ) 
+[info] (and (= %i@2 1 ) (= %j@2 10 ) ) 
+[info] (<= 6 (+ %j@3 (* (- 1 ) %i@3 ) ) ) 
+[info] false 
+[info] new back edges is: Vector()
+[info] ----------------
+[info]  And( true ,(%12@1  = %j@4 ) ,(%3@3  = %j@4 ) ,(%7@2  = %i@3 ) ,(%3@2  = %j@3 ) ,(%7@1  = %i@2 ) ,(%3@1  = %j@2 ) ,(%1@2  = 0 ) ,(%j@2  = 10 ) ,(%i@2  = 1 ) ,%5@1 ,(%5@1  = (%3@1  >= %4@1 ) ) ,(%4@1  = %i@2 ) ,(%j@3  = %10@1 ) ,(%10@1  = ((- 1 )  + %9@1 ) ) ,(%9@1  = %j@2 ) ,(%i@3  = %8@1 ) ,(%8@1  = (%7@1  + 2 ) ) ,%5@2 ,(%5@2  = (%3@2  >= %4@2 ) ) ,(%4@2  = %i@3 ) ,(%j@4  = %10@2 ) ,(%10@2  = ((- 1 )  + %9@2 ) ) ,(%9@2  = %j@3 ) ,(%i@4  = %8@2 ) ,(%8@2  = (%7@2  + 2 ) ) , Not( %5@3 ) ,(%5@3  = (%3@3  >= %4@3 ) ) ,(%4@3  = %i@4 ) ,%13@1 ,(%13@1  =  Not( (%12@1  = 6 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 2
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 1, 0, 0)
+[info] Predicates are: 
+[info]  (and (= %i@2 1 ) (= %j@2 10 ) ) 
+[info] (and (= %i@2 1 ) (= %j@2 10 ) ) 
+[info] (<= 6 (+ (* (- 1 ) %i@3 ) %j@3 ) ) 
+[info] (<= 6 (+ (* (- 1 ) %i@3 ) %j@3 ) ) 
+[info] (<= 3 (+ %j@4 (* (- 1 ) %i@4 ) ) ) 
+[info] false 
+[info] new back edges is: Vector()
+[info] ----------------
+[info]  And( true ,(%12@1  = %j@5 ) ,(%3@4  = %j@5 ) ,(%7@3  = %i@4 ) ,(%3@3  = %j@4 ) ,(%7@2  = %i@3 ) ,(%3@2  = %j@3 ) ,(%7@1  = %i@2 ) ,(%3@1  = %j@2 ) ,(%1@2  = 0 ) ,(%j@2  = 10 ) ,(%i@2  = 1 ) ,%5@1 ,(%5@1  = (%3@1  >= %4@1 ) ) ,(%4@1  = %i@2 ) ,(%j@3  = %10@1 ) ,(%10@1  = ((- 1 )  + %9@1 ) ) ,(%9@1  = %j@2 ) ,(%i@3  = %8@1 ) ,(%8@1  = (%7@1  + 2 ) ) ,%5@2 ,(%5@2  = (%3@2  >= %4@2 ) ) ,(%4@2  = %i@3 ) ,(%j@4  = %10@2 ) ,(%10@2  = ((- 1 )  + %9@2 ) ) ,(%9@2  = %j@3 ) ,(%i@4  = %8@2 ) ,(%8@2  = (%7@2  + 2 ) ) ,%5@3 ,(%5@3  = (%3@3  >= %4@3 ) ) ,(%4@3  = %i@4 ) ,(%j@5  = %10@3 ) ,(%10@3  = ((- 1 )  + %9@3 ) ) ,(%9@3  = %j@4 ) ,(%i@5  = %8@3 ) ,(%8@3  = (%7@3  + 2 ) ) , Not( %5@4 ) ,(%5@4  = (%3@4  >= %4@4 ) ) ,(%4@4  = %i@5 ) ,%13@1 ,(%13@1  =  Not( (%12@1  = 6 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 3
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+[info] Predicates are: 
+[info]  (and (= %i@2 1 ) (= %j@2 10 ) ) 
+[info] (and (= %i@2 1 ) (= %j@2 10 ) ) 
+[info] (<= 6 (+ (* (- 1 ) %i@3 ) %j@3 ) ) 
+[info] (<= 6 (+ (* (- 1 ) %i@3 ) %j@3 ) ) 
+[info] (<= 3 (+ (* (- 1 ) %i@4 ) %j@4 ) ) 
+[info] (<= 3 (+ (* (- 1 ) %i@4 ) %j@4 ) ) 
+[info] (<= 0 (+ %j@5 (* (- 1 ) %i@5 ) ) ) 
+[info] false 
+[info] new back edges is: Vector()
+[info] ----------------
+[info]  And( true ,(%12@1  = %j@6 ) ,(%3@5  = %j@6 ) ,(%7@4  = %i@5 ) ,(%3@4  = %j@5 ) ,(%7@3  = %i@4 ) ,(%3@3  = %j@4 ) ,(%7@2  = %i@3 ) ,(%3@2  = %j@3 ) ,(%7@1  = %i@2 ) ,(%3@1  = %j@2 ) ,(%1@2  = 0 ) ,(%j@2  = 10 ) ,(%i@2  = 1 ) ,%5@1 ,(%5@1  = (%3@1  >= %4@1 ) ) ,(%4@1  = %i@2 ) ,(%j@3  = %10@1 ) ,(%10@1  = ((- 1 )  + %9@1 ) ) ,(%9@1  = %j@2 ) ,(%i@3  = %8@1 ) ,(%8@1  = (%7@1  + 2 ) ) ,%5@2 ,(%5@2  = (%3@2  >= %4@2 ) ) ,(%4@2  = %i@3 ) ,(%j@4  = %10@2 ) ,(%10@2  = ((- 1 )  + %9@2 ) ) ,(%9@2  = %j@3 ) ,(%i@4  = %8@2 ) ,(%8@2  = (%7@2  + 2 ) ) ,%5@3 ,(%5@3  = (%3@3  >= %4@3 ) ) ,(%4@3  = %i@4 ) ,(%j@5  = %10@3 ) ,(%10@3  = ((- 1 )  + %9@3 ) ) ,(%9@3  = %j@4 ) ,(%i@5  = %8@3 ) ,(%8@3  = (%7@3  + 2 ) ) ,%5@4 ,(%5@4  = (%3@4  >= %4@4 ) ) ,(%4@4  = %i@5 ) ,(%j@6  = %10@4 ) ,(%10@4  = ((- 1 )  + %9@4 ) ) ,(%9@4  = %j@5 ) ,(%i@6  = %8@4 ) ,(%8@4  = (%7@4  + 2 ) ) , Not( %5@5 ) ,(%5@5  = (%3@5  >= %4@5 ) ) ,(%4@5  = %i@6 ) ,%13@1 ,(%13@1  =  Not( (%12@1  = 6 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 4
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+[info] Predicates are: 
+[info]  (= %j@2 10 ) 
+[info] (= %j@2 10 ) 
+[info] (and (<= %j@3 9 ) (<= 9 %j@3 ) ) 
+[info] (and (<= %j@3 9 ) (<= 9 %j@3 ) ) 
+[info] (and (<= %j@4 8 ) (<= 8 %j@4 ) ) 
+[info] (and (<= %j@4 8 ) (<= 8 %j@4 ) ) 
+[info] (and (<= %j@5 7 ) (<= 7 %j@5 ) ) 
+[info] (and (<= %j@5 7 ) (<= 7 %j@5 ) ) 
+[info] (= %j@6 6 ) 
+[info] (= %j@6 6 ) 
+[info] new back edges is: Vector()
+[info] ----------------
+[info]  And( true ,(%12@1  = %j@7 ) ,(%3@6  = %j@7 ) ,(%7@5  = %i@6 ) ,(%3@5  = %j@6 ) ,(%7@4  = %i@5 ) ,(%3@4  = %j@5 ) ,(%7@3  = %i@4 ) ,(%3@3  = %j@4 ) ,(%7@2  = %i@3 ) ,(%3@2  = %j@3 ) ,(%7@1  = %i@2 ) ,(%3@1  = %j@2 ) ,(%1@2  = 0 ) ,(%j@2  = 10 ) ,(%i@2  = 1 ) ,%5@1 ,(%5@1  = (%3@1  >= %4@1 ) ) ,(%4@1  = %i@2 ) ,(%j@3  = %10@1 ) ,(%10@1  = ((- 1 )  + %9@1 ) ) ,(%9@1  = %j@2 ) ,(%i@3  = %8@1 ) ,(%8@1  = (%7@1  + 2 ) ) ,%5@2 ,(%5@2  = (%3@2  >= %4@2 ) ) ,(%4@2  = %i@3 ) ,(%j@4  = %10@2 ) ,(%10@2  = ((- 1 )  + %9@2 ) ) ,(%9@2  = %j@3 ) ,(%i@4  = %8@2 ) ,(%8@2  = (%7@2  + 2 ) ) ,%5@3 ,(%5@3  = (%3@3  >= %4@3 ) ) ,(%4@3  = %i@4 ) ,(%j@5  = %10@3 ) ,(%10@3  = ((- 1 )  + %9@3 ) ) ,(%9@3  = %j@4 ) ,(%i@5  = %8@3 ) ,(%8@3  = (%7@3  + 2 ) ) ,%5@4 ,(%5@4  = (%3@4  >= %4@4 ) ) ,(%4@4  = %i@5 ) ,(%j@6  = %10@4 ) ,(%10@4  = ((- 1 )  + %9@4 ) ) ,(%9@4  = %j@5 ) ,(%i@6  = %8@4 ) ,(%8@4  = (%7@4  + 2 ) ) ,%5@5 ,(%5@5  = (%3@5  >= %4@5 ) ) ,(%4@5  = %i@6 ) ,(%j@7  = %10@5 ) ,(%10@5  = ((- 1 )  + %9@5 ) ) ,(%9@5  = %j@6 ) ,(%i@7  = %8@5 ) ,(%8@5  = (%7@5  + 2 ) ) , Not( %5@6 ) ,(%5@6  = (%3@6  >= %4@6 ) ) ,(%4@6  = %i@7 ) ,%13@1 ,(%13@1  =  Not( (%12@1  = 6 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 5
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+[info] Predicates are: 
+[info]  (and (= %j@2 10 ) (= %i@2 1 ) ) 
+[info] (and (= %j@2 10 ) (= %i@2 1 ) ) 
+[info] (<= (- 6 ) (+ (* (- 1 ) %j@3 ) %i@3 ) ) 
+[info] (<= (- 6 ) (+ (* (- 1 ) %j@3 ) %i@3 ) ) 
+[info] (<= (- 3 ) (+ (* (- 1 ) %j@4 ) %i@4 ) ) 
+[info] (<= (- 3 ) (+ (* (- 1 ) %j@4 ) %i@4 ) ) 
+[info] (<= 0 (+ (* (- 1 ) %j@5 ) %i@5 ) ) 
+[info] (<= 0 (+ (* (- 1 ) %j@5 ) %i@5 ) ) 
+[info] (<= 3 (+ (* (- 1 ) %j@6 ) %i@6 ) ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,2),0), LabDiEdge(DiEdge(11,2),0), LabDiEdge(DiEdge(5,4),0), LabDiEdge(DiEdge(7,4),0), LabDiEdge(DiEdge(9,4),0), LabDiEdge(DiEdge(11,4),0), LabDiEdge(DiEdge(7,6),0), LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(11,6),0), LabDiEdge(DiEdge(9,8),0), LabDiEdge(DiEdge(11,8),0), LabDiEdge(DiEdge(11,10),0), LabDiEdge(DiEdge(4,3),0), LabDiEdge(DiEdge(6,3),0), LabDiEdge(DiEdge(8,3),0), LabDiEdge(DiEdge(10,3),0), LabDiEdge(DiEdge(6,5),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(10,5),0), LabDiEdge(DiEdge(8,7),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(10,9),0))
+[info] TRUE
+[success] Total time: 7 s, completed 07/02/2018 2:35:38 PM
+skink 2.0-SNAPSHOT> 

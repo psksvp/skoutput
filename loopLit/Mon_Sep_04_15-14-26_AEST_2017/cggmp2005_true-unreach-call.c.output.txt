@@ -1,0 +1,300 @@
+define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %i = alloca i32, align 4
+    %j = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 1, i32* %i, align 4, !dbg !19
+    store i32 10, i32* %j, align 4, !dbg !20
+    br label %2, !dbg !21
+  
+  ; <label>:2
+    %3 = load i32, i32* %j, align 4, !dbg !22
+    %4 = load i32, i32* %i, align 4, !dbg !25
+    %5 = icmp sge i32 %3, %4, !dbg !26
+    br i1 %5, label %6, label %11, !dbg !21
+  
+  ; <label>:6
+    %7 = load i32, i32* %i, align 4, !dbg !27
+    %8 = add nsw i32 %7, 2, !dbg !28
+    store i32 %8, i32* %i, align 4, !dbg !29
+    %9 = load i32, i32* %j, align 4, !dbg !30
+    %10 = add nsw i32 -1, %9, !dbg !31
+    store i32 %10, i32* %j, align 4, !dbg !32
+    br label %2, !dbg !21
+  
+  ; <label>:11
+    %12 = load i32, i32* %j, align 4, !dbg !33
+    %13 = icmp ne i32 %12, 6, !dbg !34
+    br i1 %13, label %14, label %15, !dbg !33
+  
+  ; <label>:14
+    br label %__error.14
+  
+  ; <label>:15
+    ret i32 0, !dbg !36
+  
+  __error.14: 
+    call void @__VERIFIER_error() , !dbg !35
+    br label %15, !dbg !35
+  
+} 
+
+using predicates abs
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 25 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 75 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false , And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 169 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false , And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 328 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 577 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false ,false , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 945 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false ,false ,false , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 1465 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 2174 and mis is 6
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%j  = 10 ) ,
+((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,
+ Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,
+(%j  >= %i ) ,
+(%i  = 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ) 
+ Or(  And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  = 10 ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ,(%i  = 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) , And(  Not( (%i  = 1 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  = 10 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) , Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) ,(%j  >= %i ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= %i ) ,(%j  >= 7 ) ) , Or(  Not( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ) , Not( (%j  >= %i ) ) ) , Or( ((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) ,(%j  >= %i ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Or( (%j  <= 5 ) , Not( (%i  = 1 ) ) ,(%j  >= 7 ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or(  Not( (%j  = 10 ) ) ,(%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 10 ) ) , Not( (%i  = 1 ) ) ) , Not( (%j  >= %i ) ) ,((%j  + ((- 1 )  * %i ) )  <= (- 1 ) ) , Or( (%j  <= 5 ) ,(%j  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 3113 and mis is 6
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 10 reached

@@ -1,0 +1,40 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/half_2_true-unreach-call.c,false,clang-4.0,20)</h3><hr>
+<pre>#include "assert.h"
+
+int main() {
+  int n,i,k;
+  n = __VERIFIER_nondet_int();
+  __VERIFIER_assume(n <= LARGE_INT);
+  k = n;
+  i = 0;
+  while( i < n ) {
+    k--;
+    i = i + 2;
+  }
+
+  int j = 0;
+ 
+  while( j < n/2 ) {
+    if(!(k > 0)) __VERIFIER_error();
+    k--;
+    j++;
+  }
+  return 0;
+}
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/tep9gsyrCP.c
+maximum number of iterations 20 reached
+
+config: -e Z3 -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/tep9gsyrCP.c
+maximum number of iterations 20 reached
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/tep9gsyrCP.c
+strange solver status: Failure(java.lang.IllegalArgumentException: requirement failed: Solver could not be initialised: Cannot run program "yices-smt2": error=2, No such file or directory)</pre><hr>
+</body>
+</html>
+      

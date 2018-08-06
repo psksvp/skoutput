@@ -1,0 +1,439 @@
+define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    %m = alloca i32, align 4
+    %n = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 0, i32* %x, align 4, !dbg !19
+    store i32 0, i32* %m, align 4, !dbg !20
+    %2 = call i32 (...) @__VERIFIER_nondet_int() , !dbg !21
+    store i32 %2, i32* %n, align 4, !dbg !22
+    br label %3, !dbg !23
+  
+  ; <label>:3
+    %4 = load i32, i32* %x, align 4, !dbg !24
+    %5 = load i32, i32* %n, align 4, !dbg !27
+    %6 = icmp slt i32 %4, %5, !dbg !28
+    br i1 %6, label %7, label %15, !dbg !23
+  
+  ; <label>:7
+    %8 = call i32 (...) @__VERIFIER_nondet_int() , !dbg !29
+    %9 = icmp ne i32 %8, 0, !dbg !29
+    br i1 %9, label %10, label %12, !dbg !29
+  
+  ; <label>:10
+    %11 = load i32, i32* %x, align 4, !dbg !30
+    store i32 %11, i32* %m, align 4, !dbg !31
+    br label %12, !dbg !32
+  
+  ; <label>:12
+    %13 = load i32, i32* %x, align 4, !dbg !33
+    %14 = add nsw i32 %13, 1, !dbg !34
+    store i32 %14, i32* %x, align 4, !dbg !35
+    br label %3, !dbg !23
+  
+  ; <label>:15
+    %16 = load i32, i32* %m, align 4, !dbg !36
+    %17 = icmp sge i32 %16, 0, !dbg !37
+    br i1 %17, label %22, label %18, !dbg !38
+  
+  ; <label>:18
+    %19 = load i32, i32* %n, align 4, !dbg !39
+    %20 = icmp sle i32 %19, 0, !dbg !40
+    br i1 %20, label %22, label %21, !dbg !41
+  
+  ; <label>:21
+    br label %__error.21
+  
+  ; <label>:22
+    %23 = load i32, i32* %m, align 4, !dbg !44
+    %24 = load i32, i32* %n, align 4, !dbg !45
+    %25 = icmp slt i32 %23, %24, !dbg !46
+    br i1 %25, label %30, label %26, !dbg !47
+  
+  ; <label>:26
+    %27 = load i32, i32* %n, align 4, !dbg !48
+    %28 = icmp sle i32 %27, 0, !dbg !49
+    br i1 %28, label %30, label %29, !dbg !50
+  
+  ; <label>:29
+    br label %__error.29
+  
+  ; <label>:30
+    ret i32 0, !dbg !52
+  
+  __error.21: 
+    call void @__VERIFIER_error() , !dbg !42
+    br label %22, !dbg !42
+  
+  __error.29: 
+    call void @__VERIFIER_error() , !dbg !51
+    br label %30, !dbg !51
+  
+} 
+
+using predicates abs
+List(0, 1, 0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+running with predicates: 9
+((%m  + ((- 1 )  * %x ) )  <= 0 ) ,
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%m  >= 0 ) ,
+(%x  = 0 ) ,
+((%x  + ((- 1 )  * %m ) )  <= 0 ) ,
+(%n  <= %m ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or(  Not( (%n  <= %m ) ) ,(%n  <= %x ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( (%x  = 0 ) ) ) , Or(  Not( (%m  = 0 ) ) ,(%x  = 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+------------
+simplify cache hit is 59 and mis is 11
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 10
+(%m  <= (- 1 ) ) ,
+((%m  + ((- 1 )  * %x ) )  <= 0 ) ,
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%x  = 0 ) ,
+((%x  + ((- 1 )  * %m ) )  <= 0 ) ,
+(%n  <= 0 ) ,
+(%n  <= %m ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or(  Not( (%n  <= %m ) ) ,(%n  <= %x ) ) , Or(  Not( (%n  <= 0 ) ) ,(%n  <= %m ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( (%x  = 0 ) ) ) , Or(  Not( (%m  = 0 ) ) ,(%x  = 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 112 and mis is 22
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 8
+(%m  <= (- 1 ) ) ,
+((%m  + ((- 1 )  * %x ) )  <= 0 ) ,
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%x  = 0 ) ,
+((%x  + ((- 1 )  * %m ) )  <= 0 ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( (%x  = 0 ) ) ) , Or(  Not( (%m  = 0 ) ) ,(%x  = 0 ) ) , Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) , And(  Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+------------
+simplify cache hit is 165 and mis is 33
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%m  >= 0 ) ,
+(%x  = 0 ) ,
+(%n  <= %m ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or(  Not( (%n  <= %m ) ) ,(%n  <= %x ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %m ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( (%x  = 0 ) ) , Not( (%n  <= %x ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%x  = 0 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+------------
+simplify cache hit is 195 and mis is 40
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,4))
+new backedge found from 4 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 9
+((%m  + ((- 1 )  * %x ) )  <= 0 ) ,
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%m  >= 0 ) ,
+(%x  = 0 ) ,
+((%x  + ((- 1 )  * %m ) )  <= 0 ) ,
+(%n  <= %m ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or(  Not( (%n  <= %m ) ) ,(%n  <= %x ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( (%x  = 0 ) ) ) , Or(  Not( (%m  = 0 ) ) ,(%x  = 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+------------
+simplify cache hit is 341 and mis is 40
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5), (1,8), (5,8), (4,7), (2,6))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 6 with choice(5) exitValue is 0
+new backedge found from 7 to 5 with choice(4) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 9
+((%m  + ((- 1 )  * %x ) )  <= 0 ) ,
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%m  >= 0 ) ,
+(%x  = 0 ) ,
+((%x  + ((- 1 )  * %m ) )  <= 0 ) ,
+(%n  <= %m ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or(  Not( (%n  <= %m ) ) ,(%n  <= %x ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( (%x  = 0 ) ) ) , Or(  Not( (%m  = 0 ) ) ,(%x  = 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  >= 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  >= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+------------
+simplify cache hit is 531 and mis is 44
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5), (1,8), (1,12), (5,8), (5,12), (8,12), (4,7), (4,11), (7,11), (2,6), (2,9), (6,9), (3,10))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 2 with choice(1) exitValue is 0
+new backedge found from 12 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 6 with choice(5) exitValue is 0
+new backedge found from 12 to 6 with choice(5) exitValue is 0
+new backedge found from 12 to 9 with choice(8) exitValue is 0
+new backedge found from 7 to 5 with choice(4) exitValue is 0
+new backedge found from 11 to 5 with choice(4) exitValue is 0
+new backedge found from 11 to 8 with choice(7) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 0
+new backedge found from 9 to 3 with choice(2) exitValue is 0
+new backedge found from 9 to 7 with choice(6) exitValue is 1
+new backedge found from 10 to 4 with choice(3) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 10
+(%m  <= (- 1 ) ) ,
+((%m  + ((- 1 )  * %x ) )  <= 0 ) ,
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%x  = 0 ) ,
+((%x  + ((- 1 )  * %m ) )  <= 0 ) ,
+(%n  <= 0 ) ,
+(%n  <= %m ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or(  Not( (%n  <= %m ) ) ,(%n  <= %x ) ) , Or(  Not( (%n  <= 0 ) ) ,(%n  <= %m ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( (%x  = 0 ) ) ) , Or(  Not( (%m  = 0 ) ) ,(%x  = 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 719 and mis is 48
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5), (1,8), (1,12), (5,8), (5,12), (8,12), (4,7), (4,11), (7,11), (2,6), (2,9), (6,9), (3,10))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 2 with choice(1) exitValue is 0
+new backedge found from 12 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 6 with choice(5) exitValue is 0
+new backedge found from 12 to 6 with choice(5) exitValue is 0
+new backedge found from 12 to 9 with choice(8) exitValue is 0
+new backedge found from 7 to 5 with choice(4) exitValue is 0
+new backedge found from 11 to 5 with choice(4) exitValue is 0
+new backedge found from 11 to 8 with choice(7) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 0
+new backedge found from 9 to 3 with choice(2) exitValue is 0
+new backedge found from 9 to 7 with choice(6) exitValue is 1
+new backedge found from 10 to 4 with choice(3) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 8
+(%m  <= (- 1 ) ) ,
+((%m  + ((- 1 )  * %x ) )  <= 0 ) ,
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%x  = 0 ) ,
+((%x  + ((- 1 )  * %m ) )  <= 0 ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ,false , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( (%x  = 0 ) ) ) , Or(  Not( (%m  = 0 ) ) ,(%x  = 0 ) ) , Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+------------
+simplify cache hit is 907 and mis is 52
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5), (1,8), (1,12), (5,8), (5,12), (8,12), (4,7), (4,11), (7,11), (2,6), (2,9), (6,9), (3,10))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 2 with choice(1) exitValue is 0
+new backedge found from 12 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 6 with choice(5) exitValue is 0
+new backedge found from 12 to 6 with choice(5) exitValue is 0
+new backedge found from 12 to 9 with choice(8) exitValue is 0
+new backedge found from 7 to 5 with choice(4) exitValue is 0
+new backedge found from 11 to 5 with choice(4) exitValue is 0
+new backedge found from 11 to 8 with choice(7) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 0
+new backedge found from 9 to 3 with choice(2) exitValue is 0
+new backedge found from 9 to 7 with choice(6) exitValue is 1
+new backedge found from 10 to 4 with choice(3) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 10
+(%m  <= (- 1 ) ) ,
+((%m  + ((- 1 )  * %x ) )  <= 0 ) ,
+((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,
+(%m  = 0 ) ,
+(%x  = 0 ) ,
+((%x  + ((- 1 )  * %m ) )  <= 0 ) ,
+(%n  <= 0 ) ,
+(%n  <= %m ) ,
+(%n  <= %x ) ,
+(%n  >= 1 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%n  <= %x ) ) , Not( (%n  >= 1 ) ) ) , Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) ,(%n  >= 1 ) ) , Or(  Not( (%n  <= %m ) ) ,(%n  <= %x ) ) , Or(  Not( (%n  <= 0 ) ) ,(%n  <= %m ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Or( (%x  = 0 ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) ) , Or(  Not( (%x  = 0 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Or( (%m  = 0 ) , Not( (%x  = 0 ) ) ) , Or(  Not( (%m  = 0 ) ) ,(%x  = 0 ) ) , Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%x  = 0 ) ,((%x  + ((- 1 )  * %m ) )  <= 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  >= 1 ) ) , And(  Or(  Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%n  <= %x ) ) ) , Or( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ,(%n  <= %x ) ) , Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) , And(  Not( (%n  <= %m ) ) , Not( (%n  <= 0 ) ) , Not( ((%x  + ((- 1 )  * %m ) )  <= 0 ) ) , Not( (%x  = 0 ) ) , Not( ((%x  + ((- 1 )  * %n ) )  <= (- 1 ) ) ) , Not( (%m  <= (- 1 ) ) ) ,((%m  + ((- 1 )  * %x ) )  <= 0 ) ,(%m  = 0 ) ,(%n  <= %x ) ,(%n  >= 1 ) ) ,false ) 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 1033 and mis is 52
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,5), (1,8), (5,8), (4,7), (2,6))
+new backedge found from 5 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 2 with choice(1) exitValue is 0
+new backedge found from 8 to 6 with choice(5) exitValue is 0
+new backedge found from 7 to 5 with choice(4) exitValue is 0
+new backedge found from 6 to 3 with choice(2) exitValue is 0
+----------------------
+UNKNOWN
+refinement failure: maximum number of iterations 10 reached

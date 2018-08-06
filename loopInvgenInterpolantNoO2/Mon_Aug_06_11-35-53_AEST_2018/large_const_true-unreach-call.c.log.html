@@ -1,0 +1,55 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/large_const_true-unreach-call.c,false,clang-4.0,10)</h3><hr>
+<pre>#define LARGE_INT 1000000
+#include "assert.h"
+
+int main(int argc, char* argv[]) {
+  int c1 = 4000;
+  int c2 = 2000;
+  int c3 = 10000;
+  int n, v;
+  int i, k, j;
+
+  n = __VERIFIER_nondet_int();
+  __VERIFIER_assume(0 <= n && n < 10);
+
+  k = 0;
+  i = 0;
+  while( i < n ) {
+    i++;
+    v = __VERIFIER_nondet_int();
+    __VERIFIER_assume(0 <= v && n < 2);
+    if( v == 0 )
+      k += c1;
+    else if( v == 1 )
+      k += c2;
+    else
+      k += c3;
+  }
+
+  j = 0;
+  while( j < n ) {
+    //if(!(k > 0)) __VERIFIER_error();
+    if(!(k > 0)) __VERIFIER_error();
+    j++;
+    k--;
+  }
+
+  return 0;
+}
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/WZ2InWaWzc.c
+equality: unexpected equality: Local(5) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace()), Named(Local(1)) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace())
+
+config: -e Z3 -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/WZ2InWaWzc.c
+equality: unexpected equality: Local(5) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace()), Named(Local(1)) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace())
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/WZ2InWaWzc.c
+equality: unexpected equality: Local(5) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace()), Named(Local(1)) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace())</pre><hr>
+</body>
+</html>
+      

@@ -1,0 +1,590 @@
+define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    %1 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !15
+    %2 = icmp ult i32 %1, 11, !dbg !16
+    %3 = zext i1 %2 to i32, !dbg !17
+    tail call void @__VERIFIER_assume(i32 %3) #2 , !dbg !19
+    %4 = mul nsw i32 %1, 1000000
+    br label %5, !dbg !20
+  
+  ; <label>:5
+    %6 = phi i32 [ 0, %0 ], [ %8, %5 ]
+    %7 = icmp slt i32 %6, %4, !dbg !21
+    %8 = add nsw i32 %6, %1, !dbg !23
+    br i1 %7, label %5, label %9, !dbg !25, !llvm.loop !26
+  
+  ; <label>:9
+    %10 = icmp eq i32 %6, %4, !dbg !29
+    br i1 %10, label %12, label %11, !dbg !30
+  
+  ; <label>:11
+    br label %__error.11
+  
+  ; <label>:12
+    ret i32 0, !dbg !34
+  
+  __error.11: 
+    tail call void @__VERIFIER_error() #2 , !dbg !32
+    br label %12, !dbg !33
+  
+} 
+
+using predicates abs
+List(0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 18 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 55 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 112 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 196 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 315 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 478 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 695 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 977 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 1336 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 1785 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 2338 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 3010 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 3817 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 4776 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 5905 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 7223 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 8750 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%6  = 0 ) ,
+ Not( (11  <= %1 ) ) ,
+ Not( (%6  = %4 ) ) ,
+ Not( (%4  <= %6 ) ) ,
+(%1  >= 0 ) ,
+(%4  = (1000000  * %1 ) ) ,
+(%4  <= %6 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%6  = %4 ) ) ,(%4  <= %6 ) ) , Or(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%4  <= %6 ) ) ) , Or(  Not( (%4  <= %6 ) ) ,(%4  <= %6 ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) ,(%6  = 0 ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%4  <= %6 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) , Not( (%4  <= %6 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%6  = 0 ) ) , Not(  Not( (%6  = %4 ) ) ) ) , Not(  Not( (%4  <= %6 ) ) ) , Not( (11  <= %1 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+ Or(  And(  Not(  Not( (%4  <= %6 ) ) ) , Not( (%6  = 0 ) ) , Not( (11  <= %1 ) ) , Not( (%6  = %4 ) ) ,(%1  >= 0 ) ,(%4  = (1000000  * %1 ) ) ,(%4  <= %6 ) ) ,false ) 
+------------
+simplify cache hit is 10507 and mis is 5
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 20 reached

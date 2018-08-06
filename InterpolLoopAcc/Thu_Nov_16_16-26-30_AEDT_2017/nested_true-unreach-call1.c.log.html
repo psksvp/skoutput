@@ -1,0 +1,108 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-acceleration/nested_true-unreach-call1.c,false,clang-3.7,20)</h3><hr>
+<pre>extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+
+void __VERIFIER_assert(int cond) {
+  if (!(cond)) {
+    ERROR: __VERIFIER_error();
+  }
+  return;
+}
+
+int main(void) {
+  unsigned int x = 0;
+  unsigned int y = 0;
+
+  while (x < 0x0fffffff) {
+    y = 0;
+
+    while (y < 10) {
+      y++;
+    }
+
+    x++;
+  }
+
+  //__VERIFIER_assert(x % 2);
+  if(!(x % 2)) __VERIFIER_error();
+}
+</pre><hr>
+<pre>define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 0, i32* %x, align 4, !dbg !17
+    store i32 0, i32* %y, align 4, !dbg !18
+    br label %2, !dbg !19
+  
+  ; <label>:2
+    %3 = load i32, i32* %x, align 4, !dbg !20
+    %4 = icmp ult i32 %3, 268435455, !dbg !23
+    br i1 %4, label %5, label %15, !dbg !19
+  
+  ; <label>:5
+    store i32 0, i32* %y, align 4, !dbg !24
+    br label %6, !dbg !25
+  
+  ; <label>:6
+    %7 = load i32, i32* %y, align 4, !dbg !26
+    %8 = icmp ult i32 %7, 10, !dbg !27
+    br i1 %8, label %9, label %12, !dbg !25
+  
+  ; <label>:9
+    %10 = load i32, i32* %y, align 4, !dbg !28
+    %11 = add i32 %10, 1, !dbg !28
+    store i32 %11, i32* %y, align 4, !dbg !28
+    br label %6, !dbg !25
+  
+  ; <label>:12
+    %13 = load i32, i32* %x, align 4, !dbg !29
+    %14 = add i32 %13, 1, !dbg !29
+    store i32 %14, i32* %x, align 4, !dbg !29
+    br label %2, !dbg !19
+  
+  ; <label>:15
+    %16 = load i32, i32* %x, align 4, !dbg !30
+    %17 = urem i32 %16, 2, !dbg !31
+    %18 = icmp ne i32 %17, 0, !dbg !31
+    br i1 %18, label %20, label %19, !dbg !32
+  
+  ; <label>:19
+    br label %__error.19
+  
+  ; <label>:20
+    %21 = load i32, i32* %1, !dbg !34
+    ret i32 %21, !dbg !34
+  
+  __error.19: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !33
+    unreachable, !dbg !33
+  
+} 
+
+----------------
+ And( true ,(%16@1  = %x@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) , Not( %4@1 ) ,(%3@1  >= 0 ) ,(%4@1  = (%3@1  < 268435455 ) ) ,(268435455  >= 0 ) , Not( %18@1 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%17@1  = (%16@1 % 2 ) ) ) 
+----------------
+#############>>>>>> current iteration is 0
+using interpolant
+choices:List(0, 1, 1, 0)
+Predicates are: 
+ (interpolants (= 0 %x@2 ) false ) 
+new back edges is: Vector()
+----------------
+ And( true ,(%16@1  = %x@3 ) ,(%3@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%7@1  = %y@3 ) ,(%y@3  = 0 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) ,%4@1 ,(%3@1  >= 0 ) ,(%4@1  = (%3@1  < 268435455 ) ) ,(268435455  >= 0 ) , Not( %8@1 ) ,(%7@1  >= 0 ) ,(%8@1  = (%7@1  < 10 ) ) ,(10  >= 0 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) , Not( %4@2 ) ,(%3@2  >= 0 ) ,(%4@2  = (%3@2  < 268435455 ) ) ,(268435455  >= 0 ) , Not( %18@1 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%17@1  = (%16@1 % 2 ) ) ) 
+----------------
+#############>>>>>> current iteration is 1
+using interpolant
+choices:List(0, 0, 0, 1, 0, 1, 1, 0)
+Predicates are: 
+ (interpolants true true (= 0 %y@3 ) false false false ) 
+UNKNOWN
+refinement failure due to exception: 5</pre><hr>
+</body>
+</html>
+      

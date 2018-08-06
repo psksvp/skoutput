@@ -1,0 +1,1040 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-acceleration/multivar_true-unreach-call1.c,false,clang-3.7,20)</h3><hr>
+<pre>extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+extern unsigned int __VERIFIER_nondet_uint(void);
+
+void __VERIFIER_assert(int cond) {
+  if (!(cond)) {
+    ERROR: __VERIFIER_error();
+  }
+  return;
+}
+
+int main(void) {
+  unsigned int x = __VERIFIER_nondet_uint();
+  unsigned int y = x;
+
+  while (x < 1024) {
+    x++;
+    y++;
+  }
+
+  //__VERIFIER_assert(x == y);
+  if(!(x==y)) __VERIFIER_error();
+}
+</pre><hr>
+<pre>define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    %2 = call i32 @__VERIFIER_nondet_uint() , !dbg !17
+    store i32 %2, i32* %x, align 4, !dbg !18
+    %3 = load i32, i32* %x, align 4, !dbg !19
+    store i32 %3, i32* %y, align 4, !dbg !20
+    br label %4, !dbg !21
+  
+  ; <label>:4
+    %5 = load i32, i32* %x, align 4, !dbg !22
+    %6 = icmp ult i32 %5, 1024, !dbg !25
+    br i1 %6, label %7, label %12, !dbg !21
+  
+  ; <label>:7
+    %8 = load i32, i32* %x, align 4, !dbg !26
+    %9 = add i32 %8, 1, !dbg !26
+    store i32 %9, i32* %x, align 4, !dbg !26
+    %10 = load i32, i32* %y, align 4, !dbg !27
+    %11 = add i32 %10, 1, !dbg !27
+    store i32 %11, i32* %y, align 4, !dbg !27
+    br label %4, !dbg !21
+  
+  ; <label>:12
+    %13 = load i32, i32* %x, align 4, !dbg !28
+    %14 = load i32, i32* %y, align 4, !dbg !29
+    %15 = icmp eq i32 %13, %14, !dbg !30
+    br i1 %15, label %17, label %16, !dbg !31
+  
+  ; <label>:16
+    br label %__error.16
+  
+  ; <label>:17
+    %18 = load i32, i32* %1, !dbg !33
+    ret i32 %18, !dbg !33
+  
+  __error.16: 
+    call void (...) @__VERIFIER_error() #3 , !dbg !32
+    unreachable, !dbg !32
+  
+} 
+
+----------------
+ And( true ,(%13@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) , Not( %6@1 ) ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@2 ) ) 
+----------------
+#############>>>>>> current iteration is 0
+using predicates abs
+using predAbs on trace: List(0, 1, 1, 0)
+List(0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+----------------
+ And( true ,(%13@1  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) , Not( %6@2 ) ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@3 ) ) 
+----------------
+#############>>>>>> current iteration is 1
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 22 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) , Not( %6@3 ) ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@4 ) ) 
+----------------
+#############>>>>>> current iteration is 2
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 72 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) , Not( %6@4 ) ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@5 ) ) 
+----------------
+#############>>>>>> current iteration is 3
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 166 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) , Not( %6@5 ) ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@6 ) ) 
+----------------
+#############>>>>>> current iteration is 4
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 325 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) , Not( %6@6 ) ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@7 ) ) 
+----------------
+#############>>>>>> current iteration is 5
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 574 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) , Not( %6@7 ) ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@8 ) ) 
+----------------
+#############>>>>>> current iteration is 6
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 942 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) , Not( %6@8 ) ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@9 ) ) 
+----------------
+#############>>>>>> current iteration is 7
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 1462 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) , Not( %6@9 ) ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@10 ) ) 
+----------------
+#############>>>>>> current iteration is 8
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 2171 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) , Not( %6@10 ) ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@11 ) ) 
+----------------
+#############>>>>>> current iteration is 9
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 3110 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) , Not( %6@11 ) ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@12 ) ) 
+----------------
+#############>>>>>> current iteration is 10
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 4324 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) , Not( %6@12 ) ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@13 ) ) 
+----------------
+#############>>>>>> current iteration is 11
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 5862 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) , Not( %6@13 ) ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@14 ) ) 
+----------------
+#############>>>>>> current iteration is 12
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 7777 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@15 ) ,(%5@14  = %x@15 ) ,(%8@13  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) ,%6@13 ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) ,(%y@15  = %11@13 ) ,(%11@13  = (%10@13  + 1 ) ) ,(%10@13  = %y@14 ) ,(%x@15  = %9@13 ) ,(%9@13  = (%8@13  + 1 ) ) , Not( %6@14 ) ,(%5@14  >= 0 ) ,(%6@14  = (%5@14  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@15 ) ) 
+----------------
+#############>>>>>> current iteration is 13
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 10126 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@16 ) ,(%5@15  = %x@16 ) ,(%8@14  = %x@15 ) ,(%5@14  = %x@15 ) ,(%8@13  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) ,%6@13 ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) ,(%y@15  = %11@13 ) ,(%11@13  = (%10@13  + 1 ) ) ,(%10@13  = %y@14 ) ,(%x@15  = %9@13 ) ,(%9@13  = (%8@13  + 1 ) ) ,%6@14 ,(%5@14  >= 0 ) ,(%6@14  = (%5@14  < 1024 ) ) ,(1024  >= 0 ) ,(%y@16  = %11@14 ) ,(%11@14  = (%10@14  + 1 ) ) ,(%10@14  = %y@15 ) ,(%x@16  = %9@14 ) ,(%9@14  = (%8@14  + 1 ) ) , Not( %6@15 ) ,(%5@15  >= 0 ) ,(%6@15  = (%5@15  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@16 ) ) 
+----------------
+#############>>>>>> current iteration is 14
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 12970 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@17 ) ,(%5@16  = %x@17 ) ,(%8@15  = %x@16 ) ,(%5@15  = %x@16 ) ,(%8@14  = %x@15 ) ,(%5@14  = %x@15 ) ,(%8@13  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) ,%6@13 ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) ,(%y@15  = %11@13 ) ,(%11@13  = (%10@13  + 1 ) ) ,(%10@13  = %y@14 ) ,(%x@15  = %9@13 ) ,(%9@13  = (%8@13  + 1 ) ) ,%6@14 ,(%5@14  >= 0 ) ,(%6@14  = (%5@14  < 1024 ) ) ,(1024  >= 0 ) ,(%y@16  = %11@14 ) ,(%11@14  = (%10@14  + 1 ) ) ,(%10@14  = %y@15 ) ,(%x@16  = %9@14 ) ,(%9@14  = (%8@14  + 1 ) ) ,%6@15 ,(%5@15  >= 0 ) ,(%6@15  = (%5@15  < 1024 ) ) ,(1024  >= 0 ) ,(%y@17  = %11@15 ) ,(%11@15  = (%10@15  + 1 ) ) ,(%10@15  = %y@16 ) ,(%x@17  = %9@15 ) ,(%9@15  = (%8@15  + 1 ) ) , Not( %6@16 ) ,(%5@16  >= 0 ) ,(%6@16  = (%5@16  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@17 ) ) 
+----------------
+#############>>>>>> current iteration is 15
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 16374 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@18 ) ,(%5@17  = %x@18 ) ,(%8@16  = %x@17 ) ,(%5@16  = %x@17 ) ,(%8@15  = %x@16 ) ,(%5@15  = %x@16 ) ,(%8@14  = %x@15 ) ,(%5@14  = %x@15 ) ,(%8@13  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) ,%6@13 ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) ,(%y@15  = %11@13 ) ,(%11@13  = (%10@13  + 1 ) ) ,(%10@13  = %y@14 ) ,(%x@15  = %9@13 ) ,(%9@13  = (%8@13  + 1 ) ) ,%6@14 ,(%5@14  >= 0 ) ,(%6@14  = (%5@14  < 1024 ) ) ,(1024  >= 0 ) ,(%y@16  = %11@14 ) ,(%11@14  = (%10@14  + 1 ) ) ,(%10@14  = %y@15 ) ,(%x@16  = %9@14 ) ,(%9@14  = (%8@14  + 1 ) ) ,%6@15 ,(%5@15  >= 0 ) ,(%6@15  = (%5@15  < 1024 ) ) ,(1024  >= 0 ) ,(%y@17  = %11@15 ) ,(%11@15  = (%10@15  + 1 ) ) ,(%10@15  = %y@16 ) ,(%x@17  = %9@15 ) ,(%9@15  = (%8@15  + 1 ) ) ,%6@16 ,(%5@16  >= 0 ) ,(%6@16  = (%5@16  < 1024 ) ) ,(1024  >= 0 ) ,(%y@18  = %11@16 ) ,(%11@16  = (%10@16  + 1 ) ) ,(%10@16  = %y@17 ) ,(%x@18  = %9@16 ) ,(%9@16  = (%8@16  + 1 ) ) , Not( %6@17 ) ,(%5@17  >= 0 ) ,(%6@17  = (%5@17  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@18 ) ) 
+----------------
+#############>>>>>> current iteration is 16
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 20407 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@19 ) ,(%5@18  = %x@19 ) ,(%8@17  = %x@18 ) ,(%5@17  = %x@18 ) ,(%8@16  = %x@17 ) ,(%5@16  = %x@17 ) ,(%8@15  = %x@16 ) ,(%5@15  = %x@16 ) ,(%8@14  = %x@15 ) ,(%5@14  = %x@15 ) ,(%8@13  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) ,%6@13 ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) ,(%y@15  = %11@13 ) ,(%11@13  = (%10@13  + 1 ) ) ,(%10@13  = %y@14 ) ,(%x@15  = %9@13 ) ,(%9@13  = (%8@13  + 1 ) ) ,%6@14 ,(%5@14  >= 0 ) ,(%6@14  = (%5@14  < 1024 ) ) ,(1024  >= 0 ) ,(%y@16  = %11@14 ) ,(%11@14  = (%10@14  + 1 ) ) ,(%10@14  = %y@15 ) ,(%x@16  = %9@14 ) ,(%9@14  = (%8@14  + 1 ) ) ,%6@15 ,(%5@15  >= 0 ) ,(%6@15  = (%5@15  < 1024 ) ) ,(1024  >= 0 ) ,(%y@17  = %11@15 ) ,(%11@15  = (%10@15  + 1 ) ) ,(%10@15  = %y@16 ) ,(%x@17  = %9@15 ) ,(%9@15  = (%8@15  + 1 ) ) ,%6@16 ,(%5@16  >= 0 ) ,(%6@16  = (%5@16  < 1024 ) ) ,(1024  >= 0 ) ,(%y@18  = %11@16 ) ,(%11@16  = (%10@16  + 1 ) ) ,(%10@16  = %y@17 ) ,(%x@18  = %9@16 ) ,(%9@16  = (%8@16  + 1 ) ) ,%6@17 ,(%5@17  >= 0 ) ,(%6@17  = (%5@17  < 1024 ) ) ,(1024  >= 0 ) ,(%y@19  = %11@17 ) ,(%11@17  = (%10@17  + 1 ) ) ,(%10@17  = %y@18 ) ,(%x@19  = %9@17 ) ,(%9@17  = (%8@17  + 1 ) ) , Not( %6@18 ) ,(%5@18  >= 0 ) ,(%6@18  = (%5@18  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@19 ) ) 
+----------------
+#############>>>>>> current iteration is 17
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 25142 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@20 ) ,(%5@19  = %x@20 ) ,(%8@18  = %x@19 ) ,(%5@18  = %x@19 ) ,(%8@17  = %x@18 ) ,(%5@17  = %x@18 ) ,(%8@16  = %x@17 ) ,(%5@16  = %x@17 ) ,(%8@15  = %x@16 ) ,(%5@15  = %x@16 ) ,(%8@14  = %x@15 ) ,(%5@14  = %x@15 ) ,(%8@13  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) ,%6@13 ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) ,(%y@15  = %11@13 ) ,(%11@13  = (%10@13  + 1 ) ) ,(%10@13  = %y@14 ) ,(%x@15  = %9@13 ) ,(%9@13  = (%8@13  + 1 ) ) ,%6@14 ,(%5@14  >= 0 ) ,(%6@14  = (%5@14  < 1024 ) ) ,(1024  >= 0 ) ,(%y@16  = %11@14 ) ,(%11@14  = (%10@14  + 1 ) ) ,(%10@14  = %y@15 ) ,(%x@16  = %9@14 ) ,(%9@14  = (%8@14  + 1 ) ) ,%6@15 ,(%5@15  >= 0 ) ,(%6@15  = (%5@15  < 1024 ) ) ,(1024  >= 0 ) ,(%y@17  = %11@15 ) ,(%11@15  = (%10@15  + 1 ) ) ,(%10@15  = %y@16 ) ,(%x@17  = %9@15 ) ,(%9@15  = (%8@15  + 1 ) ) ,%6@16 ,(%5@16  >= 0 ) ,(%6@16  = (%5@16  < 1024 ) ) ,(1024  >= 0 ) ,(%y@18  = %11@16 ) ,(%11@16  = (%10@16  + 1 ) ) ,(%10@16  = %y@17 ) ,(%x@18  = %9@16 ) ,(%9@16  = (%8@16  + 1 ) ) ,%6@17 ,(%5@17  >= 0 ) ,(%6@17  = (%5@17  < 1024 ) ) ,(1024  >= 0 ) ,(%y@19  = %11@17 ) ,(%11@17  = (%10@17  + 1 ) ) ,(%10@17  = %y@18 ) ,(%x@19  = %9@17 ) ,(%9@17  = (%8@17  + 1 ) ) ,%6@18 ,(%5@18  >= 0 ) ,(%6@18  = (%5@18  < 1024 ) ) ,(1024  >= 0 ) ,(%y@20  = %11@18 ) ,(%11@18  = (%10@18  + 1 ) ) ,(%10@18  = %y@19 ) ,(%x@20  = %9@18 ) ,(%9@18  = (%8@18  + 1 ) ) , Not( %6@19 ) ,(%5@19  >= 0 ) ,(%6@19  = (%5@19  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@20 ) ) 
+----------------
+#############>>>>>> current iteration is 18
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 30656 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@21 ) ,(%5@20  = %x@21 ) ,(%8@19  = %x@20 ) ,(%5@19  = %x@20 ) ,(%8@18  = %x@19 ) ,(%5@18  = %x@19 ) ,(%8@17  = %x@18 ) ,(%5@17  = %x@18 ) ,(%8@16  = %x@17 ) ,(%5@16  = %x@17 ) ,(%8@15  = %x@16 ) ,(%5@15  = %x@16 ) ,(%8@14  = %x@15 ) ,(%5@14  = %x@15 ) ,(%8@13  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) ,%6@13 ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) ,(%y@15  = %11@13 ) ,(%11@13  = (%10@13  + 1 ) ) ,(%10@13  = %y@14 ) ,(%x@15  = %9@13 ) ,(%9@13  = (%8@13  + 1 ) ) ,%6@14 ,(%5@14  >= 0 ) ,(%6@14  = (%5@14  < 1024 ) ) ,(1024  >= 0 ) ,(%y@16  = %11@14 ) ,(%11@14  = (%10@14  + 1 ) ) ,(%10@14  = %y@15 ) ,(%x@16  = %9@14 ) ,(%9@14  = (%8@14  + 1 ) ) ,%6@15 ,(%5@15  >= 0 ) ,(%6@15  = (%5@15  < 1024 ) ) ,(1024  >= 0 ) ,(%y@17  = %11@15 ) ,(%11@15  = (%10@15  + 1 ) ) ,(%10@15  = %y@16 ) ,(%x@17  = %9@15 ) ,(%9@15  = (%8@15  + 1 ) ) ,%6@16 ,(%5@16  >= 0 ) ,(%6@16  = (%5@16  < 1024 ) ) ,(1024  >= 0 ) ,(%y@18  = %11@16 ) ,(%11@16  = (%10@16  + 1 ) ) ,(%10@16  = %y@17 ) ,(%x@18  = %9@16 ) ,(%9@16  = (%8@16  + 1 ) ) ,%6@17 ,(%5@17  >= 0 ) ,(%6@17  = (%5@17  < 1024 ) ) ,(1024  >= 0 ) ,(%y@19  = %11@17 ) ,(%11@17  = (%10@17  + 1 ) ) ,(%10@17  = %y@18 ) ,(%x@19  = %9@17 ) ,(%9@17  = (%8@17  + 1 ) ) ,%6@18 ,(%5@18  >= 0 ) ,(%6@18  = (%5@18  < 1024 ) ) ,(1024  >= 0 ) ,(%y@20  = %11@18 ) ,(%11@18  = (%10@18  + 1 ) ) ,(%10@18  = %y@19 ) ,(%x@20  = %9@18 ) ,(%9@18  = (%8@18  + 1 ) ) ,%6@19 ,(%5@19  >= 0 ) ,(%6@19  = (%5@19  < 1024 ) ) ,(1024  >= 0 ) ,(%y@21  = %11@19 ) ,(%11@19  = (%10@19  + 1 ) ) ,(%10@19  = %y@20 ) ,(%x@21  = %9@19 ) ,(%9@19  = (%8@19  + 1 ) ) , Not( %6@20 ) ,(%5@20  >= 0 ) ,(%6@20  = (%5@20  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@21 ) ) 
+----------------
+#############>>>>>> current iteration is 19
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+8 predicates generated
+true ,
+(%x  <= 1023 ) ,
+ Or( ((%x  + ((- 1 )  * %y ) )  <= (- 1 ) ) ,((((- 1 )  * %x )  + %y )  <= (- 1 ) ) ) ,
+((%y  + ((- 1 )  * %x ) )  <= 0 ) ,
+(%x  >= 0 ) ,
+(%1  = 0 ) ,
+((%x  + ((- 1 )  * %y ) )  <= 0 ) ,
+(1024  <= %x ) 
+running filters on the generated input predicates
+running reduceToSuperSetTerms
+true 
+running with predicates: 1
+true 
+
+Fixed point reached with Predicates ===============
+true 
+ Or( true ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+ Or( true ,false ) 
+------------
+simplify cache hit is 37030 and mis is 1
+last loc eq to false? >>>no
+----------------
+ And( true ,(%13@1  = %x@22 ) ,(%5@21  = %x@22 ) ,(%8@20  = %x@21 ) ,(%5@20  = %x@21 ) ,(%8@19  = %x@20 ) ,(%5@19  = %x@20 ) ,(%8@18  = %x@19 ) ,(%5@18  = %x@19 ) ,(%8@17  = %x@18 ) ,(%5@17  = %x@18 ) ,(%8@16  = %x@17 ) ,(%5@16  = %x@17 ) ,(%8@15  = %x@16 ) ,(%5@15  = %x@16 ) ,(%8@14  = %x@15 ) ,(%5@14  = %x@15 ) ,(%8@13  = %x@14 ) ,(%5@13  = %x@14 ) ,(%8@12  = %x@13 ) ,(%5@12  = %x@13 ) ,(%8@11  = %x@12 ) ,(%5@11  = %x@12 ) ,(%8@10  = %x@11 ) ,(%5@10  = %x@11 ) ,(%8@9  = %x@10 ) ,(%5@9  = %x@10 ) ,(%8@8  = %x@9 ) ,(%5@8  = %x@9 ) ,(%8@7  = %x@8 ) ,(%5@7  = %x@8 ) ,(%8@6  = %x@7 ) ,(%5@6  = %x@7 ) ,(%8@5  = %x@6 ) ,(%5@5  = %x@6 ) ,(%8@4  = %x@5 ) ,(%5@4  = %x@5 ) ,(%8@3  = %x@4 ) ,(%5@3  = %x@4 ) ,(%8@2  = %x@3 ) ,(%5@2  = %x@3 ) ,(%8@1  = %x@2 ) ,(%5@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = %3@1 ) ,(%3@1  = %x@2 ) ,(%x@2  = %2@1 ) ,(%2@1  >= 0 ) ,%6@1 ,(%5@1  >= 0 ) ,(%6@1  = (%5@1  < 1024 ) ) ,(1024  >= 0 ) ,(%y@3  = %11@1 ) ,(%11@1  = (%10@1  + 1 ) ) ,(%10@1  = %y@2 ) ,(%x@3  = %9@1 ) ,(%9@1  = (%8@1  + 1 ) ) ,%6@2 ,(%5@2  >= 0 ) ,(%6@2  = (%5@2  < 1024 ) ) ,(1024  >= 0 ) ,(%y@4  = %11@2 ) ,(%11@2  = (%10@2  + 1 ) ) ,(%10@2  = %y@3 ) ,(%x@4  = %9@2 ) ,(%9@2  = (%8@2  + 1 ) ) ,%6@3 ,(%5@3  >= 0 ) ,(%6@3  = (%5@3  < 1024 ) ) ,(1024  >= 0 ) ,(%y@5  = %11@3 ) ,(%11@3  = (%10@3  + 1 ) ) ,(%10@3  = %y@4 ) ,(%x@5  = %9@3 ) ,(%9@3  = (%8@3  + 1 ) ) ,%6@4 ,(%5@4  >= 0 ) ,(%6@4  = (%5@4  < 1024 ) ) ,(1024  >= 0 ) ,(%y@6  = %11@4 ) ,(%11@4  = (%10@4  + 1 ) ) ,(%10@4  = %y@5 ) ,(%x@6  = %9@4 ) ,(%9@4  = (%8@4  + 1 ) ) ,%6@5 ,(%5@5  >= 0 ) ,(%6@5  = (%5@5  < 1024 ) ) ,(1024  >= 0 ) ,(%y@7  = %11@5 ) ,(%11@5  = (%10@5  + 1 ) ) ,(%10@5  = %y@6 ) ,(%x@7  = %9@5 ) ,(%9@5  = (%8@5  + 1 ) ) ,%6@6 ,(%5@6  >= 0 ) ,(%6@6  = (%5@6  < 1024 ) ) ,(1024  >= 0 ) ,(%y@8  = %11@6 ) ,(%11@6  = (%10@6  + 1 ) ) ,(%10@6  = %y@7 ) ,(%x@8  = %9@6 ) ,(%9@6  = (%8@6  + 1 ) ) ,%6@7 ,(%5@7  >= 0 ) ,(%6@7  = (%5@7  < 1024 ) ) ,(1024  >= 0 ) ,(%y@9  = %11@7 ) ,(%11@7  = (%10@7  + 1 ) ) ,(%10@7  = %y@8 ) ,(%x@9  = %9@7 ) ,(%9@7  = (%8@7  + 1 ) ) ,%6@8 ,(%5@8  >= 0 ) ,(%6@8  = (%5@8  < 1024 ) ) ,(1024  >= 0 ) ,(%y@10  = %11@8 ) ,(%11@8  = (%10@8  + 1 ) ) ,(%10@8  = %y@9 ) ,(%x@10  = %9@8 ) ,(%9@8  = (%8@8  + 1 ) ) ,%6@9 ,(%5@9  >= 0 ) ,(%6@9  = (%5@9  < 1024 ) ) ,(1024  >= 0 ) ,(%y@11  = %11@9 ) ,(%11@9  = (%10@9  + 1 ) ) ,(%10@9  = %y@10 ) ,(%x@11  = %9@9 ) ,(%9@9  = (%8@9  + 1 ) ) ,%6@10 ,(%5@10  >= 0 ) ,(%6@10  = (%5@10  < 1024 ) ) ,(1024  >= 0 ) ,(%y@12  = %11@10 ) ,(%11@10  = (%10@10  + 1 ) ) ,(%10@10  = %y@11 ) ,(%x@12  = %9@10 ) ,(%9@10  = (%8@10  + 1 ) ) ,%6@11 ,(%5@11  >= 0 ) ,(%6@11  = (%5@11  < 1024 ) ) ,(1024  >= 0 ) ,(%y@13  = %11@11 ) ,(%11@11  = (%10@11  + 1 ) ) ,(%10@11  = %y@12 ) ,(%x@13  = %9@11 ) ,(%9@11  = (%8@11  + 1 ) ) ,%6@12 ,(%5@12  >= 0 ) ,(%6@12  = (%5@12  < 1024 ) ) ,(1024  >= 0 ) ,(%y@14  = %11@12 ) ,(%11@12  = (%10@12  + 1 ) ) ,(%10@12  = %y@13 ) ,(%x@14  = %9@12 ) ,(%9@12  = (%8@12  + 1 ) ) ,%6@13 ,(%5@13  >= 0 ) ,(%6@13  = (%5@13  < 1024 ) ) ,(1024  >= 0 ) ,(%y@15  = %11@13 ) ,(%11@13  = (%10@13  + 1 ) ) ,(%10@13  = %y@14 ) ,(%x@15  = %9@13 ) ,(%9@13  = (%8@13  + 1 ) ) ,%6@14 ,(%5@14  >= 0 ) ,(%6@14  = (%5@14  < 1024 ) ) ,(1024  >= 0 ) ,(%y@16  = %11@14 ) ,(%11@14  = (%10@14  + 1 ) ) ,(%10@14  = %y@15 ) ,(%x@16  = %9@14 ) ,(%9@14  = (%8@14  + 1 ) ) ,%6@15 ,(%5@15  >= 0 ) ,(%6@15  = (%5@15  < 1024 ) ) ,(1024  >= 0 ) ,(%y@17  = %11@15 ) ,(%11@15  = (%10@15  + 1 ) ) ,(%10@15  = %y@16 ) ,(%x@17  = %9@15 ) ,(%9@15  = (%8@15  + 1 ) ) ,%6@16 ,(%5@16  >= 0 ) ,(%6@16  = (%5@16  < 1024 ) ) ,(1024  >= 0 ) ,(%y@18  = %11@16 ) ,(%11@16  = (%10@16  + 1 ) ) ,(%10@16  = %y@17 ) ,(%x@18  = %9@16 ) ,(%9@16  = (%8@16  + 1 ) ) ,%6@17 ,(%5@17  >= 0 ) ,(%6@17  = (%5@17  < 1024 ) ) ,(1024  >= 0 ) ,(%y@19  = %11@17 ) ,(%11@17  = (%10@17  + 1 ) ) ,(%10@17  = %y@18 ) ,(%x@19  = %9@17 ) ,(%9@17  = (%8@17  + 1 ) ) ,%6@18 ,(%5@18  >= 0 ) ,(%6@18  = (%5@18  < 1024 ) ) ,(1024  >= 0 ) ,(%y@20  = %11@18 ) ,(%11@18  = (%10@18  + 1 ) ) ,(%10@18  = %y@19 ) ,(%x@20  = %9@18 ) ,(%9@18  = (%8@18  + 1 ) ) ,%6@19 ,(%5@19  >= 0 ) ,(%6@19  = (%5@19  < 1024 ) ) ,(1024  >= 0 ) ,(%y@21  = %11@19 ) ,(%11@19  = (%10@19  + 1 ) ) ,(%10@19  = %y@20 ) ,(%x@21  = %9@19 ) ,(%9@19  = (%8@19  + 1 ) ) ,%6@20 ,(%5@20  >= 0 ) ,(%6@20  = (%5@20  < 1024 ) ) ,(1024  >= 0 ) ,(%y@22  = %11@20 ) ,(%11@20  = (%10@20  + 1 ) ) ,(%10@20  = %y@21 ) ,(%x@22  = %9@20 ) ,(%9@20  = (%8@20  + 1 ) ) , Not( %6@21 ) ,(%5@21  >= 0 ) ,(%6@21  = (%5@21  < 1024 ) ) ,(1024  >= 0 ) , Not( %15@1 ) ,(%15@1  = (%13@1  = %14@1 ) ) ,(%14@1  = %y@22 ) ) 
+----------------
+#############>>>>>> current iteration is 20
+UNKNOWN
+refinement failure: maximum number of iterations 20 reached</pre><hr>
+</body>
+</html>
+      

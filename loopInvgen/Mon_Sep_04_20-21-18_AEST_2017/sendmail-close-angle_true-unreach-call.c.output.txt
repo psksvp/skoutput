@@ -1,0 +1,349 @@
+define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    %1 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !15
+    %2 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !16
+    %3 = icmp sgt i32 %2, 1, !dbg !17
+    %4 = icmp sgt i32 %1, 0, !dbg !18
+    %5 = and i1 %4, %3, !dbg !19
+    %6 = icmp slt i32 %2, %1, !dbg !20
+    %7 = and i1 %6, %5, !dbg !19
+    br i1 %7, label %8, label %30, !dbg !19
+  
+  ; <label>:8
+    %9 = add nsw i32 %2, -2, !dbg !21
+    br label %10, !dbg !22
+  
+  ; <label>:10
+    %11 = phi i32 [ 0, %8 ], [ %19, %23 ]
+    %12 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !23
+    %13 = icmp eq i32 %12, 0, !dbg !25
+    %14 = icmp eq i32 %11, %9, !dbg !26
+    %15 = or i1 %14, %13, !dbg !25
+    %16 = icmp slt i32 %11, %2
+    br i1 %16, label %18, label %17, !dbg !27
+  
+  ; <label>:17
+    br label %__error.17
+  
+  ; <label>:18
+    %19 = add nuw nsw i32 %11, 1
+    br i1 %15, label %24, label %20, !dbg !25
+  
+  ; <label>:20
+    %21 = icmp slt i32 %19, %1, !dbg !31
+    br i1 %21, label %23, label %22, !dbg !32
+  
+  ; <label>:22
+    br label %__error.22
+  
+  ; <label>:23
+    br label %10, !dbg !23, !llvm.loop !36
+  
+  ; <label>:24
+    %25 = icmp sgt i32 %11, -2, !dbg !38
+    br i1 %25, label %27, label %26, !dbg !39
+  
+  ; <label>:26
+    br label %__error.26
+  
+  ; <label>:27
+    %28 = icmp slt i32 %19, %2, !dbg !43
+    br i1 %28, label %30, label %29, !dbg !44
+  
+  ; <label>:29
+    br label %__error.29
+  
+  ; <label>:30
+    ret i32 0, !dbg !48
+  
+  __error.17: 
+    tail call void @__VERIFIER_error() #2 , !dbg !29
+    br label %18, !dbg !30
+  
+  __error.22: 
+    tail call void @__VERIFIER_error() #2 , !dbg !34
+    br label %23, !dbg !35
+  
+  __error.26: 
+    tail call void @__VERIFIER_error() #2 , !dbg !41
+    br label %27, !dbg !42
+  
+  __error.29: 
+    tail call void @__VERIFIER_error() #2 , !dbg !46
+    br label %30, !dbg !47
+  
+} 
+
+using predicates abs
+List(0, 0, 0, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 10
+ Not( (%1  <= %2 ) ) ,
+(%11  = %19 ) ,
+(%19  = (1  + %11 ) ) ,
+ Not( (%1  <= %19 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+(%11  = 0 ) ,
+(%2  <= %19 ) ,
+ Not( (%11  <= (- 2 ) ) ) ,
+ Not( (%2  <= %11 ) ) ,
+ Not( (%2  <= 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = %19 ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%1  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = 0 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%2  <= %19 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+------------
+simplify cache hit is 93 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 9
+(%11  <= (- 2 ) ) ,
+ Not( (%1  <= %2 ) ) ,
+(%11  = %19 ) ,
+(%19  = (1  + %11 ) ) ,
+ Not( (%1  <= %19 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+(%11  = 0 ) ,
+ Not( (%2  <= %11 ) ) ,
+ Not( (%2  <= 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%1  <= %19 ) ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%19  = (1  + %11 ) ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+false 
+------------
+simplify cache hit is 168 and mis is 16
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((3,7))
+new backedge found from 7 to 4 with choice(3) exitValue is 1
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 10
+ Not( (%1  <= %2 ) ) ,
+(%11  = %19 ) ,
+(%19  = (1  + %11 ) ) ,
+ Not( (%1  <= %19 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+(%11  = 0 ) ,
+(%2  <= %19 ) ,
+ Not( (%11  <= (- 2 ) ) ) ,
+ Not( (%2  <= %11 ) ) ,
+ Not( (%2  <= 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = %19 ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%1  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = 0 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%2  <= %19 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+------------
+simplify cache hit is 321 and mis is 16
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 10
+ Not( (%1  <= %2 ) ) ,
+(%11  = %19 ) ,
+(%19  = (1  + %11 ) ) ,
+ Not( (%1  <= %19 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+(%11  = 0 ) ,
+(%2  <= %19 ) ,
+ Not( (%11  <= (- 2 ) ) ) ,
+ Not( (%2  <= %11 ) ) ,
+ Not( (%2  <= 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = %19 ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%1  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = 0 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false , And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%2  <= %19 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+------------
+simplify cache hit is 616 and mis is 16
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 10
+ Not( (%1  <= %2 ) ) ,
+(%11  = %19 ) ,
+(%19  = (1  + %11 ) ) ,
+ Not( (%1  <= %19 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+(%11  = 0 ) ,
+(%2  <= %19 ) ,
+ Not( (%11  <= (- 2 ) ) ) ,
+ Not( (%2  <= %11 ) ) ,
+ Not( (%2  <= 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = %19 ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%1  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = 0 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false , And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%2  <= %19 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+------------
+simplify cache hit is 1127 and mis is 16
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 10
+ Not( (%1  <= %2 ) ) ,
+(%11  = %19 ) ,
+(%19  = (1  + %11 ) ) ,
+ Not( (%1  <= %19 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+(%11  = 0 ) ,
+(%2  <= %19 ) ,
+ Not( (%11  <= (- 2 ) ) ) ,
+ Not( (%2  <= %11 ) ) ,
+ Not( (%2  <= 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = %19 ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not(  Not( (%2  <= %11 ) ) ) , Not( (%1  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %11 ) ) ,(%2  <= %19 ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%1  <= %19 ) ) ,(%2  <= %19 ) ) , Or(  Not( (%19  = (1  + %11 ) ) ) , Not( (%2  <= %19 ) ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%1  <= %2 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) , Or(  Not( (%11  = %19 ) ) , Not( (%19  = (1  + %11 ) ) ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%11  = 0 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%2  <= %19 ) ) , Not( (%11  = 0 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false , And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) , And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false , And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%2  <= %19 ) ) , Not( (%19  = (1  + %11 ) ) ) , Not( (%1  <= %2 ) ) ,(%11  = %19 ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%11  = 0 ) ) , Not( (%2  <= %19 ) ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (%11  = 0 ) ) , Not( (%11  = %19 ) ) , Not( (%1  <= %2 ) ) ,(%19  = (1  + %11 ) ) , Not( (%1  <= %19 ) ) , Not( (%1  <= 0 ) ) ,(%2  <= %19 ) , Not( (%11  <= (- 2 ) ) ) , Not( (%2  <= %11 ) ) , Not( (%2  <= 1 ) ) ) ,false ) 
+------------
+simplify cache hit is 1944 and mis is 16
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 10
+ Not( (%1  <= %2 ) ) ,
+(%11  = %19 ) ,
+(%19  = (1  + %11 ) ) ,
+ Not( (%1  <= %19 ) ) ,
+ Not( (%1  <= 0 ) ) ,
+(%11  = 0 ) ,
+(%2  <= %19 ) ,
+ Not( (%11  <= (- 2 ) ) ) ,
+ Not( (%2  <= %11 ) ) ,
+ Not( (%2  <= 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0)

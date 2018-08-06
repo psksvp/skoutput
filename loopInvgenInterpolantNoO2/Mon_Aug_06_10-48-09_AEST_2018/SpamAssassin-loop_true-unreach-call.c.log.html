@@ -1,0 +1,69 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/SpamAssassin-loop_true-unreach-call.c,false,clang-4.0,20)</h3><hr>
+<pre>#include "assert.h"
+
+int main()
+{
+    int len;
+    int i;
+    int j;
+
+    int bufsize;
+    bufsize = __VERIFIER_nondet_int();
+    if (bufsize < 0) return 0; // avoid overflows for too negative values
+    len = __VERIFIER_nondet_int();
+    int limit = bufsize - 4;
+
+
+    for (i = 0; i < len; ) {
+        for (j = 0; i < len && j < limit; ){
+            if (i + 1 < len){ 
+                if(!(i+1<len)) __VERIFIER_error();
+                if(!(0<=i)) __VERIFIER_error();
+                if( __VERIFIER_nondet_int() ) goto ELSE;
+                if(!(i<len)) __VERIFIER_error();
+                if(!(0<=i)) __VERIFIER_error();
+                if(!(j<bufsize)) __VERIFIER_error();
+                if(!(0<=j)) __VERIFIER_error();
+
+                j++;
+                i++;
+                if(!(i<len)) __VERIFIER_error();
+                if(!(0<=i)) __VERIFIER_error();
+                if(!(j<bufsize)) __VERIFIER_error();
+                if(!(0<=j)) __VERIFIER_error();
+
+                j++;
+                i++;
+                if(!(j<bufsize)) __VERIFIER_error();
+                if(!(0<=j)) __VERIFIER_error();
+                j++;
+            } else {
+ELSE:
+                if(!(i<len)) __VERIFIER_error();
+                if(!(0<=i)) __VERIFIER_error();
+                if(!(j<bufsize)) __VERIFIER_error();
+                if(!(0<=j)) __VERIFIER_error();
+                j++;
+                i++;
+            }
+        }
+    }
+    return 0;
+}
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/Y7V98cA6W8.c
+maximum number of iterations 20 reached
+
+config: -e Z3 -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/Y7V98cA6W8.c
+maximum number of iterations 20 reached
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/Y7V98cA6W8.c
+strange solver status: Failure(java.lang.IllegalArgumentException: requirement failed: Solver could not be initialised: Cannot run program "yices-smt2": error=2, No such file or directory)</pre><hr>
+</body>
+</html>
+      

@@ -1,0 +1,185 @@
+
+<html>
+<body>
+<h3>Code(/Users/psksvp/Workspace/temp/temp/sv-benchmarks-svcomp16/c/loop-acceleration/underapprox_true-unreach-call2.c,false,clang-3.7,20)</h3><hr>
+<pre>extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+
+void __VERIFIER_assert(int cond) {
+  if (!(cond)) {
+    ERROR: __VERIFIER_error();
+  }
+  return;
+}
+
+int main(void) {
+  unsigned int x = 0;
+  unsigned int y = 1;
+
+  while (x < 6) {
+    x++;
+    y *= 2;
+  }
+
+  //__VERIFIER_assert(x == 6);
+  if(x != 6) __VERIFIER_error();
+}
+</pre><hr>
+<pre>define i32 @main() #0  { 
+  
+  entry: 
+    %retval = alloca i32, align 4
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %retval
+    store i32 0, i32* %x, align 4, !dbg !17
+    store i32 1, i32* %y, align 4, !dbg !18
+    br label %while.cond, !dbg !19
+  
+  while.cond: 
+    %0 = load i32, i32* %x, align 4, !dbg !20
+    %cmp = icmp ult i32 %0, 6, !dbg !21
+    br i1 %cmp, label %while.body, label %while.end, !dbg !19
+  
+  while.body: 
+    %1 = load i32, i32* %x, align 4, !dbg !22
+    %inc = add i32 %1, 1, !dbg !22
+    store i32 %inc, i32* %x, align 4, !dbg !22
+    %2 = load i32, i32* %y, align 4, !dbg !23
+    %mul = mul i32 %2, 2, !dbg !23
+    store i32 %mul, i32* %y, align 4, !dbg !23
+    br label %while.cond, !dbg !19
+  
+  while.end: 
+    %3 = load i32, i32* %x, align 4, !dbg !24
+    %cmp1 = icmp ne i32 %3, 6, !dbg !25
+    br i1 %cmp1, label %if.then, label %if.end, !dbg !24
+  
+  if.then: 
+    br label %__error.if.then
+  
+  if.end: 
+    %4 = load i32, i32* %retval, !dbg !27
+    ret i32 %4, !dbg !27
+  
+  __error.if.then: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !26
+    unreachable, !dbg !26
+  
+} 
+
+----------------
+ And( true ,(%3@1  = %x@2 ) ,(%0@1  = %x@2 ) ,(%retval@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) , Not( %cmp@1 ) ,(%0@1  >= 0 ) ,(%cmp@1  = (%0@1  < 6 ) ) ,(6  >= 0 ) ,%cmp1@1 ,(%cmp1@1  =  Not( (%3@1  = 6 ) ) ) ) 
+----------------
+#############>>>>>> current iteration is 0
+using interpolant
+choices:List(0, 1, 0, 0)
+Predicates are: 
+ (= 0 %x@2 ) 
+false 
+new back edges is: Vector()
+----------------
+ And( true ,(%3@1  = %x@3 ) ,(%0@2  = %x@3 ) ,(%1@1  = %x@2 ) ,(%0@1  = %x@2 ) ,(%retval@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) ,%cmp@1 ,(%0@1  >= 0 ) ,(%cmp@1  = (%0@1  < 6 ) ) ,(6  >= 0 ) ,(%y@3  = %mul@1 ) ,(%mul@1  = (%2@1  * 2 ) ) ,(%2@1  = %y@2 ) ,(%x@3  = %inc@1 ) ,(%inc@1  = (%1@1  + 1 ) ) , Not( %cmp@2 ) ,(%0@2  >= 0 ) ,(%cmp@2  = (%0@2  < 6 ) ) ,(6  >= 0 ) ,%cmp1@1 ,(%cmp1@1  =  Not( (%3@1  = 6 ) ) ) ) 
+----------------
+#############>>>>>> current iteration is 1
+using interpolant
+choices:List(0, 0, 0, 1, 0, 0)
+Predicates are: 
+ (= 0 %x@2 ) 
+(= 0 %x@2 ) 
+(<= %x@3 1 ) 
+false 
+new back edges is: Vector()
+----------------
+ And( true ,(%3@1  = %x@4 ) ,(%0@3  = %x@4 ) ,(%1@2  = %x@3 ) ,(%0@2  = %x@3 ) ,(%1@1  = %x@2 ) ,(%0@1  = %x@2 ) ,(%retval@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) ,%cmp@1 ,(%0@1  >= 0 ) ,(%cmp@1  = (%0@1  < 6 ) ) ,(6  >= 0 ) ,(%y@3  = %mul@1 ) ,(%mul@1  = (%2@1  * 2 ) ) ,(%2@1  = %y@2 ) ,(%x@3  = %inc@1 ) ,(%inc@1  = (%1@1  + 1 ) ) ,%cmp@2 ,(%0@2  >= 0 ) ,(%cmp@2  = (%0@2  < 6 ) ) ,(6  >= 0 ) ,(%y@4  = %mul@2 ) ,(%mul@2  = (%2@2  * 2 ) ) ,(%2@2  = %y@3 ) ,(%x@4  = %inc@2 ) ,(%inc@2  = (%1@2  + 1 ) ) , Not( %cmp@3 ) ,(%0@3  >= 0 ) ,(%cmp@3  = (%0@3  < 6 ) ) ,(6  >= 0 ) ,%cmp1@1 ,(%cmp1@1  =  Not( (%3@1  = 6 ) ) ) ) 
+----------------
+#############>>>>>> current iteration is 2
+using interpolant
+choices:List(0, 0, 0, 0, 0, 1, 0, 0)
+Predicates are: 
+ (= 0 %x@2 ) 
+(= 0 %x@2 ) 
+(<= %x@3 1 ) 
+(<= %x@3 1 ) 
+(<= %x@4 2 ) 
+false 
+new back edges is: Vector()
+----------------
+ And( true ,(%3@1  = %x@5 ) ,(%0@4  = %x@5 ) ,(%1@3  = %x@4 ) ,(%0@3  = %x@4 ) ,(%1@2  = %x@3 ) ,(%0@2  = %x@3 ) ,(%1@1  = %x@2 ) ,(%0@1  = %x@2 ) ,(%retval@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) ,%cmp@1 ,(%0@1  >= 0 ) ,(%cmp@1  = (%0@1  < 6 ) ) ,(6  >= 0 ) ,(%y@3  = %mul@1 ) ,(%mul@1  = (%2@1  * 2 ) ) ,(%2@1  = %y@2 ) ,(%x@3  = %inc@1 ) ,(%inc@1  = (%1@1  + 1 ) ) ,%cmp@2 ,(%0@2  >= 0 ) ,(%cmp@2  = (%0@2  < 6 ) ) ,(6  >= 0 ) ,(%y@4  = %mul@2 ) ,(%mul@2  = (%2@2  * 2 ) ) ,(%2@2  = %y@3 ) ,(%x@4  = %inc@2 ) ,(%inc@2  = (%1@2  + 1 ) ) ,%cmp@3 ,(%0@3  >= 0 ) ,(%cmp@3  = (%0@3  < 6 ) ) ,(6  >= 0 ) ,(%y@5  = %mul@3 ) ,(%mul@3  = (%2@3  * 2 ) ) ,(%2@3  = %y@4 ) ,(%x@5  = %inc@3 ) ,(%inc@3  = (%1@3  + 1 ) ) , Not( %cmp@4 ) ,(%0@4  >= 0 ) ,(%cmp@4  = (%0@4  < 6 ) ) ,(6  >= 0 ) ,%cmp1@1 ,(%cmp1@1  =  Not( (%3@1  = 6 ) ) ) ) 
+----------------
+#############>>>>>> current iteration is 3
+using interpolant
+choices:List(0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+Predicates are: 
+ (= 0 %x@2 ) 
+(= 0 %x@2 ) 
+(<= %x@3 1 ) 
+(<= %x@3 1 ) 
+(<= %x@4 2 ) 
+(<= %x@4 2 ) 
+(<= %x@5 3 ) 
+false 
+new back edges is: Vector()
+----------------
+ And( true ,(%3@1  = %x@6 ) ,(%0@5  = %x@6 ) ,(%1@4  = %x@5 ) ,(%0@4  = %x@5 ) ,(%1@3  = %x@4 ) ,(%0@3  = %x@4 ) ,(%1@2  = %x@3 ) ,(%0@2  = %x@3 ) ,(%1@1  = %x@2 ) ,(%0@1  = %x@2 ) ,(%retval@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) ,%cmp@1 ,(%0@1  >= 0 ) ,(%cmp@1  = (%0@1  < 6 ) ) ,(6  >= 0 ) ,(%y@3  = %mul@1 ) ,(%mul@1  = (%2@1  * 2 ) ) ,(%2@1  = %y@2 ) ,(%x@3  = %inc@1 ) ,(%inc@1  = (%1@1  + 1 ) ) ,%cmp@2 ,(%0@2  >= 0 ) ,(%cmp@2  = (%0@2  < 6 ) ) ,(6  >= 0 ) ,(%y@4  = %mul@2 ) ,(%mul@2  = (%2@2  * 2 ) ) ,(%2@2  = %y@3 ) ,(%x@4  = %inc@2 ) ,(%inc@2  = (%1@2  + 1 ) ) ,%cmp@3 ,(%0@3  >= 0 ) ,(%cmp@3  = (%0@3  < 6 ) ) ,(6  >= 0 ) ,(%y@5  = %mul@3 ) ,(%mul@3  = (%2@3  * 2 ) ) ,(%2@3  = %y@4 ) ,(%x@5  = %inc@3 ) ,(%inc@3  = (%1@3  + 1 ) ) ,%cmp@4 ,(%0@4  >= 0 ) ,(%cmp@4  = (%0@4  < 6 ) ) ,(6  >= 0 ) ,(%y@6  = %mul@4 ) ,(%mul@4  = (%2@4  * 2 ) ) ,(%2@4  = %y@5 ) ,(%x@6  = %inc@4 ) ,(%inc@4  = (%1@4  + 1 ) ) , Not( %cmp@5 ) ,(%0@5  >= 0 ) ,(%cmp@5  = (%0@5  < 6 ) ) ,(6  >= 0 ) ,%cmp1@1 ,(%cmp1@1  =  Not( (%3@1  = 6 ) ) ) ) 
+----------------
+#############>>>>>> current iteration is 4
+using interpolant
+choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+Predicates are: 
+ (= 0 %x@2 ) 
+(= 0 %x@2 ) 
+(<= %x@3 1 ) 
+(<= %x@3 1 ) 
+(<= %x@4 2 ) 
+(<= %x@4 2 ) 
+(<= %x@5 3 ) 
+(<= %x@5 3 ) 
+(<= %x@6 4 ) 
+false 
+new back edges is: Vector()
+----------------
+ And( true ,(%3@1  = %x@7 ) ,(%0@6  = %x@7 ) ,(%1@5  = %x@6 ) ,(%0@5  = %x@6 ) ,(%1@4  = %x@5 ) ,(%0@4  = %x@5 ) ,(%1@3  = %x@4 ) ,(%0@3  = %x@4 ) ,(%1@2  = %x@3 ) ,(%0@2  = %x@3 ) ,(%1@1  = %x@2 ) ,(%0@1  = %x@2 ) ,(%retval@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) ,%cmp@1 ,(%0@1  >= 0 ) ,(%cmp@1  = (%0@1  < 6 ) ) ,(6  >= 0 ) ,(%y@3  = %mul@1 ) ,(%mul@1  = (%2@1  * 2 ) ) ,(%2@1  = %y@2 ) ,(%x@3  = %inc@1 ) ,(%inc@1  = (%1@1  + 1 ) ) ,%cmp@2 ,(%0@2  >= 0 ) ,(%cmp@2  = (%0@2  < 6 ) ) ,(6  >= 0 ) ,(%y@4  = %mul@2 ) ,(%mul@2  = (%2@2  * 2 ) ) ,(%2@2  = %y@3 ) ,(%x@4  = %inc@2 ) ,(%inc@2  = (%1@2  + 1 ) ) ,%cmp@3 ,(%0@3  >= 0 ) ,(%cmp@3  = (%0@3  < 6 ) ) ,(6  >= 0 ) ,(%y@5  = %mul@3 ) ,(%mul@3  = (%2@3  * 2 ) ) ,(%2@3  = %y@4 ) ,(%x@5  = %inc@3 ) ,(%inc@3  = (%1@3  + 1 ) ) ,%cmp@4 ,(%0@4  >= 0 ) ,(%cmp@4  = (%0@4  < 6 ) ) ,(6  >= 0 ) ,(%y@6  = %mul@4 ) ,(%mul@4  = (%2@4  * 2 ) ) ,(%2@4  = %y@5 ) ,(%x@6  = %inc@4 ) ,(%inc@4  = (%1@4  + 1 ) ) ,%cmp@5 ,(%0@5  >= 0 ) ,(%cmp@5  = (%0@5  < 6 ) ) ,(6  >= 0 ) ,(%y@7  = %mul@5 ) ,(%mul@5  = (%2@5  * 2 ) ) ,(%2@5  = %y@6 ) ,(%x@7  = %inc@5 ) ,(%inc@5  = (%1@5  + 1 ) ) , Not( %cmp@6 ) ,(%0@6  >= 0 ) ,(%cmp@6  = (%0@6  < 6 ) ) ,(6  >= 0 ) ,%cmp1@1 ,(%cmp1@1  =  Not( (%3@1  = 6 ) ) ) ) 
+----------------
+#############>>>>>> current iteration is 5
+using interpolant
+choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+Predicates are: 
+ (= 0 %x@2 ) 
+(= 0 %x@2 ) 
+(<= %x@3 1 ) 
+(<= %x@3 1 ) 
+(<= %x@4 2 ) 
+(<= %x@4 2 ) 
+(<= %x@5 3 ) 
+(<= %x@5 3 ) 
+(<= %x@6 4 ) 
+(<= %x@6 4 ) 
+(<= %x@7 5 ) 
+false 
+new back edges is: Vector()
+----------------
+ And( true ,(%3@1  = %x@8 ) ,(%0@7  = %x@8 ) ,(%1@6  = %x@7 ) ,(%0@6  = %x@7 ) ,(%1@5  = %x@6 ) ,(%0@5  = %x@6 ) ,(%1@4  = %x@5 ) ,(%0@4  = %x@5 ) ,(%1@3  = %x@4 ) ,(%0@3  = %x@4 ) ,(%1@2  = %x@3 ) ,(%0@2  = %x@3 ) ,(%1@1  = %x@2 ) ,(%0@1  = %x@2 ) ,(%retval@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) ,%cmp@1 ,(%0@1  >= 0 ) ,(%cmp@1  = (%0@1  < 6 ) ) ,(6  >= 0 ) ,(%y@3  = %mul@1 ) ,(%mul@1  = (%2@1  * 2 ) ) ,(%2@1  = %y@2 ) ,(%x@3  = %inc@1 ) ,(%inc@1  = (%1@1  + 1 ) ) ,%cmp@2 ,(%0@2  >= 0 ) ,(%cmp@2  = (%0@2  < 6 ) ) ,(6  >= 0 ) ,(%y@4  = %mul@2 ) ,(%mul@2  = (%2@2  * 2 ) ) ,(%2@2  = %y@3 ) ,(%x@4  = %inc@2 ) ,(%inc@2  = (%1@2  + 1 ) ) ,%cmp@3 ,(%0@3  >= 0 ) ,(%cmp@3  = (%0@3  < 6 ) ) ,(6  >= 0 ) ,(%y@5  = %mul@3 ) ,(%mul@3  = (%2@3  * 2 ) ) ,(%2@3  = %y@4 ) ,(%x@5  = %inc@3 ) ,(%inc@3  = (%1@3  + 1 ) ) ,%cmp@4 ,(%0@4  >= 0 ) ,(%cmp@4  = (%0@4  < 6 ) ) ,(6  >= 0 ) ,(%y@6  = %mul@4 ) ,(%mul@4  = (%2@4  * 2 ) ) ,(%2@4  = %y@5 ) ,(%x@6  = %inc@4 ) ,(%inc@4  = (%1@4  + 1 ) ) ,%cmp@5 ,(%0@5  >= 0 ) ,(%cmp@5  = (%0@5  < 6 ) ) ,(6  >= 0 ) ,(%y@7  = %mul@5 ) ,(%mul@5  = (%2@5  * 2 ) ) ,(%2@5  = %y@6 ) ,(%x@7  = %inc@5 ) ,(%inc@5  = (%1@5  + 1 ) ) ,%cmp@6 ,(%0@6  >= 0 ) ,(%cmp@6  = (%0@6  < 6 ) ) ,(6  >= 0 ) ,(%y@8  = %mul@6 ) ,(%mul@6  = (%2@6  * 2 ) ) ,(%2@6  = %y@7 ) ,(%x@8  = %inc@6 ) ,(%inc@6  = (%1@6  + 1 ) ) , Not( %cmp@7 ) ,(%0@7  >= 0 ) ,(%cmp@7  = (%0@7  < 6 ) ) ,(6  >= 0 ) ,%cmp1@1 ,(%cmp1@1  =  Not( (%3@1  = 6 ) ) ) ) 
+----------------
+#############>>>>>> current iteration is 6
+using interpolant
+choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+Predicates are: 
+ (= 0 %x@2 ) 
+(= 0 %x@2 ) 
+(and (<= %x@3 1 ) (<= 1 %x@3 ) ) 
+(and (<= %x@3 1 ) (<= 1 %x@3 ) ) 
+(and (<= %x@4 2 ) (<= 2 %x@4 ) ) 
+(and (<= %x@4 2 ) (<= 2 %x@4 ) ) 
+(and (<= %x@5 3 ) (<= 3 %x@5 ) ) 
+(and (<= %x@5 3 ) (<= 3 %x@5 ) ) 
+(and (<= %x@6 4 ) (<= 4 %x@6 ) ) 
+(and (<= %x@6 4 ) (<= 4 %x@6 ) ) 
+(and (<= %x@7 5 ) (<= 5 %x@7 ) ) 
+(and (<= %x@7 5 ) (<= 5 %x@7 ) ) 
+(= 6 %x@8 ) 
+(= 6 %x@8 ) 
+new back edges is: Vector(LabDiEdge(DiEdge(13,2),0), LabDiEdge(DiEdge(13,4),0), LabDiEdge(DiEdge(13,6),0), LabDiEdge(DiEdge(13,8),0), LabDiEdge(DiEdge(13,10),0), LabDiEdge(DiEdge(13,12),0))
+TRUE</pre><hr>
+</body>
+</html>
+      

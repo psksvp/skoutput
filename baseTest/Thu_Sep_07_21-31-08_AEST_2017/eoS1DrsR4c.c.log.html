@@ -1,0 +1,1096 @@
+
+<html>
+<body>
+<h3>Code(/tmp/eoS1DrsR4c.c,false,clang-3.7,20)</h3><hr>
+<pre>
+extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+
+int main(int argc, char** arg)
+{
+  int x = 0;
+  int y = 0;
+  while(x < 2000)
+  {
+      x++;
+      y++;
+  }
+  if(x != 2000) __VERIFIER_error();
+  if(y < 0)   __VERIFIER_error();
+  return 0;
+}
+              
+</pre><hr>
+<pre>define i32 @main(i32 %argc, i8** %arg) #0  { 
+  
+    %1 = alloca i32, align 4
+    %2 = alloca i32, align 4
+    %3 = alloca i8**, align 8
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 %argc, i32* %2, align 4
+    store i8** %arg, i8*** %3, align 8
+    store i32 0, i32* %x, align 4, !dbg !9
+    store i32 0, i32* %y, align 4, !dbg !10
+    br label %4, !dbg !11
+  
+  ; <label>:4
+    %5 = load i32, i32* %x, align 4, !dbg !12
+    %6 = icmp slt i32 %5, 2000, !dbg !15
+    br i1 %6, label %7, label %12, !dbg !11
+  
+  ; <label>:7
+    %8 = load i32, i32* %x, align 4, !dbg !16
+    %9 = add nsw i32 %8, 1, !dbg !16
+    store i32 %9, i32* %x, align 4, !dbg !16
+    %10 = load i32, i32* %y, align 4, !dbg !17
+    %11 = add nsw i32 %10, 1, !dbg !17
+    store i32 %11, i32* %y, align 4, !dbg !17
+    br label %4, !dbg !11
+  
+  ; <label>:12
+    %13 = load i32, i32* %x, align 4, !dbg !18
+    %14 = icmp ne i32 %13, 2000, !dbg !19
+    br i1 %14, label %15, label %16, !dbg !18
+  
+  ; <label>:15
+    br label %__error.15
+  
+  ; <label>:16
+    %17 = load i32, i32* %y, align 4, !dbg !21
+    %18 = icmp slt i32 %17, 0, !dbg !22
+    br i1 %18, label %19, label %20, !dbg !21
+  
+  ; <label>:19
+    br label %__error.19
+  
+  ; <label>:20
+    ret i32 0, !dbg !24
+  
+  __error.15: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !20
+    unreachable, !dbg !20
+  
+  __error.19: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !23
+    unreachable, !dbg !23
+  
+} 
+
+using predicates abs
+using predAbs on trace: List(0, 1, 0, 0)
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) , And(  Not( (%y  = 0 ) ) , Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) , And(  Not( (%y  = 0 ) ) , Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 28 and mis is 7
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 76 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 170 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 329 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 578 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 946 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 1466 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 2175 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 3114 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 4328 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 5866 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 7781 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 10130 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 12974 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 16378 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 20411 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 25146 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 30660 and mis is 9
+last loc eq to false? >>>no
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+generating predicates for abstraction
+5 predicates generated
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+running filters on the generated input predicates
+running atomicTerms
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  >= 2001 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running reduceToSuperSetTerms
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+running with predicates: 3
+(%x  <= 1999 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%y  = 0 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Not( (%y  = 0 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+------------
+simplify cache hit is 37034 and mis is 9
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 20 reached</pre><hr>
+</body>
+</html>
+      

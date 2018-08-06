@@ -1,0 +1,43 @@
+define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    %1 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !15
+    %2 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !16
+    %3 = add i32 %1, -10, !dbg !17
+    %4 = icmp ult i32 %3, 9991, !dbg !17
+    %5 = zext i1 %4 to i32, !dbg !18
+    tail call void @__VERIFIER_assume(i32 %5) #2 , !dbg !20
+    %6 = add i32 %2, -10, !dbg !21
+    %7 = icmp ult i32 %6, 9991, !dbg !21
+    %8 = zext i1 %7 to i32, !dbg !22
+    tail call void @__VERIFIER_assume(i32 %8) #2 , !dbg !23
+    %9 = icmp sgt i32 %1, 0, !dbg !24
+    br i1 %9, label %10, label %15, !dbg !26
+  
+  ; <label>:10
+    %11 = icmp sgt i32 %2, 0
+    %12 = select i1 %11, i32 %2, i32 0, !dbg !26
+    %13 = mul i32 %1, %12, !dbg !26
+    %14 = icmp sgt i32 %13, 99, !dbg !27
+    br i1 %14, label %16, label %15, !dbg !28
+  
+  ; <label>:15
+    br label %__error.15
+  
+  ; <label>:16
+    ret i32 0, !dbg !32
+  
+  __error.15: 
+    tail call void @__VERIFIER_error() #2 , !dbg !30
+    br label %16, !dbg !31
+  
+} 
+
+using predicates abs
+List(0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+TRUE

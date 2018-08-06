@@ -1,0 +1,248 @@
+define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    %1 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !15
+    %2 = icmp slt i32 %1, 0, !dbg !16
+    br i1 %2, label %72, label %3, !dbg !17
+  
+  ; <label>:3
+    %4 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !18
+    %5 = add nsw i32 %1, -4, !dbg !19
+    %6 = icmp sgt i32 %4, 0, !dbg !20
+    br i1 %6, label %7, label %72, !dbg !22
+  
+  ; <label>:7
+    %8 = icmp sgt i32 %1, 4
+    br label %13, !dbg !22
+  
+  ; <label>:9
+    br label %10, !dbg !20
+  
+  ; <label>:10
+    %11 = phi i32 [ %14, %13 ], [ %66, %9 ]
+    %12 = icmp slt i32 %11, %4, !dbg !20
+    br i1 %12, label %13, label %71, !dbg !22
+  
+  ; <label>:13
+    %14 = phi i32 [ 0, %7 ], [ %11, %10 ]
+    %15 = icmp slt i32 %14, %4, !dbg !23
+    %16 = and i1 %8, %15, !dbg !24
+    br i1 %16, label %17, label %10, !dbg !24, !llvm.loop !25
+  
+  ; <label>:17
+    br label %18, !dbg !28
+  
+  ; <label>:18
+    %19 = phi i32 [ %66, %64 ], [ %14, %17 ]
+    %20 = phi i32 [ %67, %64 ], [ 0, %17 ]
+    %21 = add nsw i32 %19, 1, !dbg !28
+    %22 = icmp slt i32 %21, %4, !dbg !29
+    br i1 %22, label %23, label %55, !dbg !30
+  
+  ; <label>:23
+    %24 = icmp slt i32 %19, 0, !dbg !31
+    br i1 %24, label %25, label %26, !dbg !33
+  
+  ; <label>:25
+    br label %__error.25
+  
+  ; <label>:26
+    %27 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !36
+    %28 = icmp eq i32 %27, 0, !dbg !36
+    br i1 %28, label %29, label %55, !dbg !36
+  
+  ; <label>:29
+    br i1 %24, label %30, label %31, !dbg !37
+  
+  ; <label>:30
+    br label %__error.30
+  
+  ; <label>:31
+    %32 = icmp slt i32 %20, %1, !dbg !41
+    br i1 %32, label %34, label %33, !dbg !42
+  
+  ; <label>:33
+    br label %__error.33
+  
+  ; <label>:34
+    %35 = icmp slt i32 %20, 0, !dbg !46
+    br i1 %35, label %36, label %37, !dbg !48
+  
+  ; <label>:36
+    br label %__error.36
+  
+  ; <label>:37
+    %38 = add nsw i32 %20, 1, !dbg !51
+    %39 = icmp sgt i32 %19, -2, !dbg !52
+    br i1 %39, label %41, label %40, !dbg !53
+  
+  ; <label>:40
+    br label %__error.40
+  
+  ; <label>:41
+    %42 = icmp slt i32 %38, %1, !dbg !57
+    br i1 %42, label %44, label %43, !dbg !58
+  
+  ; <label>:43
+    br label %__error.43
+  
+  ; <label>:44
+    %45 = icmp sgt i32 %20, -2, !dbg !62
+    br i1 %45, label %47, label %46, !dbg !63
+  
+  ; <label>:46
+    br label %__error.46
+  
+  ; <label>:47
+    %48 = add nsw i32 %20, 2, !dbg !67
+    %49 = add nsw i32 %19, 2, !dbg !68
+    %50 = icmp slt i32 %48, %1, !dbg !69
+    br i1 %50, label %52, label %51, !dbg !70
+  
+  ; <label>:51
+    br label %__error.51
+  
+  ; <label>:52
+    %53 = icmp slt i32 %20, -2, !dbg !74
+    br i1 %53, label %54, label %64, !dbg !76
+  
+  ; <label>:54
+    br label %__error.54
+  
+  ; <label>:55
+    %56 = icmp slt i32 %19, 0, !dbg !79
+    br i1 %56, label %57, label %58, !dbg !81
+  
+  ; <label>:57
+    br label %__error.57
+  
+  ; <label>:58
+    %59 = icmp slt i32 %20, %1, !dbg !84
+    br i1 %59, label %61, label %60, !dbg !85
+  
+  ; <label>:60
+    br label %__error.60
+  
+  ; <label>:61
+    %62 = icmp slt i32 %20, 0, !dbg !89
+    br i1 %62, label %63, label %64, !dbg !91
+  
+  ; <label>:63
+    br label %__error.63
+  
+  ; <label>:64
+    %65 = phi i32 [ 1, %61 ], [ 1, %63 ], [ 3, %52 ], [ 3, %54 ]
+    %66 = phi i32 [ %21, %61 ], [ %21, %63 ], [ %49, %52 ], [ %49, %54 ]
+    %67 = add nsw i32 %20, %65
+    %68 = icmp slt i32 %66, %4, !dbg !23
+    %69 = icmp slt i32 %67, %5, !dbg !94
+    %70 = and i1 %69, %68, !dbg !24
+    br i1 %70, label %18, label %9, !dbg !24, !llvm.loop !96
+  
+  ; <label>:71
+    br label %72, !dbg !99
+  
+  ; <label>:72
+    ret i32 0, !dbg !99
+  
+  __error.25: 
+    tail call void @__VERIFIER_error() #2 , !dbg !34
+    br label %26, !dbg !35
+  
+  __error.30: 
+    tail call void @__VERIFIER_error() #2 , !dbg !39
+    br label %31, !dbg !40
+  
+  __error.33: 
+    tail call void @__VERIFIER_error() #2 , !dbg !44
+    br label %34, !dbg !45
+  
+  __error.36: 
+    tail call void @__VERIFIER_error() #2 , !dbg !49
+    br label %37, !dbg !50
+  
+  __error.40: 
+    tail call void @__VERIFIER_error() #2 , !dbg !55
+    br label %41, !dbg !56
+  
+  __error.43: 
+    tail call void @__VERIFIER_error() #2 , !dbg !60
+    br label %44, !dbg !61
+  
+  __error.46: 
+    tail call void @__VERIFIER_error() #2 , !dbg !65
+    br label %47, !dbg !66
+  
+  __error.51: 
+    tail call void @__VERIFIER_error() #2 , !dbg !72
+    br label %52, !dbg !73
+  
+  __error.54: 
+    tail call void @__VERIFIER_error() #2 , !dbg !77
+    br label %64, !dbg !78
+  
+  __error.57: 
+    tail call void @__VERIFIER_error() #2 , !dbg !82
+    br label %58, !dbg !83
+  
+  __error.60: 
+    tail call void @__VERIFIER_error() #2 , !dbg !87
+    br label %61, !dbg !88
+  
+  __error.63: 
+    tail call void @__VERIFIER_error() #2 , !dbg !92
+    br label %64, !dbg !93
+  
+} 
+
+using predicates abs
+List(1, 0, 0, 0, 0, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(1, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+list of variables to quantify over is empty
+running with predicates: 28
+(0  <= %20 ) ,
+(%38  = (1  + %20 ) ) ,
+(%66  = %49 ) ,
+ Not( (%19  <= (- 2 ) ) ) ,
+(0  <= %19 ) ,
+ Not( (0  <= %19 ) ) ,
+ Not( (%20  <= (- 2 ) ) ) ,
+ Not( (%4  <= %66 ) ) ,
+(%20  = %67 ) ,
+(%5  = ((- 4 )  + %1 ) ) ,
+((%67  + ((- 1 )  * %20 ) )  <= 3 ) ,
+(%14  = 0 ) ,
+ Not( (%1  <= %38 ) ) ,
+ Not( (%4  <= %21 ) ) ,
+((- 2 )  <= %20 ) ,
+(%49  = (2  + %19 ) ) ,
+(%19  = %66 ) ,
+%8 ,
+ Not( (%1  <= %20 ) ) ,
+(%21  = (1  + %19 ) ) ,
+ Not( (%4  <= 0 ) ) ,
+ Not( (%5  <= %67 ) ) ,
+(%19  = %14 ) ,
+(0  <= %1 ) ,
+ Not( (%4  <= %14 ) ) ,
+((%20  + ((- 1 )  * %67 ) )  <= (- 3 ) ) ,
+(%20  = 0 ) ,
+((%20  + ((- 1 )  * %1 ) )  <= (- 3 ) ) 
+I am doing the trace:List(1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0)
+UNKNOWN
+refinement failure due to exception: psksvp.satisfiableCheck of terms  And( false , Not(  Or(  Not(  Not( (%4@1  <= %66@0 ) ) ) , Not( ((%20@0  + ((- 1 )  * %1@0 ) )  <= (- 3 ) ) ) , Not(  Not( (%4@1  <= %14@0 ) ) ) , Not( (0  <= %1@0 ) ) , Not(  Not( (%5@1  <= %67@0 ) ) ) , Not(  Not( (%4@1  <= 0 ) ) ) , Not(  Not( (%1@0  <= %20@0 ) ) ) , Not(  Not( (%4@1  <= %21@0 ) ) ) , Not(  Not( (%1@0  <= %38@0 ) ) ) , Not( (%5@1  = ((- 4 )  + %1@0 ) ) ) ) ) ,(%5@1  = (%1@0  + (- 4 ) ) ) ,%6@1 ,(%6@1  = (%4@1  > 0 ) ) )  solver returns java.io.IOException: Stream closed

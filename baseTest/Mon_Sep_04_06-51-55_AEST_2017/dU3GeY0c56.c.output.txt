@@ -1,0 +1,73 @@
+define i32 @main(i32 %argc, i8** %arg) #0  { 
+  
+    %1 = alloca i32, align 4
+    %2 = alloca i32, align 4
+    %3 = alloca i8**, align 8
+    %i = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 %argc, i32* %2, align 4
+    store i8** %arg, i8*** %3, align 8
+    store i32 1, i32* %i, align 4, !dbg !9
+    br label %4, !dbg !10
+  
+  ; <label>:4
+    %5 = load i32, i32* %i, align 4, !dbg !11
+    %6 = icmp sle i32 %5, 1000, !dbg !14
+    br i1 %6, label %7, label %11, !dbg !15
+  
+  ; <label>:7
+    br label %8, !dbg !16
+  
+  ; <label>:8
+    %9 = load i32, i32* %i, align 4, !dbg !18
+    %10 = add nsw i32 %9, 1, !dbg !18
+    store i32 %10, i32* %i, align 4, !dbg !18
+    br label %4, !dbg !15
+  
+  ; <label>:11
+    %12 = load i32, i32* %i, align 4, !dbg !20
+    %13 = icmp ne i32 %12, 1001, !dbg !21
+    br i1 %13, label %14, label %15, !dbg !20
+  
+  ; <label>:14
+    br label %__error.14
+  
+  ; <label>:15
+    ret i32 0, !dbg !23
+  
+  __error.14: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !22
+    unreachable, !dbg !22
+  
+} 
+
+using predicates abs
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 4
+(%i  = 1 ) ,
+(%i  <= 1000 ) ,
+(%i  >= 1001 ) ,
+ Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (%i  >= 1001 ) ) ,(%i  = 1 ) ,(%i  <= 1000 ) , Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) ,false ) 
+ Or(  And(  Not( (%i  >= 1001 ) ) ,(%i  = 1 ) ,(%i  <= 1000 ) , Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) , And(  Not( (%i  >= 1001 ) ) ,(%i  = 1 ) ,(%i  <= 1000 ) , Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) , And(  Not( (%i  >= 1001 ) ) , Not( (%i  = 1 ) ) ,(%i  <= 1000 ) , Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) ,false ,false ) 
+ Or(  And(  Not( (%i  >= 1001 ) ) ,(%i  <= 1000 ) , Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) , And(  Not( (%i  >= 1001 ) ) ,(%i  = 1 ) ,(%i  <= 1000 ) , Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%i  = 1 ) ) ,(%i  <= 1000 ) ,(%i  >= 1002 ) ) , Or(  Not( (%i  >= 1001 ) ) , Not(  Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) ) , Or(  Not( (%i  <= 1000 ) ) ,(%i  <= 1000 ) ,(%i  >= 1002 ) ) , Or( (%i  <= 1000 ) ,(%i  >= 1001 ) ) ) , And(  Not( (%i  >= 1001 ) ) , Not( (%i  = 1 ) ) ,(%i  <= 1000 ) , Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) ,false ) 
+ Or(  And(  Not(  Or( (%i  <= 1000 ) ,(%i  >= 1002 ) ) ) , Not( (%i  <= 1000 ) ) , Not( (%i  = 1 ) ) ,(%i  >= 1001 ) ) ,false ) 
+false 
+------------
+simplify cache hit is 32 and mis is 5
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,4))
+new backedge found from 4 to 2 with choice(1) exitValue is 0
+----------------------
+TRUE

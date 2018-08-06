@@ -1,0 +1,28 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/up_true-unreach-call.c,false,clang-4.0,10)</h3><hr>
+<pre>#define LARGE_INT 1000000
+#include "assert.h"
+
+int main() {
+  int n;
+  int i = 0;
+  int k = 0;
+  n = __VERIFIER_nondet_int();
+  while( i < n ) {
+	i++;
+	k++;
+  }
+  int j = 0;
+  while( j < n ) {
+    __VERIFIER_assert (k > 0);
+    j++;
+    k--;
+  }
+}
+</pre><hr>
+<pre>TRUE</pre><hr>
+</body>
+</html>
+      

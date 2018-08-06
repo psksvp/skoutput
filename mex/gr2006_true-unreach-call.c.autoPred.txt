@@ -1,0 +1,330 @@
+[info] Running psksvp.ScratchPad 
+[info] 
+[info] define i32 @main() #0  { 
+[info]   
+[info]     %1 = alloca i32, align 4
+[info]     %x = alloca i32, align 4
+[info]     %y = alloca i32, align 4
+[info]     store i32 0, i32* %1
+[info]     store i32 0, i32* %x, align 4, !dbg !9
+[info]     store i32 0, i32* %y, align 4, !dbg !10
+[info]     br label %2, !dbg !11
+[info]   
+[info]   ; <label>:2
+[info]     %3 = load i32, i32* %x, align 4, !dbg !12
+[info]     %4 = icmp slt i32 %3, 50, !dbg !13
+[info]     br i1 %4, label %5, label %8, !dbg !12
+[info]   
+[info]   ; <label>:5
+[info]     %6 = load i32, i32* %y, align 4, !dbg !14
+[info]     %7 = add nsw i32 %6, 1, !dbg !14
+[info]     store i32 %7, i32* %y, align 4, !dbg !14
+[info]     br label %11, !dbg !15
+[info]   
+[info]   ; <label>:8
+[info]     %9 = load i32, i32* %y, align 4, !dbg !16
+[info]     %10 = add nsw i32 %9, -1, !dbg !16
+[info]     store i32 %10, i32* %y, align 4, !dbg !16
+[info]     br label %11
+[info]   
+[info]   ; <label>:11
+[info]     %12 = load i32, i32* %y, align 4, !dbg !17
+[info]     %13 = icmp slt i32 %12, 0, !dbg !18
+[info]     br i1 %13, label %14, label %15, !dbg !17
+[info]   
+[info]   ; <label>:14
+[info]     br label %18, !dbg !19
+[info]   
+[info]   ; <label>:15
+[info]     %16 = load i32, i32* %x, align 4, !dbg !21
+[info]     %17 = add nsw i32 %16, 1, !dbg !21
+[info]     store i32 %17, i32* %x, align 4, !dbg !21
+[info]     br label %2, !dbg !11
+[info]   
+[info]   ; <label>:18
+[info]     %19 = load i32, i32* %x, align 4, !dbg !22
+[info]     %20 = icmp ne i32 %19, 100, !dbg !23
+[info]     br i1 %20, label %21, label %23, !dbg !22
+[info]   
+[info]   ; <label>:21
+[info]     br label %__error.21
+[info]   
+[info]   ; <label>:23
+[info]     ret i32 0, !dbg !25
+[info]   
+[info]   __error.21: 
+[info]     %22 = call i32 (...) @__VERIFIER_error() , !dbg !24
+[info]     br label %23, !dbg !24
+[info]   
+[info] } 
+[info] 
+[info] ----------------
+[info]  And( true ,(%19@1  = %x@2 ) ,true ,(%12@1  = %y@3 ) ,(%6@1  = %y@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  < 50 ) ) ,(%y@3  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) ,%13@1 ,(%13@1  = (%12@1  < 0 ) ) ,%20@1 ,(%20@1  =  Not( (%19@1  = 100 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 0
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0)
+[info] List(0, 0, 0, 0, 0, 0, 0)
+[info] no Repetitions, rtn linear automaton
+[info] linear auto created and about to return
+[info] ----------------
+[info]  And( true ,(%19@1  = %x@3 ) ,true ,(%12@2  = %y@4 ) ,(%6@2  = %y@3 ) ,(%3@2  = %x@3 ) ,(%16@1  = %x@2 ) ,(%12@1  = %y@3 ) ,(%6@1  = %y@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  < 50 ) ) ,(%y@3  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) , Not( %13@1 ) ,(%13@1  = (%12@1  < 0 ) ) ,(%x@3  = %17@1 ) ,(%17@1  = (%16@1  + 1 ) ) ,%4@2 ,(%4@2  = (%3@2  < 50 ) ) ,(%y@4  = %7@2 ) ,(%7@2  = (%6@2  + 1 ) ) ,%13@2 ,(%13@2  = (%12@2  < 0 ) ) ,%20@1 ,(%20@1  =  Not( (%19@1  = 100 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 1
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+[info] generating predicates for abstraction
+[info] list of variables to quantify over is empty
+[info] 7 predicates generated
+[info] true ,
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] running with predicates: 6
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ) 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 76 and mis is 5
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((3,7), (2,6), (1,5))
+[info] back edge checkPost [ Or(  And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Not( (%x@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) ,false ) ],  And( (%12@1  = %y@0 ) , Not( %13@1 ) ,(%13@1  = (%12@1  < 0 ) ) ) , [ Or(  And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  = 0 ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Not( (%x@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) ,false ,false ) ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 1
+[info] back edge checkPost [ Or(  And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Not( (%x@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) ,false ) ],  And( (%6@1  = %y@0 ) ,(%y@1  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) ) , [ Or(  And(  Not( (%y@1  <= (- 1 ) ) ) , Not( (%y@1  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@1 ) ) , And(  Not( (%y@1  <= (- 1 ) ) ) , Not( (%y@1  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  = 0 ) ,(%x@0  <= 49 ) ,(0  <= %y@1 ) ) , And(  Not( (%y@1  <= (- 1 ) ) ) , Not( (%y@1  = 0 ) ) , Not( (%x@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@1 ) ) ,false ,false ) ]
+[info] new backedge found from 6 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [ Or(  And(  Or(  Not( (%x@0  = 0 ) ) ,(%x@0  <= 49 ) ) , Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(0  <= %y@0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Not( (%x@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) ,false ) ],  And( (%3@1  = %x@0 ) ,%4@1 ,(%4@1  = (%3@1  < 50 ) ) ) , [ Or(  And(  Not( (%y@0  <= (- 1 ) ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  = 0 ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ,(%y@0  = 0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  = 0 ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ,(%y@0  = 0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  = 0 ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ,(%y@0  = 0 ) ) , And(  Not( (%y@0  <= (- 1 ) ) ) , Not( (%y@0  = 0 ) ) , Not( (%x@0  = 0 ) ) , Or( (%x@0  <= 99 ) ,(%x@0  >= 101 ) ) ,(%x@0  <= 49 ) ,(0  <= %y@0 ) ) ,false ,false ) ]
+[info] new backedge found from 5 to 2 with choice(1) exitValue is 0
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%19@1  = %x@3 ) ,true ,(%12@2  = %y@4 ) ,(%9@1  = %y@3 ) ,(%3@2  = %x@3 ) ,(%16@1  = %x@2 ) ,(%12@1  = %y@3 ) ,(%6@1  = %y@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  < 50 ) ) ,(%y@3  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) , Not( %13@1 ) ,(%13@1  = (%12@1  < 0 ) ) ,(%x@3  = %17@1 ) ,(%17@1  = (%16@1  + 1 ) ) , Not( %4@2 ) ,(%4@2  = (%3@2  < 50 ) ) ,(%y@4  = %10@1 ) ,(%10@1  = (%9@1  + (- 1 ) ) ) ,%13@2 ,(%13@2  = (%12@2  < 0 ) ) ,%20@1 ,(%20@1  =  Not( (%19@1  = 100 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 2
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+[info] generating predicates for abstraction
+[info] list of variables to quantify over is empty
+[info] 8 predicates generated
+[info] true ,
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] running with predicates: 7
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Or(  Not( (%y  = 0 ) ) , Not( (%y  <= (- 1 ) ) ) ) , Or(  Not( (0  <= %y ) ) , Not( (%y  <= (- 1 ) ) ) ) , Or( (0  <= %y ) ,(%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info] ------------
+[info] simplify cache hit is 199 and mis is 17
+[info] last loc eq to false? >>>no
+[info] ----------------
+[info]  And( true ,(%19@1  = %x@4 ) ,true ,(%12@3  = %y@5 ) ,(%9@1  = %y@4 ) ,(%3@3  = %x@4 ) ,(%16@2  = %x@3 ) ,(%12@2  = %y@4 ) ,(%6@2  = %y@3 ) ,(%3@2  = %x@3 ) ,(%16@1  = %x@2 ) ,(%12@1  = %y@3 ) ,(%6@1  = %y@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  < 50 ) ) ,(%y@3  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) , Not( %13@1 ) ,(%13@1  = (%12@1  < 0 ) ) ,(%x@3  = %17@1 ) ,(%17@1  = (%16@1  + 1 ) ) ,%4@2 ,(%4@2  = (%3@2  < 50 ) ) ,(%y@4  = %7@2 ) ,(%7@2  = (%6@2  + 1 ) ) , Not( %13@2 ) ,(%13@2  = (%12@2  < 0 ) ) ,(%x@4  = %17@2 ) ,(%17@2  = (%16@2  + 1 ) ) , Not( %4@3 ) ,(%4@3  = (%3@3  < 50 ) ) ,(%y@5  = %10@1 ) ,(%10@1  = (%9@1  + (- 1 ) ) ) ,%13@3 ,(%13@3  = (%12@3  < 0 ) ) ,%20@1 ,(%20@1  =  Not( (%19@1  = 100 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 3
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+[info] generating predicates for abstraction
+[info] list of variables to quantify over is empty
+[info] 8 predicates generated
+[info] true ,
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] running with predicates: 7
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Or(  Not( (%y  = 0 ) ) , Not( (%y  <= (- 1 ) ) ) ) , Or(  Not( (0  <= %y ) ) , Not( (%y  <= (- 1 ) ) ) ) , Or( (0  <= %y ) ,(%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info] ------------
+[info] simplify cache hit is 448 and mis is 17
+[info] last loc eq to false? >>>no
+[info] ----------------
+[info]  And( true ,(%19@1  = %x@5 ) ,true ,(%12@4  = %y@6 ) ,(%9@1  = %y@5 ) ,(%3@4  = %x@5 ) ,(%16@3  = %x@4 ) ,(%12@3  = %y@5 ) ,(%6@3  = %y@4 ) ,(%3@3  = %x@4 ) ,(%16@2  = %x@3 ) ,(%12@2  = %y@4 ) ,(%6@2  = %y@3 ) ,(%3@2  = %x@3 ) ,(%16@1  = %x@2 ) ,(%12@1  = %y@3 ) ,(%6@1  = %y@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  < 50 ) ) ,(%y@3  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) , Not( %13@1 ) ,(%13@1  = (%12@1  < 0 ) ) ,(%x@3  = %17@1 ) ,(%17@1  = (%16@1  + 1 ) ) ,%4@2 ,(%4@2  = (%3@2  < 50 ) ) ,(%y@4  = %7@2 ) ,(%7@2  = (%6@2  + 1 ) ) , Not( %13@2 ) ,(%13@2  = (%12@2  < 0 ) ) ,(%x@4  = %17@2 ) ,(%17@2  = (%16@2  + 1 ) ) ,%4@3 ,(%4@3  = (%3@3  < 50 ) ) ,(%y@5  = %7@3 ) ,(%7@3  = (%6@3  + 1 ) ) , Not( %13@3 ) ,(%13@3  = (%12@3  < 0 ) ) ,(%x@5  = %17@3 ) ,(%17@3  = (%16@3  + 1 ) ) , Not( %4@4 ) ,(%4@4  = (%3@4  < 50 ) ) ,(%y@6  = %10@1 ) ,(%10@1  = (%9@1  + (- 1 ) ) ) ,%13@4 ,(%13@4  = (%12@4  < 0 ) ) ,%20@1 ,(%20@1  =  Not( (%19@1  = 100 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 4
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+[info] generating predicates for abstraction
+[info] list of variables to quantify over is empty
+[info] 8 predicates generated
+[info] true ,
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] running with predicates: 7
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Or(  Not( (%y  = 0 ) ) , Not( (%y  <= (- 1 ) ) ) ) , Or(  Not( (0  <= %y ) ) , Not( (%y  <= (- 1 ) ) ) ) , Or( (0  <= %y ) ,(%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info] ------------
+[info] simplify cache hit is 917 and mis is 17
+[info] last loc eq to false? >>>no
+[info] ----------------
+[info]  And( true ,(%19@1  = %x@6 ) ,true ,(%12@5  = %y@7 ) ,(%9@1  = %y@6 ) ,(%3@5  = %x@6 ) ,(%16@4  = %x@5 ) ,(%12@4  = %y@6 ) ,(%6@4  = %y@5 ) ,(%3@4  = %x@5 ) ,(%16@3  = %x@4 ) ,(%12@3  = %y@5 ) ,(%6@3  = %y@4 ) ,(%3@3  = %x@4 ) ,(%16@2  = %x@3 ) ,(%12@2  = %y@4 ) ,(%6@2  = %y@3 ) ,(%3@2  = %x@3 ) ,(%16@1  = %x@2 ) ,(%12@1  = %y@3 ) ,(%6@1  = %y@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  < 50 ) ) ,(%y@3  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) , Not( %13@1 ) ,(%13@1  = (%12@1  < 0 ) ) ,(%x@3  = %17@1 ) ,(%17@1  = (%16@1  + 1 ) ) ,%4@2 ,(%4@2  = (%3@2  < 50 ) ) ,(%y@4  = %7@2 ) ,(%7@2  = (%6@2  + 1 ) ) , Not( %13@2 ) ,(%13@2  = (%12@2  < 0 ) ) ,(%x@4  = %17@2 ) ,(%17@2  = (%16@2  + 1 ) ) ,%4@3 ,(%4@3  = (%3@3  < 50 ) ) ,(%y@5  = %7@3 ) ,(%7@3  = (%6@3  + 1 ) ) , Not( %13@3 ) ,(%13@3  = (%12@3  < 0 ) ) ,(%x@5  = %17@3 ) ,(%17@3  = (%16@3  + 1 ) ) ,%4@4 ,(%4@4  = (%3@4  < 50 ) ) ,(%y@6  = %7@4 ) ,(%7@4  = (%6@4  + 1 ) ) , Not( %13@4 ) ,(%13@4  = (%12@4  < 0 ) ) ,(%x@6  = %17@4 ) ,(%17@4  = (%16@4  + 1 ) ) , Not( %4@5 ) ,(%4@5  = (%3@5  < 50 ) ) ,(%y@7  = %10@1 ) ,(%10@1  = (%9@1  + (- 1 ) ) ) ,%13@5 ,(%13@5  = (%12@5  < 0 ) ) ,%20@1 ,(%20@1  =  Not( (%19@1  = 100 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 5
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+[info] generating predicates for abstraction
+[info] list of variables to quantify over is empty
+[info] 8 predicates generated
+[info] true ,
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] running with predicates: 7
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ,(%y  = 0 ) ) ,false ,false ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  = 0 ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) ,false ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) , And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (50  <= %x ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(%x  <= 49 ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ,false ) 
+[info]  Or(  And(  Or( (%x  <= 99 ) , Not( (%x  <= 49 ) ) ,(%x  >= 101 ) ) , Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (%x  <= 49 ) ) , Not( (%y  = 0 ) ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) ,(0  <= %y ) ) , And(  Or(  Not( (%x  = 0 ) ) ,(%x  <= 49 ) ) , Or(  Not( (50  <= %x ) ) , Not( (%x  <= 49 ) ) ) , Or( (50  <= %x ) ,(%x  <= 49 ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(0  <= %y ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Or(  Not( (%y  = 0 ) ) , Not( (%y  <= (- 1 ) ) ) ) , Or(  Not( (0  <= %y ) ) , Not( (%y  <= (- 1 ) ) ) ) , Or( (0  <= %y ) ,(%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(0  <= %y ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info]  Or(  And(  Not( (%y  = 0 ) ) , Not( (0  <= %y ) ) , Not( (%x  <= 49 ) ) , Not( (%x  = 0 ) ) , Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,(50  <= %x ) ,(%y  <= (- 1 ) ) ) ,false ) 
+[info] ------------
+[info] simplify cache hit is 1704 and mis is 17
+[info] last loc eq to false? >>>no
+[info] ----------------
+[info]  And( true ,(%19@1  = %x@7 ) ,true ,(%12@6  = %y@8 ) ,(%9@1  = %y@7 ) ,(%3@6  = %x@7 ) ,(%16@5  = %x@6 ) ,(%12@5  = %y@7 ) ,(%6@5  = %y@6 ) ,(%3@5  = %x@6 ) ,(%16@4  = %x@5 ) ,(%12@4  = %y@6 ) ,(%6@4  = %y@5 ) ,(%3@4  = %x@5 ) ,(%16@3  = %x@4 ) ,(%12@3  = %y@5 ) ,(%6@3  = %y@4 ) ,(%3@3  = %x@4 ) ,(%16@2  = %x@3 ) ,(%12@2  = %y@4 ) ,(%6@2  = %y@3 ) ,(%3@2  = %x@3 ) ,(%16@1  = %x@2 ) ,(%12@1  = %y@3 ) ,(%6@1  = %y@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 0 ) ,(%x@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  < 50 ) ) ,(%y@3  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) , Not( %13@1 ) ,(%13@1  = (%12@1  < 0 ) ) ,(%x@3  = %17@1 ) ,(%17@1  = (%16@1  + 1 ) ) ,%4@2 ,(%4@2  = (%3@2  < 50 ) ) ,(%y@4  = %7@2 ) ,(%7@2  = (%6@2  + 1 ) ) , Not( %13@2 ) ,(%13@2  = (%12@2  < 0 ) ) ,(%x@4  = %17@2 ) ,(%17@2  = (%16@2  + 1 ) ) ,%4@3 ,(%4@3  = (%3@3  < 50 ) ) ,(%y@5  = %7@3 ) ,(%7@3  = (%6@3  + 1 ) ) , Not( %13@3 ) ,(%13@3  = (%12@3  < 0 ) ) ,(%x@5  = %17@3 ) ,(%17@3  = (%16@3  + 1 ) ) ,%4@4 ,(%4@4  = (%3@4  < 50 ) ) ,(%y@6  = %7@4 ) ,(%7@4  = (%6@4  + 1 ) ) , Not( %13@4 ) ,(%13@4  = (%12@4  < 0 ) ) ,(%x@6  = %17@4 ) ,(%17@4  = (%16@4  + 1 ) ) ,%4@5 ,(%4@5  = (%3@5  < 50 ) ) ,(%y@7  = %7@5 ) ,(%7@5  = (%6@5  + 1 ) ) , Not( %13@5 ) ,(%13@5  = (%12@5  < 0 ) ) ,(%x@7  = %17@5 ) ,(%17@5  = (%16@5  + 1 ) ) , Not( %4@6 ) ,(%4@6  = (%3@6  < 50 ) ) ,(%y@8  = %10@1 ) ,(%10@1  = (%9@1  + (- 1 ) ) ) ,%13@6 ,(%13@6  = (%12@6  < 0 ) ) ,%20@1 ,(%20@1  =  Not( (%19@1  = 100 ) ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 6
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+[info] generating predicates for abstraction
+[info] list of variables to quantify over is empty
+[info] 8 predicates generated
+[info] true ,
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 
+[info] running with predicates: 7
+[info]  Or( (%x  <= 99 ) ,(%x  >= 101 ) ) ,
+[info] (50  <= %x ) ,
+[info] (%x  = 0 ) ,
+[info] (%x  <= 49 ) ,
+[info] (0  <= %y ) ,
+[info] (%y  = 0 ) ,
+[info] (%y  <= (- 1 ) ) 

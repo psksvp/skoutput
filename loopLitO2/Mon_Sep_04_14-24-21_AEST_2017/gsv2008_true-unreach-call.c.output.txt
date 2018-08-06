@@ -1,0 +1,231 @@
+define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    %1 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !15
+    %2 = add i32 %1, 999, !dbg !16
+    %3 = icmp ult i32 %2, 1000999, !dbg !16
+    %4 = zext i1 %3 to i32, !dbg !17
+    tail call void @__VERIFIER_assume(i32 %4) #2 , !dbg !19
+    br label %5, !dbg !20
+  
+  ; <label>:5
+    %6 = phi i32 [ %1, %0 ], [ %9, %5 ]
+    %7 = phi i32 [ -50, %0 ], [ %8, %5 ]
+    %8 = add nsw i32 %6, %7, !dbg !22
+    %9 = add nsw i32 %6, 1, !dbg !23
+    %10 = icmp slt i32 %8, 0, !dbg !24
+    br i1 %10, label %5, label %11, !dbg !20, !llvm.loop !25
+  
+  ; <label>:11
+    %12 = icmp sgt i32 %6, -1, !dbg !28
+    br i1 %12, label %14, label %13, !dbg !29
+  
+  ; <label>:13
+    br label %__error.13
+  
+  ; <label>:14
+    ret i32 0, !dbg !31
+  
+  __error.13: 
+    tail call void @__VERIFIER_error() #2 , !dbg !30
+    br label %14, !dbg !30
+  
+} 
+
+using predicates abs
+List(0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%6  = %1 ) ,
+(%6  <= 49 ) ,
+(%6  <= (- 1 ) ) ,
+(%1  >= (- 999 ) ) ,
+(%1  <= 999999 ) 
+I am doing the trace:List(0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And( (%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  = %1 ) ,(%6  <= 49 ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  <= 49 ) ,(%6  <= (- 1 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+------------
+simplify cache hit is 18 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%6  = %1 ) ,
+(%6  <= 49 ) ,
+(%6  <= (- 1 ) ) ,
+(%1  >= (- 999 ) ) ,
+(%1  <= 999999 ) 
+I am doing the trace:List(0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And( (%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  = %1 ) ,(%6  <= 49 ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  <= 49 ) ,(%6  <= (- 1 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+------------
+simplify cache hit is 55 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%6  = %1 ) ,
+(%6  <= 49 ) ,
+(%6  <= (- 1 ) ) ,
+(%1  >= (- 999 ) ) ,
+(%1  <= 999999 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And( (%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  = %1 ) ,(%6  <= 49 ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  <= 49 ) ,(%6  <= (- 1 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+------------
+simplify cache hit is 112 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%6  = %1 ) ,
+(%6  <= 49 ) ,
+(%6  <= (- 1 ) ) ,
+(%1  >= (- 999 ) ) ,
+(%1  <= 999999 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And( (%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  = %1 ) ,(%6  <= 49 ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  <= 49 ) ,(%6  <= (- 1 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+------------
+simplify cache hit is 196 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%6  = %1 ) ,
+(%6  <= 49 ) ,
+(%6  <= (- 1 ) ) ,
+(%1  >= (- 999 ) ) ,
+(%1  <= 999999 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And( (%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  = %1 ) ,(%6  <= 49 ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  <= 49 ) ,(%6  <= (- 1 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+------------
+simplify cache hit is 315 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%6  = %1 ) ,
+(%6  <= 49 ) ,
+(%6  <= (- 1 ) ) ,
+(%1  >= (- 999 ) ) ,
+(%1  <= 999999 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And( (%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  = %1 ) ,(%6  <= 49 ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  <= 49 ) ,(%6  <= (- 1 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+------------
+simplify cache hit is 478 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%6  = %1 ) ,
+(%6  <= 49 ) ,
+(%6  <= (- 1 ) ) ,
+(%1  >= (- 999 ) ) ,
+(%1  <= 999999 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And( (%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  = %1 ) ,(%6  <= 49 ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  <= 49 ) ,(%6  <= (- 1 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+------------
+simplify cache hit is 695 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%6  = %1 ) ,
+(%6  <= 49 ) ,
+(%6  <= (- 1 ) ) ,
+(%1  >= (- 999 ) ) ,
+(%1  <= 999999 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And( (%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  = %1 ) ,(%6  <= 49 ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) , Or(  Not( (%6  = %1 ) ) ,(%6  <= 49 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ,false ) 
+ Or(  And(  Or( (%6  <= 49 ) , Not( (%6  <= (- 1 ) ) ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+ Or(  And( (%6  <= 49 ) ,(%6  <= (- 1 ) ) ,(%1  >= (- 999 ) ) ,(%1  <= 999999 ) ) ,false ) 
+------------
+simplify cache hit is 977 and mis is 5
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 10 reached

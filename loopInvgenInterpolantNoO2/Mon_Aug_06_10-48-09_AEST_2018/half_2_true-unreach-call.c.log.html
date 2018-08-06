@@ -1,0 +1,36 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/half_2_true-unreach-call.c,false,clang-4.0,20)</h3><hr>
+<pre>#include "assert.h"
+
+int main() {
+  int n,i,k;
+  n = __VERIFIER_nondet_int();
+  __VERIFIER_assume(n <= LARGE_INT);
+  k = n;
+  i = 0;
+  while( i < n ) {
+    k--;
+    i = i + 2;
+  }
+
+  int j = 0;
+ 
+  while( j < n/2 ) {
+    if(!(k > 0)) __VERIFIER_error();
+    k--;
+    j++;
+  }
+  return 0;
+}
+</pre><hr>
+<pre>/tmp/2yuWoX9rrV.c:6:26: error: use of undeclared identifier 'LARGE_INT'
+  __VERIFIER_assume(n <= LARGE_INT);
+                         ^
+1 error generated.
+
+buildIRFromFile: preparing LLVM code failed with code 1</pre><hr>
+</body>
+</html>
+      

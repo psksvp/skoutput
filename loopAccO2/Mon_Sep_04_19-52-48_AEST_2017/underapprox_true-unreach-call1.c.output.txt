@@ -1,0 +1,7 @@
+define i32 @main() local_unnamed_addr #0 !dbg !12 { 
+  
+    ret i32 0, !dbg !13
+  
+} 
+
+TRUE

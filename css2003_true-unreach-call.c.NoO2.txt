@@ -1,0 +1,330 @@
+** No O2 Full Predicates **
+
+scala> consoleRun("/home/psksvp/workspace/sv-bench/c/loop-lit/css2003_true-unreach-call.c", Nil, false, true, "clang-3.7", 40)
+
+define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %i = alloca i32, align 4
+    %j = alloca i32, align 4
+    %k = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 1, i32* %i, align 4, !dbg !19
+    store i32 1, i32* %j, align 4, !dbg !20
+    %2 = call i32 (...) @__VERIFIER_nondet_int() , !dbg !21
+    store i32 %2, i32* %k, align 4, !dbg !22
+    %3 = load i32, i32* %k, align 4, !dbg !23
+    %4 = icmp sle i32 0, %3, !dbg !24
+    br i1 %4, label %5, label %8, !dbg !25
+  
+  ; <label>:5
+    %6 = load i32, i32* %k, align 4, !dbg !26
+    %7 = icmp sle i32 %6, 1, !dbg !28
+    br label %8
+  
+  ; <label>:8
+    %9 = phi i1 [ false, %0 ], [ %7, %5 ]
+    %10 = zext i1 %9 to i32, !dbg !29
+    call void @__VERIFIER_assume(i32 %10) , !dbg !31
+    br label %11, !dbg !32
+  
+  ; <label>:11
+    %12 = load i32, i32* %i, align 4, !dbg !33
+    %13 = icmp slt i32 %12, 1000000, !dbg !35
+    br i1 %13, label %14, label %36, !dbg !32
+  
+  ; <label>:14
+    %15 = load i32, i32* %i, align 4, !dbg !36
+    %16 = add nsw i32 %15, 1, !dbg !37
+    store i32 %16, i32* %i, align 4, !dbg !38
+    %17 = load i32, i32* %j, align 4, !dbg !39
+    %18 = load i32, i32* %k, align 4, !dbg !40
+    %19 = add nsw i32 %17, %18, !dbg !41
+    store i32 %19, i32* %j, align 4, !dbg !42
+    %20 = load i32, i32* %k, align 4, !dbg !43
+    %21 = sub nsw i32 %20, 1, !dbg !44
+    store i32 %21, i32* %k, align 4, !dbg !45
+    %22 = load i32, i32* %i, align 4, !dbg !46
+    %23 = load i32, i32* %k, align 4, !dbg !47
+    %24 = add nsw i32 %22, %23, !dbg !48
+    %25 = icmp sle i32 1, %24, !dbg !49
+    br i1 %25, label %26, label %34, !dbg !50
+  
+  ; <label>:26
+    %27 = load i32, i32* %i, align 4, !dbg !51
+    %28 = load i32, i32* %k, align 4, !dbg !52
+    %29 = add nsw i32 %27, %28, !dbg !53
+    %30 = icmp sle i32 %29, 2, !dbg !54
+    br i1 %30, label %31, label %34, !dbg !55
+  
+  ; <label>:31
+    %32 = load i32, i32* %i, align 4, !dbg !56
+    %33 = icmp sge i32 %32, 1, !dbg !58
+    br i1 %33, label %35, label %34, !dbg !59
+  
+  ; <label>:34
+    br label %__error.34
+  
+  ; <label>:35
+    br label %11, !dbg !32
+  
+  ; <label>:36
+    ret i32 0, !dbg !63
+  
+  __error.34: 
+    call void @__VERIFIER_error() , !dbg !60
+    br label %35, !dbg !60
+  
+} 
+
+using predicates abs
+List(0, 0, 0, 0, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 11
+(%i  <= 0 ) ,
+%7 ,
+((%i  + %k )  <= 2 ) ,
+(1  <= (%i  + %k ) ) ,
+(%j  = 1 ) ,
+(%i  <= 999999 ) ,
+(%i  = 1 ) ,
+(%i  >= 1 ) ,
+(0  <= %k ) ,
+ Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,
+(1  <= (%k  + %i ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (%i  <= 0 ) ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Or( %7 , Not( ((%i  + %k )  <= 2 ) ) ) , Or(  Not( %7 ) ,((%i  + %k )  <= 2 ) ) , Not( (%i  <= 0 ) ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%j  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%j  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%j  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%j  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%j  = 1 ) ) , Not( (%i  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+false 
+------------
+simplify cache hit is 183 and mis is 9
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((3,8), (4,9), (6,11), (5,10))
+new backedge found from 8 to 4 with choice(3) exitValue is 0
+new backedge found from 9 to 5 with choice(4) exitValue is 0
+new backedge found from 11 to 7 with choice(6) exitValue is 0
+new backedge found from 10 to 6 with choice(5) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 11
+%7 ,
+((%i  + %k )  <= 2 ) ,
+(1  <= (%i  + %k ) ) ,
+(%j  = 1 ) ,
+(%i  <= 999999 ) ,
+((%k  + %i )  >= 3 ) ,
+(%i  = 1 ) ,
+(%i  >= 1 ) ,
+(0  <= %k ) ,
+ Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,
+(1  <= (%k  + %i ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( ((%i  + %k )  <= 2 ) ) , Not( ((%k  + %i )  >= 3 ) ) ) , Or( ((%i  + %k )  <= 2 ) ,((%k  + %i )  >= 3 ) ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Or(  Not( ((%i  + %k )  <= 2 ) ) , Not( ((%k  + %i )  >= 3 ) ) ) , Or( %7 ,((%k  + %i )  >= 3 ) ) , Or(  Not( %7 ) ,((%i  + %k )  <= 2 ) ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) , Not( (%j  = 1 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) , Not( (%j  = 1 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+ Or(  And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  >= 3 ) ) , Not( (%j  = 1 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ,(1  <= (%k  + %i ) ) ) ,false ) 
+false 
+------------
+simplify cache hit is 349 and mis is 18
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((3,8), (4,9), (5,10))
+new backedge found from 8 to 4 with choice(3) exitValue is 0
+new backedge found from 9 to 5 with choice(4) exitValue is 0
+new backedge found from 10 to 6 with choice(5) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 10
+((%k  + %i )  <= 0 ) ,
+%7 ,
+((%i  + %k )  <= 2 ) ,
+(1  <= (%i  + %k ) ) ,
+(%j  = 1 ) ,
+(%i  <= 999999 ) ,
+(%i  = 1 ) ,
+(%i  >= 1 ) ,
+(0  <= %k ) ,
+ Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%k  + %i )  <= 0 ) ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) ) ,false ) 
+ Or(  And(  Or( %7 , Not( ((%i  + %k )  <= 2 ) ) ) , Or(  Not( %7 ) ,((%i  + %k )  <= 2 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) ,false ) 
+ Or(  And(  Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) ,false ) 
+ Or(  And(  Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,(0  <= %k ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Not( (0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( (%j  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%i  <= 999999 ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) , Or(  Not( (%j  = 1 ) ) ,(%i  <= 999999 ) ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) ,false ) 
+ Or(  And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) , And(  Or(  Not( (%j  = 1 ) ) , Not( (0  <= %k ) ) ) , Or( (%j  = 1 ) ,(0  <= %k ) ) , Not( (%i  = 1 ) ) , Not( ((%k  + %i )  <= 0 ) ) ,%7 ,((%i  + %k )  <= 2 ) ,(1  <= (%i  + %k ) ) ,(%i  <= 999999 ) ,(%i  >= 1 ) , Or(  And( %7 ,(%k  <= 1 ) ) , And(  Not( %7 ) ,(%k  >= 2 ) ) ) ) ,false ) 
+false 
+------------
+simplify cache hit is 496 and mis is 27
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((3,8), (4,9))
+new backedge found from 8 to 4 with choice(3) exitValue is 0
+new backedge found from 9 to 5 with choice(4) exitValue is 0
+----------------------
+using predicates abs
+List(0, 0, 0, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(1, 0, 0, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 9
+false ,
+(%i  <= 0 ) ,
+((%i  + %k )  <= 2 ) ,
+(%k  <= (- 1 ) ) ,
+(1  <= (%i  + %k ) ) ,
+(%j  = 1 ) ,
+(%i  <= 999999 ) ,
+(%i  = 1 ) ,
+(%i  >= 1 ) 
+I am doing the trace:List(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (1  <= (%i  + %k ) ) ) , Not( (%i  <= 0 ) ) ,((%i  + %k )  <= 2 ) ,(%k  <= (- 1 ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ) ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 497 and mis is 28
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((2,7), (3,8), (5,10), (4,9))
+new backedge found from 7 to 3 with choice(2) exitValue is 0
+new backedge found from 8 to 4 with choice(3) exitValue is 0
+new backedge found from 10 to 6 with choice(5) exitValue is 0
+new backedge found from 9 to 5 with choice(4) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 9
+false ,
+((%i  + %k )  >= 3 ) ,
+((%i  + %k )  <= 2 ) ,
+(%k  <= (- 1 ) ) ,
+(1  <= (%i  + %k ) ) ,
+(%j  = 1 ) ,
+(%i  <= 999999 ) ,
+(%i  = 1 ) ,
+(%i  >= 1 ) 
+I am doing the trace:List(1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (1  <= (%i  + %k ) ) ) , Not( ((%i  + %k )  >= 3 ) ) ,((%i  + %k )  <= 2 ) ,(%k  <= (- 1 ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ) ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 498 and mis is 29
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((2,7), (3,8), (4,9))
+new backedge found from 7 to 3 with choice(2) exitValue is 0
+new backedge found from 8 to 4 with choice(3) exitValue is 0
+new backedge found from 9 to 5 with choice(4) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 9
+false ,
+((%i  + %k )  <= 2 ) ,
+(%k  <= (- 1 ) ) ,
+(1  <= (%i  + %k ) ) ,
+(%j  = 1 ) ,
+(%i  <= 999999 ) ,
+(%i  = 1 ) ,
+(%i  >= 1 ) ,
+((%i  + %k )  <= 0 ) 
+I am doing the trace:List(1, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (1  <= (%i  + %k ) ) ) ,((%i  + %k )  <= 2 ) ,(%k  <= (- 1 ) ) ,(%j  = 1 ) ,(%i  <= 999999 ) ,(%i  = 1 ) ,(%i  >= 1 ) ,((%i  + %k )  <= 0 ) ) ,false ) 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+false 
+------------
+simplify cache hit is 499 and mis is 30
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((2,7), (3,8))
+new backedge found from 7 to 3 with choice(2) exitValue is 0
+new backedge found from 8 to 4 with choice(3) exitValue is 0
+----------------------
+using predicates abs
+List(1, 0, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(1, 0, 0, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+TRUE
+
+scala> 

@@ -1,0 +1,117 @@
+define i32 @main(i32 %argc, i8** %arg) #0  { 
+  
+    %1 = alloca i32, align 4
+    %2 = alloca i32, align 4
+    %3 = alloca i8**, align 8
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 %argc, i32* %2, align 4
+    store i8** %arg, i8*** %3, align 8
+    store i32 0, i32* %x, align 4, !dbg !9
+    store i32 0, i32* %y, align 4, !dbg !10
+    br label %4, !dbg !11
+  
+  ; <label>:4
+    %5 = load i32, i32* %x, align 4, !dbg !12
+    %6 = icmp slt i32 %5, 2000, !dbg !15
+    br i1 %6, label %7, label %12, !dbg !11
+  
+  ; <label>:7
+    %8 = load i32, i32* %x, align 4, !dbg !16
+    %9 = add nsw i32 %8, 1, !dbg !16
+    store i32 %9, i32* %x, align 4, !dbg !16
+    %10 = load i32, i32* %y, align 4, !dbg !17
+    %11 = add nsw i32 %10, 1, !dbg !17
+    store i32 %11, i32* %y, align 4, !dbg !17
+    br label %4, !dbg !11
+  
+  ; <label>:12
+    %13 = load i32, i32* %x, align 4, !dbg !18
+    %14 = icmp ne i32 %13, 2000, !dbg !19
+    br i1 %14, label %15, label %16, !dbg !18
+  
+  ; <label>:15
+    br label %__error.15
+  
+  ; <label>:16
+    %17 = load i32, i32* %y, align 4, !dbg !21
+    %18 = icmp slt i32 %17, 0, !dbg !22
+    br i1 %18, label %19, label %20, !dbg !21
+  
+  ; <label>:19
+    br label %__error.19
+  
+  ; <label>:20
+    ret i32 0, !dbg !24
+  
+  __error.15: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !20
+    unreachable, !dbg !20
+  
+  __error.19: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !23
+    unreachable, !dbg !23
+  
+} 
+
+using predicates abs
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+running with predicates: 5
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%y  = 0 ) ,
+ Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ,
+(2000  <= %x ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%x  = 0 ) ,(%y  = 0 ) , Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) ,false ) 
+ Or(  And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%x  = 0 ) ,(%y  = 0 ) , Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%x  = 0 ) ,(%y  = 0 ) , Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) , Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) , And(  Not( (2000  <= %x ) ) ,(%x  <= 1999 ) ,(%x  = 0 ) ,(%y  = 0 ) , Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) ,(%x  <= 1999 ) , Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  = 0 ) ) , Not( (2000  <= %x ) ) ) , Or(  Not(  Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) , Not( (2000  <= %x ) ) ) , Or( (%x  <= 1999 ) ,(2000  <= %x ) ) , Or(  Not( (%x  <= 1999 ) ) ,(%x  <= 1999 ) ,(%x  >= 2001 ) ) ) , And(  Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) ,(%x  <= 1999 ) , Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) ,false ) 
+ Or(  And(  Not(  Or( (%x  <= 1999 ) ,(%x  >= 2001 ) ) ) , Not( (%x  = 0 ) ) , Not( (%x  <= 1999 ) ) ,(2000  <= %x ) ) ,false ) 
+false 
+------------
+simplify cache hit is 19 and mis is 5
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,3))
+new backedge found from 3 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+generating predicates for abstraction
+running with predicates: 7
+(%x  <= 1999 ) ,
+(%x  = 0 ) ,
+(%x  <= 2000 ) ,
+(%x  >= 2000 ) ,
+(%y  = 0 ) ,
+(2000  <= %x ) ,
+(%y  <= (- 1 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (2000  <= %x ) ) , Not( (%x  >= 2000 ) ) ,(%x  <= 1999 ) ,(%x  = 0 ) ,(%x  <= 2000 ) ,(%y  = 0 ) ) ,false ) 
+ Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (2000  <= %x ) ) , Not( (%x  >= 2000 ) ) ,(%x  <= 1999 ) ,(%x  = 0 ) ,(%x  <= 2000 ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (2000  <= %x ) ) , Not( (%x  >= 2000 ) ) ,(%x  <= 1999 ) ,(%x  = 0 ) ,(%x  <= 2000 ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) , Not( (%x  >= 2000 ) ) ,(%x  <= 1999 ) ,(%x  <= 2000 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (2000  <= %x ) ) , Not( (%x  >= 2000 ) ) ,(%x  <= 1999 ) ,(%x  = 0 ) ,(%x  <= 2000 ) ,(%y  = 0 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) , Not( (%x  >= 2000 ) ) , Not( (%x  = 0 ) ) ,(%x  <= 1999 ) ,(%x  <= 2000 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (%x  <= 1999 ) ) , Not( (2000  <= %x ) ) ) , Or(  Not( (%x  >= 2000 ) ) ,(2000  <= %x ) ) , Or( (%x  <= 1999 ) ,(%x  >= 2000 ) ) , Or(  Not( (%x  = 0 ) ) , Not( (2000  <= %x ) ) ) , Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) ,(%x  <= 2000 ) ) , And(  Not( (%y  <= (- 1 ) ) ) , Not( (2000  <= %x ) ) , Not( (%y  = 0 ) ) , Not( (%x  >= 2000 ) ) , Not( (%x  = 0 ) ) ,(%x  <= 1999 ) ,(%x  <= 2000 ) ) ,false ) 
+ Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (%x  <= 1999 ) ) ,(%x  <= 2000 ) ,(%x  >= 2000 ) ,(2000  <= %x ) ) ,false ) 
+ Or(  And(  Not( (%y  <= (- 1 ) ) ) , Not( (%y  = 0 ) ) , Not( (%x  = 0 ) ) , Not( (%x  <= 1999 ) ) ,(%x  <= 2000 ) ,(%x  >= 2000 ) ,(2000  <= %x ) ) ,false ) 
+false 
+------------
+simplify cache hit is 45 and mis is 10
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,3))
+new backedge found from 3 to 2 with choice(1) exitValue is 0
+----------------------
+using predicates abs
+List(0, 1, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+TRUE

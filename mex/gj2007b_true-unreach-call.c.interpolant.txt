@@ -1,0 +1,621 @@
+[info] Running psksvp.ScratchPad 
+[info] 
+[info] define i32 @main() #0  { 
+[info]   
+[info]     %1 = alloca i32, align 4
+[info]     %x = alloca i32, align 4
+[info]     %m = alloca i32, align 4
+[info]     %n = alloca i32, align 4
+[info]     store i32 0, i32* %1
+[info]     store i32 0, i32* %x, align 4, !dbg !9
+[info]     store i32 0, i32* %m, align 4, !dbg !10
+[info]     %2 = call i32 (...) @__VERIFIER_nondet_int() , !dbg !11
+[info]     store i32 %2, i32* %n, align 4, !dbg !12
+[info]     br label %3, !dbg !13
+[info]   
+[info]   ; <label>:3
+[info]     %4 = load i32, i32* %x, align 4, !dbg !14
+[info]     %5 = load i32, i32* %n, align 4, !dbg !17
+[info]     %6 = icmp slt i32 %4, %5, !dbg !18
+[info]     br i1 %6, label %7, label %15, !dbg !13
+[info]   
+[info]   ; <label>:7
+[info]     %8 = call i32 (...) @__VERIFIER_nondet_int() , !dbg !19
+[info]     %9 = icmp ne i32 %8, 0, !dbg !19
+[info]     br i1 %9, label %10, label %12, !dbg !19
+[info]   
+[info]   ; <label>:10
+[info]     %11 = load i32, i32* %x, align 4, !dbg !20
+[info]     store i32 %11, i32* %m, align 4, !dbg !21
+[info]     br label %12, !dbg !22
+[info]   
+[info]   ; <label>:12
+[info]     %13 = load i32, i32* %x, align 4, !dbg !23
+[info]     %14 = add nsw i32 %13, 1, !dbg !24
+[info]     store i32 %14, i32* %x, align 4, !dbg !25
+[info]     br label %3, !dbg !13
+[info]   
+[info]   ; <label>:15
+[info]     %16 = load i32, i32* %m, align 4, !dbg !26
+[info]     %17 = icmp sge i32 %16, 0, !dbg !27
+[info]     br i1 %17, label %23, label %18, !dbg !28
+[info]   
+[info]   ; <label>:18
+[info]     %19 = load i32, i32* %n, align 4, !dbg !29
+[info]     %20 = icmp sle i32 %19, 0, !dbg !30
+[info]     br i1 %20, label %23, label %21, !dbg !31
+[info]   
+[info]   ; <label>:21
+[info]     br label %__error.21
+[info]   
+[info]   ; <label>:23
+[info]     %24 = load i32, i32* %m, align 4, !dbg !34
+[info]     %25 = load i32, i32* %n, align 4, !dbg !35
+[info]     %26 = icmp slt i32 %24, %25, !dbg !36
+[info]     br i1 %26, label %32, label %27, !dbg !37
+[info]   
+[info]   ; <label>:27
+[info]     %28 = load i32, i32* %n, align 4, !dbg !38
+[info]     %29 = icmp sle i32 %28, 0, !dbg !39
+[info]     br i1 %29, label %32, label %30, !dbg !40
+[info]   
+[info]   ; <label>:30
+[info]     br label %__error.30
+[info]   
+[info]   ; <label>:32
+[info]     ret i32 0, !dbg !42
+[info]   
+[info]   __error.21: 
+[info]     %22 = call i32 (...) @__VERIFIER_error() , !dbg !32
+[info]     br label %23, !dbg !32
+[info]   
+[info]   __error.30: 
+[info]     %31 = call i32 (...) @__VERIFIER_error() , !dbg !41
+[info]     br label %32, !dbg !41
+[info]   
+[info] } 
+[info] 
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@2 ) ,(%16@1  = %m@2 ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) , Not( %6@1 ) ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%17@1 ,(%17@1  = (%16@1  >= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 0
+[info] using interpolant
+[info] choices:List(0, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (<= %n@2 0 ) 
+[info] (<= %n@2 0 ) 
+[info] (<= %n@2 0 ) 
+[info] new back edges is: Vector()
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@3 ) ,(%16@1  = %m@3 ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) , Not( %6@2 ) ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%17@1 ,(%17@1  = (%16@1  >= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 1
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (and (not (<= %n@2 0 ) ) (= 0 %x@2 ) ) 
+[info] (and (not (<= %n@2 0 ) ) (= 0 %x@2 ) ) 
+[info] (and (not (<= %n@2 0 ) ) (= 0 %m@3 ) ) 
+[info] (and (not (<= %n@2 0 ) ) (= 0 %m@3 ) ) 
+[info] (and (not (<= %n@2 0 ) ) (= 0 %m@3 ) ) 
+[info] (and (not (<= %n@2 0 ) ) (= 0 %m@3 ) ) 
+[info] false 
+[info] new back edges is: Vector()
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@4 ) ,(%16@1  = %m@4 ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) , Not( %6@3 ) ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%17@1 ,(%17@1  = (%16@1  >= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 2
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] (not (<= (+ (* (- 1 ) %x@3 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %x@3 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 0 ) ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(5,2),0), LabDiEdge(DiEdge(9,2),0), LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(6,3),0), LabDiEdge(DiEdge(7,4),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@4 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@4 ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) , Not( %6@3 ) ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 3
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %m@4 ) 
+[info] (<= 1 %m@4 ) 
+[info] (<= 1 %m@4 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector()
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@5 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@5 ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%11@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%9@3 ,(%m@5  = %11@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) , Not( %6@4 ) ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 4
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(11,8),0))
+[info] ----------------
+[info]  And( true ,(%19@1  = %n@2 ) ,(%16@1  = %m@5 ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%11@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%9@3 ,(%m@5  = %11@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) , Not( %6@4 ) ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) , Not( %20@1 ) ,(%20@1  = (%19@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 5
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(11,8),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@4 ) ,(%16@1  = %m@4 ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) , Not( %6@4 ) ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) ,%17@1 ,(%17@1  = (%16@1  >= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 6
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] (<= 0 (+ (* (- 1 ) %m@4 ) %x@3 ) ) 
+[info] (<= 1 (+ (* (- 1 ) %m@4 ) %x@4 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 1 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 1 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 1 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 1 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@4 ) %n@2 ) 1 ) ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(5,2),0), LabDiEdge(DiEdge(9,2),0), LabDiEdge(DiEdge(12,2),0), LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(12,6),0), LabDiEdge(DiEdge(12,10),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(11,5),0), LabDiEdge(DiEdge(6,3),0), LabDiEdge(DiEdge(10,3),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(7,4),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@5 ) ,(%16@1  = %m@5 ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%11@3  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) ,%9@4 ,(%m@5  = %11@3 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) , Not( %6@5 ) ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) ,%17@1 ,(%17@1  = (%16@1  >= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 7
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] true 
+[info] (not (<= (+ (* (- 1 ) %x@5 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %x@5 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@5 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@5 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@5 ) %n@2 ) 0 ) ) 
+[info] (not (<= (+ (* (- 1 ) %m@5 ) %n@2 ) 0 ) ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(5,2),0), LabDiEdge(DiEdge(9,2),0), LabDiEdge(DiEdge(12,2),0), LabDiEdge(DiEdge(16,2),0), LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(12,6),0), LabDiEdge(DiEdge(16,6),0), LabDiEdge(DiEdge(12,10),0), LabDiEdge(DiEdge(16,10),0), LabDiEdge(DiEdge(16,13),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(11,5),0), LabDiEdge(DiEdge(15,5),0), LabDiEdge(DiEdge(11,9),0), LabDiEdge(DiEdge(15,9),0), LabDiEdge(DiEdge(15,12),0), LabDiEdge(DiEdge(6,3),0), LabDiEdge(DiEdge(10,3),0), LabDiEdge(DiEdge(13,3),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(13,7),0), LabDiEdge(DiEdge(13,11),1), LabDiEdge(DiEdge(7,4),0), LabDiEdge(DiEdge(14,4),0), LabDiEdge(DiEdge(14,8),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@5 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@5 ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%11@3  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) ,%9@4 ,(%m@5  = %11@3 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) , Not( %6@5 ) ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 8
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(12,6),0), LabDiEdge(DiEdge(12,10),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(11,5),0), LabDiEdge(DiEdge(11,9),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(13,7),0), LabDiEdge(DiEdge(13,11),1), LabDiEdge(DiEdge(14,8),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@6 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@6 ) ,(%4@6  = %x@7 ) ,(%13@5  = %x@6 ) ,(%11@4  = %x@6 ) ,(%9@5  =  Not( (%8@5  = 0 ) ) ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%11@3  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) ,%9@4 ,(%m@5  = %11@3 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) ,%6@5 ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) ,%9@5 ,(%m@6  = %11@4 ) ,(%x@7  = %14@5 ) ,(%14@5  = (%13@5  + 1 ) ) , Not( %6@6 ) ,(%6@6  = (%4@6  < %5@6 ) ) ,(%5@6  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 9
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(12,6),0), LabDiEdge(DiEdge(16,6),0), LabDiEdge(DiEdge(12,10),0), LabDiEdge(DiEdge(16,10),0), LabDiEdge(DiEdge(16,13),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(11,5),0), LabDiEdge(DiEdge(15,5),0), LabDiEdge(DiEdge(11,9),0), LabDiEdge(DiEdge(15,9),0), LabDiEdge(DiEdge(15,12),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(13,7),0), LabDiEdge(DiEdge(17,7),0), LabDiEdge(DiEdge(13,11),1), LabDiEdge(DiEdge(17,11),1), LabDiEdge(DiEdge(17,14),0), LabDiEdge(DiEdge(14,8),0), LabDiEdge(DiEdge(18,8),0), LabDiEdge(DiEdge(18,15),0))
+[info] ----------------
+[info]  And( true ,(%19@1  = %n@2 ) ,(%16@1  = %m@6 ) ,(%4@6  = %x@7 ) ,(%13@5  = %x@6 ) ,(%11@4  = %x@6 ) ,(%9@5  =  Not( (%8@5  = 0 ) ) ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%11@3  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) ,%9@4 ,(%m@5  = %11@3 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) ,%6@5 ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) ,%9@5 ,(%m@6  = %11@4 ) ,(%x@7  = %14@5 ) ,(%14@5  = (%13@5  + 1 ) ) , Not( %6@6 ) ,(%6@6  = (%4@6  < %5@6 ) ) ,(%5@6  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) , Not( %20@1 ) ,(%20@1  = (%19@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 10
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(12,6),0), LabDiEdge(DiEdge(16,6),0), LabDiEdge(DiEdge(12,10),0), LabDiEdge(DiEdge(16,10),0), LabDiEdge(DiEdge(16,13),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(11,5),0), LabDiEdge(DiEdge(15,5),0), LabDiEdge(DiEdge(11,9),0), LabDiEdge(DiEdge(15,9),0), LabDiEdge(DiEdge(15,12),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(13,7),0), LabDiEdge(DiEdge(17,7),0), LabDiEdge(DiEdge(13,11),1), LabDiEdge(DiEdge(17,11),1), LabDiEdge(DiEdge(17,14),0), LabDiEdge(DiEdge(14,8),0), LabDiEdge(DiEdge(18,8),0), LabDiEdge(DiEdge(18,15),0))
+[info] ----------------
+[info]  And( true ,(%19@1  = %n@2 ) ,(%16@1  = %m@5 ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%11@3  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) ,%9@4 ,(%m@5  = %11@3 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) , Not( %6@5 ) ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) , Not( %20@1 ) ,(%20@1  = (%19@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 11
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(12,6),0), LabDiEdge(DiEdge(12,10),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(11,5),0), LabDiEdge(DiEdge(11,9),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(13,7),0), LabDiEdge(DiEdge(13,11),1), LabDiEdge(DiEdge(14,8),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@4 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@4 ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) , Not( %6@4 ) ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 12
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %m@4 ) 
+[info] (<= 1 %m@4 ) 
+[info] (<= 1 %m@4 ) 
+[info] (<= 1 %m@4 ) 
+[info] (<= 1 %m@4 ) 
+[info] (<= 1 %m@4 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(12,10),0), LabDiEdge(DiEdge(11,9),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@5 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@5 ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%11@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%9@3 ,(%m@5  = %11@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %9@4 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) , Not( %6@5 ) ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 13
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(16,14),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(15,13),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(11,8),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@6 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@6 ) ,(%4@7  = %x@8 ) ,(%13@6  = %x@7 ) ,(%9@6  =  Not( (%8@6  = 0 ) ) ) ,(%4@6  = %x@7 ) ,(%13@5  = %x@6 ) ,(%11@4  = %x@6 ) ,(%9@5  =  Not( (%8@5  = 0 ) ) ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%11@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%9@3 ,(%m@5  = %11@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %9@4 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) ,%6@5 ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) ,%9@5 ,(%m@6  = %11@4 ) ,(%x@7  = %14@5 ) ,(%14@5  = (%13@5  + 1 ) ) ,%6@6 ,(%6@6  = (%4@6  < %5@6 ) ) ,(%5@6  = %n@2 ) , Not( %9@6 ) ,(%x@8  = %14@6 ) ,(%14@6  = (%13@6  + 1 ) ) , Not( %6@7 ) ,(%6@7  = (%4@7  < %5@7 ) ) ,(%5@7  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 14
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(13,6),0), LabDiEdge(DiEdge(16,6),0), LabDiEdge(DiEdge(13,10),0), LabDiEdge(DiEdge(16,10),0), LabDiEdge(DiEdge(16,14),0), LabDiEdge(DiEdge(23,21),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(12,5),0), LabDiEdge(DiEdge(15,5),0), LabDiEdge(DiEdge(12,9),0), LabDiEdge(DiEdge(15,9),0), LabDiEdge(DiEdge(15,13),0), LabDiEdge(DiEdge(22,20),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(14,7),0), LabDiEdge(DiEdge(17,7),0), LabDiEdge(DiEdge(14,11),0), LabDiEdge(DiEdge(17,11),0), LabDiEdge(DiEdge(17,15),1), LabDiEdge(DiEdge(11,8),0), LabDiEdge(DiEdge(18,8),0), LabDiEdge(DiEdge(18,12),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@7 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@7 ) ,(%4@8  = %x@9 ) ,(%13@7  = %x@8 ) ,(%9@7  =  Not( (%8@7  = 0 ) ) ) ,(%4@7  = %x@8 ) ,(%13@6  = %x@7 ) ,(%11@5  = %x@7 ) ,(%9@6  =  Not( (%8@6  = 0 ) ) ) ,(%4@6  = %x@7 ) ,(%13@5  = %x@6 ) ,(%11@4  = %x@6 ) ,(%9@5  =  Not( (%8@5  = 0 ) ) ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%11@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%9@3 ,(%m@5  = %11@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %9@4 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) ,%6@5 ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) ,%9@5 ,(%m@6  = %11@4 ) ,(%x@7  = %14@5 ) ,(%14@5  = (%13@5  + 1 ) ) ,%6@6 ,(%6@6  = (%4@6  < %5@6 ) ) ,(%5@6  = %n@2 ) ,%9@6 ,(%m@7  = %11@5 ) ,(%x@8  = %14@6 ) ,(%14@6  = (%13@6  + 1 ) ) ,%6@7 ,(%6@7  = (%4@7  < %5@7 ) ) ,(%5@7  = %n@2 ) , Not( %9@7 ) ,(%x@9  = %14@7 ) ,(%14@7  = (%13@7  + 1 ) ) , Not( %6@8 ) ,(%6@8  = (%4@8  < %5@8 ) ) ,(%5@8  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 15
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 5 %x@7 ) 
+[info] (<= 5 %x@7 ) 
+[info] (<= 5 %x@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(13,6),0), LabDiEdge(DiEdge(16,6),0), LabDiEdge(DiEdge(20,6),0), LabDiEdge(DiEdge(13,10),0), LabDiEdge(DiEdge(16,10),0), LabDiEdge(DiEdge(20,10),0), LabDiEdge(DiEdge(16,14),0), LabDiEdge(DiEdge(20,14),0), LabDiEdge(DiEdge(20,17),0), LabDiEdge(DiEdge(27,25),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(12,5),0), LabDiEdge(DiEdge(15,5),0), LabDiEdge(DiEdge(19,5),0), LabDiEdge(DiEdge(12,9),0), LabDiEdge(DiEdge(15,9),0), LabDiEdge(DiEdge(19,9),0), LabDiEdge(DiEdge(15,13),0), LabDiEdge(DiEdge(19,13),0), LabDiEdge(DiEdge(19,16),0), LabDiEdge(DiEdge(26,24),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(14,7),0), LabDiEdge(DiEdge(17,7),0), LabDiEdge(DiEdge(21,7),0), LabDiEdge(DiEdge(14,11),0), LabDiEdge(DiEdge(17,11),0), LabDiEdge(DiEdge(21,11),0), LabDiEdge(DiEdge(17,15),1), LabDiEdge(DiEdge(21,15),1), LabDiEdge(DiEdge(21,18),0), LabDiEdge(DiEdge(11,8),0), LabDiEdge(DiEdge(18,8),0), LabDiEdge(DiEdge(22,8),0), LabDiEdge(DiEdge(18,12),0), LabDiEdge(DiEdge(22,12),0), LabDiEdge(DiEdge(22,19),0))
+[info] ----------------
+[info]  And( true ,(%19@1  = %n@2 ) ,(%16@1  = %m@7 ) ,(%4@8  = %x@9 ) ,(%13@7  = %x@8 ) ,(%9@7  =  Not( (%8@7  = 0 ) ) ) ,(%4@7  = %x@8 ) ,(%13@6  = %x@7 ) ,(%11@5  = %x@7 ) ,(%9@6  =  Not( (%8@6  = 0 ) ) ) ,(%4@6  = %x@7 ) ,(%13@5  = %x@6 ) ,(%11@4  = %x@6 ) ,(%9@5  =  Not( (%8@5  = 0 ) ) ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%11@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%9@3 ,(%m@5  = %11@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %9@4 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) ,%6@5 ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) ,%9@5 ,(%m@6  = %11@4 ) ,(%x@7  = %14@5 ) ,(%14@5  = (%13@5  + 1 ) ) ,%6@6 ,(%6@6  = (%4@6  < %5@6 ) ) ,(%5@6  = %n@2 ) ,%9@6 ,(%m@7  = %11@5 ) ,(%x@8  = %14@6 ) ,(%14@6  = (%13@6  + 1 ) ) ,%6@7 ,(%6@7  = (%4@7  < %5@7 ) ) ,(%5@7  = %n@2 ) , Not( %9@7 ) ,(%x@9  = %14@7 ) ,(%14@7  = (%13@7  + 1 ) ) , Not( %6@8 ) ,(%6@8  = (%4@8  < %5@8 ) ) ,(%5@8  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) , Not( %20@1 ) ,(%20@1  = (%19@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 16
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 5 %x@7 ) 
+[info] (<= 5 %x@7 ) 
+[info] (<= 5 %x@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] (<= 5 %m@7 ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(13,6),0), LabDiEdge(DiEdge(16,6),0), LabDiEdge(DiEdge(20,6),0), LabDiEdge(DiEdge(13,10),0), LabDiEdge(DiEdge(16,10),0), LabDiEdge(DiEdge(20,10),0), LabDiEdge(DiEdge(16,14),0), LabDiEdge(DiEdge(20,14),0), LabDiEdge(DiEdge(20,17),0), LabDiEdge(DiEdge(27,25),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(12,5),0), LabDiEdge(DiEdge(15,5),0), LabDiEdge(DiEdge(19,5),0), LabDiEdge(DiEdge(12,9),0), LabDiEdge(DiEdge(15,9),0), LabDiEdge(DiEdge(19,9),0), LabDiEdge(DiEdge(15,13),0), LabDiEdge(DiEdge(19,13),0), LabDiEdge(DiEdge(19,16),0), LabDiEdge(DiEdge(26,24),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(14,7),0), LabDiEdge(DiEdge(17,7),0), LabDiEdge(DiEdge(21,7),0), LabDiEdge(DiEdge(14,11),0), LabDiEdge(DiEdge(17,11),0), LabDiEdge(DiEdge(21,11),0), LabDiEdge(DiEdge(17,15),1), LabDiEdge(DiEdge(21,15),1), LabDiEdge(DiEdge(21,18),0), LabDiEdge(DiEdge(11,8),0), LabDiEdge(DiEdge(18,8),0), LabDiEdge(DiEdge(22,8),0), LabDiEdge(DiEdge(18,12),0), LabDiEdge(DiEdge(22,12),0), LabDiEdge(DiEdge(22,19),0))
+[info] ----------------
+[info]  And( true ,(%19@1  = %n@2 ) ,(%16@1  = %m@6 ) ,(%4@7  = %x@8 ) ,(%13@6  = %x@7 ) ,(%9@6  =  Not( (%8@6  = 0 ) ) ) ,(%4@6  = %x@7 ) ,(%13@5  = %x@6 ) ,(%11@4  = %x@6 ) ,(%9@5  =  Not( (%8@5  = 0 ) ) ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%11@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%9@3 ,(%m@5  = %11@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %9@4 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) ,%6@5 ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) ,%9@5 ,(%m@6  = %11@4 ) ,(%x@7  = %14@5 ) ,(%14@5  = (%13@5  + 1 ) ) ,%6@6 ,(%6@6  = (%4@6  < %5@6 ) ) ,(%5@6  = %n@2 ) , Not( %9@6 ) ,(%x@8  = %14@6 ) ,(%14@6  = (%13@6  + 1 ) ) , Not( %6@7 ) ,(%6@7  = (%4@7  < %5@7 ) ) ,(%5@7  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) , Not( %20@1 ) ,(%20@1  = (%19@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 17
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %x@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] (<= 4 %m@6 ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(13,6),0), LabDiEdge(DiEdge(16,6),0), LabDiEdge(DiEdge(13,10),0), LabDiEdge(DiEdge(16,10),0), LabDiEdge(DiEdge(16,14),0), LabDiEdge(DiEdge(23,21),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(12,5),0), LabDiEdge(DiEdge(15,5),0), LabDiEdge(DiEdge(12,9),0), LabDiEdge(DiEdge(15,9),0), LabDiEdge(DiEdge(15,13),0), LabDiEdge(DiEdge(22,20),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(14,7),0), LabDiEdge(DiEdge(17,7),0), LabDiEdge(DiEdge(14,11),0), LabDiEdge(DiEdge(17,11),0), LabDiEdge(DiEdge(17,15),1), LabDiEdge(DiEdge(11,8),0), LabDiEdge(DiEdge(18,8),0), LabDiEdge(DiEdge(18,12),0))
+[info] ----------------
+[info]  And( true ,(%19@1  = %n@2 ) ,(%16@1  = %m@5 ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%11@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) ,%9@3 ,(%m@5  = %11@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) , Not( %9@4 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) , Not( %6@5 ) ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) , Not( %20@1 ) ,(%20@1  = (%19@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 18
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] (<= 2 %m@5 ) 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(16,14),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(15,13),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(11,8),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@5 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@5 ) ,(%4@6  = %x@7 ) ,(%13@5  = %x@6 ) ,(%9@5  =  Not( (%8@5  = 0 ) ) ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%11@3  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) ,%9@4 ,(%m@5  = %11@3 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) ,%6@5 ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) , Not( %9@5 ) ,(%x@7  = %14@5 ) ,(%14@5  = (%13@5  + 1 ) ) , Not( %6@6 ) ,(%6@6  = (%4@6  < %5@6 ) ) ,(%5@6  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 19
+[info] using interpolant
+[info] choices:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0)
+[info] Predicates are: 
+[info]  (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (= 0 %x@2 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 1 %x@3 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 2 %x@4 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %x@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] (<= 3 %m@5 ) 
+[info] false 
+[info] false 
+[info] false 
+[info] new back edges is: Vector(LabDiEdge(DiEdge(9,6),0), LabDiEdge(DiEdge(12,6),0), LabDiEdge(DiEdge(12,10),0), LabDiEdge(DiEdge(19,17),0), LabDiEdge(DiEdge(8,5),0), LabDiEdge(DiEdge(11,5),0), LabDiEdge(DiEdge(11,9),0), LabDiEdge(DiEdge(18,16),0), LabDiEdge(DiEdge(10,7),0), LabDiEdge(DiEdge(13,7),0), LabDiEdge(DiEdge(13,11),1), LabDiEdge(DiEdge(14,8),0))
+[info] ----------------
+[info]  And( true ,(%28@1  = %n@2 ) ,(%24@1  = %m@6 ) ,(%19@1  = %n@2 ) ,(%16@1  = %m@6 ) ,(%4@7  = %x@8 ) ,(%13@6  = %x@7 ) ,(%9@6  =  Not( (%8@6  = 0 ) ) ) ,(%4@6  = %x@7 ) ,(%13@5  = %x@6 ) ,(%11@4  = %x@6 ) ,(%9@5  =  Not( (%8@5  = 0 ) ) ) ,(%4@5  = %x@6 ) ,(%13@4  = %x@5 ) ,(%11@3  = %x@5 ) ,(%9@4  =  Not( (%8@4  = 0 ) ) ) ,(%4@4  = %x@5 ) ,(%13@3  = %x@4 ) ,(%9@3  =  Not( (%8@3  = 0 ) ) ) ,(%4@3  = %x@4 ) ,(%13@2  = %x@3 ) ,(%11@2  = %x@3 ) ,(%9@2  =  Not( (%8@2  = 0 ) ) ) ,(%4@2  = %x@3 ) ,(%13@1  = %x@2 ) ,(%11@1  = %x@2 ) ,(%9@1  =  Not( (%8@1  = 0 ) ) ) ,(%4@1  = %x@2 ) ,(%1@2  = 0 ) ,(%n@2  = %2@1 ) ,(%m@2  = 0 ) ,(%x@2  = 0 ) ,%6@1 ,(%6@1  = (%4@1  < %5@1 ) ) ,(%5@1  = %n@2 ) ,%9@1 ,(%m@3  = %11@1 ) ,(%x@3  = %14@1 ) ,(%14@1  = (%13@1  + 1 ) ) ,%6@2 ,(%6@2  = (%4@2  < %5@2 ) ) ,(%5@2  = %n@2 ) ,%9@2 ,(%m@4  = %11@2 ) ,(%x@4  = %14@2 ) ,(%14@2  = (%13@2  + 1 ) ) ,%6@3 ,(%6@3  = (%4@3  < %5@3 ) ) ,(%5@3  = %n@2 ) , Not( %9@3 ) ,(%x@5  = %14@3 ) ,(%14@3  = (%13@3  + 1 ) ) ,%6@4 ,(%6@4  = (%4@4  < %5@4 ) ) ,(%5@4  = %n@2 ) ,%9@4 ,(%m@5  = %11@3 ) ,(%x@6  = %14@4 ) ,(%14@4  = (%13@4  + 1 ) ) ,%6@5 ,(%6@5  = (%4@5  < %5@5 ) ) ,(%5@5  = %n@2 ) ,%9@5 ,(%m@6  = %11@4 ) ,(%x@7  = %14@5 ) ,(%14@5  = (%13@5  + 1 ) ) ,%6@6 ,(%6@6  = (%4@6  < %5@6 ) ) ,(%5@6  = %n@2 ) , Not( %9@6 ) ,(%x@8  = %14@6 ) ,(%14@6  = (%13@6  + 1 ) ) , Not( %6@7 ) ,(%6@7  = (%4@7  < %5@7 ) ) ,(%5@7  = %n@2 ) , Not( %17@1 ) ,(%17@1  = (%16@1  >= 0 ) ) ,%20@1 ,(%20@1  = (%19@1  <= 0 ) ) , Not( %26@1 ) ,(%26@1  = (%24@1  < %25@1 ) ) ,(%25@1  = %n@2 ) , Not( %29@1 ) ,(%29@1  = (%28@1  <= 0 ) ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 20
+[info] UNKNOWN
+[info] refinement failure: maximum number of iterations 20 reached
+[success] Total time: 17 s, completed 08/02/2018 11:54:26 AM
+skink 2.0-SNAPSHOT>

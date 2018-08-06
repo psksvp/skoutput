@@ -1,0 +1,913 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-acceleration/underapprox_true-unreach-call2.c,false,clang-3.7,20)</h3><hr>
+<pre>extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+
+void __VERIFIER_assert(int cond) {
+  if (!(cond)) {
+    ERROR: __VERIFIER_error();
+  }
+  return;
+}
+
+int main(void) {
+  unsigned int x = 0;
+  unsigned int y = 1;
+
+  while (x < 6) {
+    x++;
+    y *= 2;
+  }
+
+  //__VERIFIER_assert(x == 6);
+  if(x != 6) __VERIFIER_error();
+}
+</pre><hr>
+<pre>define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 0, i32* %x, align 4, !dbg !17
+    store i32 1, i32* %y, align 4, !dbg !18
+    br label %2, !dbg !19
+  
+  ; <label>:2
+    %3 = load i32, i32* %x, align 4, !dbg !20
+    %4 = icmp ult i32 %3, 6, !dbg !23
+    br i1 %4, label %5, label %10, !dbg !19
+  
+  ; <label>:5
+    %6 = load i32, i32* %x, align 4, !dbg !24
+    %7 = add i32 %6, 1, !dbg !24
+    store i32 %7, i32* %x, align 4, !dbg !24
+    %8 = load i32, i32* %y, align 4, !dbg !25
+    %9 = mul i32 %8, 2, !dbg !25
+    store i32 %9, i32* %y, align 4, !dbg !25
+    br label %2, !dbg !19
+  
+  ; <label>:10
+    %11 = load i32, i32* %x, align 4, !dbg !26
+    %12 = icmp ne i32 %11, 6, !dbg !27
+    br i1 %12, label %13, label %14, !dbg !26
+  
+  ; <label>:13
+    br label %__error.13
+  
+  ; <label>:14
+    %15 = load i32, i32* %1, !dbg !29
+    ret i32 %15, !dbg !29
+  
+  __error.13: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !28
+    unreachable, !dbg !28
+  
+} 
+
+using predicates abs
+List(0, 1, 0, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 20 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 70 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 164 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 323 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 572 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 940 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 1460 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 2169 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 3108 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 4322 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 5860 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 7775 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 10124 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 12968 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 16372 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 20405 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 25140 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 30654 and mis is 3
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+5 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ,
+(%x  <= 5 ) 
+running reducePredicatesToSuperSet
+running with predicates: 3
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+ Or( (%x  <= 5 ) ,(%x  >= 7 ) ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+ Or(  And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) , And(  Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) ) ,false ) 
+ Or(  And( (%x  >= 0 ) ,(0  = (%y % 2 ) ) , Or( (%x  <= 5 ) ,(%x  >= 7 ) ) ) ,false ) 
+------------
+simplify cache hit is 37028 and mis is 3
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 20 reached</pre><hr>
+</body>
+</html>
+      

@@ -1,0 +1,120 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-acceleration/underapprox_true-unreach-call1.c,false,clang-3.7,20)</h3><hr>
+<pre>extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+
+void __VERIFIER_assert(int cond) {
+  if (!(cond)) {
+    ERROR: __VERIFIER_error();
+  }
+  return;
+}
+
+int main(void) {
+  unsigned int x = 0;
+  unsigned int y = 1;
+
+  while (x < 6) {
+    x++;
+    y *= 2;
+  }
+
+  //__VERIFIER_assert(y % 3);
+  if(!(y % 3)) __VERIFIER_error();
+}
+</pre><hr>
+<pre>define i32 @main() #0  { 
+  
+    %1 = alloca i32, align 4
+    %x = alloca i32, align 4
+    %y = alloca i32, align 4
+    store i32 0, i32* %1
+    store i32 0, i32* %x, align 4, !dbg !17
+    store i32 1, i32* %y, align 4, !dbg !18
+    br label %2, !dbg !19
+  
+  ; <label>:2
+    %3 = load i32, i32* %x, align 4, !dbg !20
+    %4 = icmp ult i32 %3, 6, !dbg !23
+    br i1 %4, label %5, label %10, !dbg !19
+  
+  ; <label>:5
+    %6 = load i32, i32* %x, align 4, !dbg !24
+    %7 = add i32 %6, 1, !dbg !24
+    store i32 %7, i32* %x, align 4, !dbg !24
+    %8 = load i32, i32* %y, align 4, !dbg !25
+    %9 = mul i32 %8, 2, !dbg !25
+    store i32 %9, i32* %y, align 4, !dbg !25
+    br label %2, !dbg !19
+  
+  ; <label>:10
+    %11 = load i32, i32* %y, align 4, !dbg !26
+    %12 = urem i32 %11, 3, !dbg !27
+    %13 = icmp ne i32 %12, 0, !dbg !27
+    br i1 %13, label %15, label %14, !dbg !28
+  
+  ; <label>:14
+    br label %__error.14
+  
+  ; <label>:15
+    %16 = load i32, i32* %1, !dbg !30
+    ret i32 %16, !dbg !30
+  
+  __error.14: 
+    call void (...) @__VERIFIER_error() #2 , !dbg !29
+    unreachable, !dbg !29
+  
+} 
+
+----------------
+ And( true ,(%11@1  = %y@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) , Not( %4@1 ) ,(%3@1  >= 0 ) ,(%4@1  = (%3@1  < 6 ) ) ,(6  >= 0 ) , Not( %13@1 ) ,(%13@1  =  Not( (%12@1  = 0 ) ) ) ,(%12@1  = (%11@1 % 3 ) ) ) 
+----------------
+#############>>>>>> current iteration is 0
+using predicates abs
+using predAbs on trace: List(0, 1, 1, 0)
+List(0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+----------------
+ And( true ,(%11@1  = %y@3 ) ,(%3@2  = %x@3 ) ,(%6@1  = %x@2 ) ,(%3@1  = %x@2 ) ,(%1@2  = 0 ) ,(%y@2  = 1 ) ,(%x@2  = 0 ) ,%4@1 ,(%3@1  >= 0 ) ,(%4@1  = (%3@1  < 6 ) ) ,(6  >= 0 ) ,(%y@3  = %9@1 ) ,(%9@1  = (%8@1  * 2 ) ) ,(%8@1  = %y@2 ) ,(%x@3  = %7@1 ) ,(%7@1  = (%6@1  + 1 ) ) , Not( %4@2 ) ,(%3@2  >= 0 ) ,(%4@2  = (%3@2  < 6 ) ) ,(6  >= 0 ) , Not( %13@1 ) ,(%13@1  =  Not( (%12@1  = 0 ) ) ) ,(%12@1  = (%11@1 % 3 ) ) ) 
+----------------
+#############>>>>>> current iteration is 1
+using predicates abs
+using predAbs on trace: List(0, 0, 0, 1, 1, 0)
+generating predicates for abstraction
+list of variables to quantify over is empty
+6 predicates generated
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+(%x  <= 5 ) ,
+((%y % 3 )  >= 0 ) ,
+((%y % 3 )  <= 0 ) 
+running with predicates: 6
+(%x  >= 0 ) ,
+(0  = (%y % 2 ) ) ,
+(6  <= %x ) ,
+(%x  <= 5 ) ,
+((%y % 3 )  >= 0 ) ,
+((%y % 3 )  <= 0 ) 
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Not( ((%y % 3 )  <= 0 ) ) , Not( (6  <= %x ) ) , Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) ,(%x  <= 5 ) ,((%y % 3 )  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 3 )  <= 0 ) ) , Not( (6  <= %x ) ) , Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) ,(%x  <= 5 ) ,((%y % 3 )  >= 0 ) ) , And(  Not( ((%y % 3 )  <= 0 ) ) , Not( (6  <= %x ) ) , Not( (0  = (%y % 2 ) ) ) ,(%x  >= 0 ) ,(%x  <= 5 ) ,((%y % 3 )  >= 0 ) ) , And(  Not( ((%y % 3 )  <= 0 ) ) , Not( (6  <= %x ) ) ,(%x  >= 0 ) ,(0  = (%y % 2 ) ) ,(%x  <= 5 ) ,((%y % 3 )  >= 0 ) ) ,false ,false ) 
+ Or(  And(  Or(  Not( (6  <= %x ) ) , Not( (%x  <= 5 ) ) ) , Or( (6  <= %x ) ,(%x  <= 5 ) ) , Not( ((%y % 3 )  <= 0 ) ) ,(%x  >= 0 ) ,(0  = (%y % 2 ) ) ,((%y % 3 )  >= 0 ) ) ,false ) 
+ Or(  And(  Not( ((%y % 3 )  <= 0 ) ) , Not( (%x  <= 5 ) ) ,(%x  >= 0 ) ,(0  = (%y % 2 ) ) ,(6  <= %x ) ,((%y % 3 )  >= 0 ) ) ,false ) 
+false 
+------------
+simplify cache hit is 12 and mis is 4
+last loc eq to false? >>>yes
+------------------safeBackEdges
+candidate pairs Vector((1,3))
+back edge checkPost [ Or(  And(  Or(  Not( (6  <= %x@0 ) ) , Not( (%x@0  <= 5 ) ) ) , Or( (6  <= %x@0 ) ,(%x@0  <= 5 ) ) , Not( ((%y@0 % 3 )  <= 0 ) ) ,(%x@0  >= 0 ) ,(0  = (%y@0 % 2 ) ) ,((%y@0 % 3 )  >= 0 ) ) ,false ) ],  And( (%3@1  = %x@0 ) ,%4@1 ,(%3@1  >= 0 ) ,(%4@1  = (%3@1  < 6 ) ) ,(6  >= 0 ) ) , [ Or(  And(  Not( ((%y@0 % 3 )  <= 0 ) ) , Not( (6  <= %x@0 ) ) , Not( (0  = (%y@0 % 2 ) ) ) ,(%x@0  >= 0 ) ,(%x@0  <= 5 ) ,((%y@0 % 3 )  >= 0 ) ) , And(  Not( ((%y@0 % 3 )  <= 0 ) ) , Not( (6  <= %x@0 ) ) , Not( (0  = (%y@0 % 2 ) ) ) ,(%x@0  >= 0 ) ,(%x@0  <= 5 ) ,((%y@0 % 3 )  >= 0 ) ) , And(  Not( ((%y@0 % 3 )  <= 0 ) ) , Not( (6  <= %x@0 ) ) ,(%x@0  >= 0 ) ,(0  = (%y@0 % 2 ) ) ,(%x@0  <= 5 ) ,((%y@0 % 3 )  >= 0 ) ) ,false ,false ) ]
+new backedge found from 3 to 2 with choice(1) exitValue is 0
+----------------------
+TRUE</pre><hr>
+</body>
+</html>
+      

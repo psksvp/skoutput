@@ -1,0 +1,38 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/down_true-unreach-call.c,false,clang-4.0,20)</h3><hr>
+<pre>extern void __VERIFIER_error() __attribute__ ((__noreturn__));
+extern unsigned int __VERIFIER_nondet_uint();
+
+int main() {
+  int n;
+  int k = 0;
+  int i = 0;
+  n = __VERIFIER_nondet_int();
+  while( i < n ) {
+      i++;
+      k++;
+  }
+  int j = n;
+  while( j > 0 ) {
+      if(!(k > 0)) __VERIFIER_error();
+      j--;
+      k--;
+  }
+  return 0;
+}
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/g2sGxkOrhn.c
+maximum number of iterations 20 reached
+
+config: -e Z3 -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/g2sGxkOrhn.c
+maximum number of iterations 20 reached
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/g2sGxkOrhn.c
+strange solver status: Failure(java.lang.IllegalArgumentException: requirement failed: Solver could not be initialised: Cannot run program "yices-smt2": error=2, No such file or directory)</pre><hr>
+</body>
+</html>
+      

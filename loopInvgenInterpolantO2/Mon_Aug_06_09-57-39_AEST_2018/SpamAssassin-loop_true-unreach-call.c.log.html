@@ -1,0 +1,69 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/SpamAssassin-loop_true-unreach-call.c,true,clang-4.0,30)</h3><hr>
+<pre>#include "assert.h"
+
+int main()
+{
+    int len;
+    int i;
+    int j;
+
+    int bufsize;
+    bufsize = __VERIFIER_nondet_int();
+    if (bufsize < 0) return 0; // avoid overflows for too negative values
+    len = __VERIFIER_nondet_int();
+    int limit = bufsize - 4;
+
+
+    for (i = 0; i < len; ) {
+        for (j = 0; i < len && j < limit; ){
+            if (i + 1 < len){ 
+                __VERIFIER_assert(i+1<len);
+                __VERIFIER_assert(0<=i);
+                if( __VERIFIER_nondet_int() ) goto ELSE;
+                __VERIFIER_assert(i<len);
+                __VERIFIER_assert(0<=i);
+                __VERIFIER_assert(j<bufsize);
+                __VERIFIER_assert(0<=j);
+
+                j++;
+                i++;
+                __VERIFIER_assert(i<len);
+                __VERIFIER_assert(0<=i);
+                __VERIFIER_assert(j<bufsize);
+                __VERIFIER_assert(0<=j);
+
+                j++;
+                i++;
+                __VERIFIER_assert(j<bufsize);
+                __VERIFIER_assert(0<=j);
+                j++;
+            } else {
+ELSE:
+                __VERIFIER_assert(i<len);
+                __VERIFIER_assert(0<=i);
+                __VERIFIER_assert(j<bufsize);
+                __VERIFIER_assert(0<=j);
+                j++;
+                i++;
+            }
+        }
+    }
+    return 0;
+}
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --use-clang clang-4.0 -m 30 /home/psksvp/workspace/sv-bench/c/loop-invgen/SpamAssassin-loop_true-unreach-call.c
+maximum number of iterations 30 reached
+
+config: -e Z3 -v --use-predicate-abstraction --use-clang clang-4.0 -m 30 /home/psksvp/workspace/sv-bench/c/loop-invgen/SpamAssassin-loop_true-unreach-call.c
+maximum number of iterations 30 reached
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --use-clang clang-4.0 -m 30 /home/psksvp/workspace/sv-bench/c/loop-invgen/SpamAssassin-loop_true-unreach-call.c
+strange solver status: Failure(java.lang.IllegalArgumentException: requirement failed: Solver could not be initialised: Cannot run program "yices-smt2": error=2, No such file or directory)</pre><hr>
+</body>
+</html>
+      

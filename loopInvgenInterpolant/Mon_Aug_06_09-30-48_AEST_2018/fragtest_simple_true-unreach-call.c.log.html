@@ -1,0 +1,61 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/fragtest_simple_true-unreach-call.c,true,clang-4.0,10)</h3><hr>
+<pre>#include "assert.h"
+
+int main(){
+  int i,pvlen ;
+  int tmp___1 ;
+  int k = 0;
+  int n;
+
+  i = 0;
+  pvlen = __VERIFIER_nondet_int();
+
+  //  pkt = pktq->tqh_first;
+  while ( __VERIFIER_nondet_int() && i <= LARGE_INT) {
+    i = i + 1;
+  }
+
+
+  if (i > pvlen) {
+    pvlen = i;
+  }
+  i = 0;
+
+  while ( __VERIFIER_nondet_int() && i <= LARGE_INT) {
+    tmp___1 = i;
+    i = i + 1;
+    k = k + 1;
+  }
+
+  int j = 0;
+  n = i;
+  while (1) {
+
+    __VERIFIER_assert(k >= 0);
+    k = k -1;
+    i = i - 1;
+    j = j + 1;
+    if (j >= n) {
+      break;
+    }
+  }
+  return 0;
+
+}
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --use-clang clang-4.0 -m 10 /home/psksvp/workspace/sv-bench/c/loop-invgen/fragtest_simple_true-unreach-call.c
+maximum number of iterations 10 reached
+
+config: -e Z3 -v --use-predicate-abstraction --use-clang clang-4.0 -m 10 /home/psksvp/workspace/sv-bench/c/loop-invgen/fragtest_simple_true-unreach-call.c
+maximum number of iterations 10 reached
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --use-clang clang-4.0 -m 10 /home/psksvp/workspace/sv-bench/c/loop-invgen/fragtest_simple_true-unreach-call.c
+strange solver status: Failure(java.lang.IllegalArgumentException: requirement failed: Solver could not be initialised: Cannot run program "yices-smt2": error=2, No such file or directory)</pre><hr>
+</body>
+</html>
+      

@@ -1,0 +1,684 @@
+[info] Running psksvp.ScratchPad 
+[info] 
+[info] define i32 @main() #0  { 
+[info]   
+[info]     %1 = alloca i32, align 4
+[info]     %i = alloca i32, align 4
+[info]     %n = alloca i32, align 4
+[info]     %a = alloca i32, align 4
+[info]     %b = alloca i32, align 4
+[info]     store i32 0, i32* %1
+[info]     store i32 0, i32* %i, align 4, !dbg !9
+[info]     store i32 0, i32* %a, align 4, !dbg !10
+[info]     store i32 0, i32* %b, align 4, !dbg !11
+[info]     %2 = call i32 (...) @__VERIFIER_nondet_int() , !dbg !12
+[info]     store i32 %2, i32* %n, align 4, !dbg !13
+[info]     %3 = load i32, i32* %n, align 4, !dbg !14
+[info]     %4 = icmp sge i32 %3, 0, !dbg !15
+[info]     br i1 %4, label %5, label %8, !dbg !16
+[info]   
+[info]   ; <label>:5
+[info]     %6 = load i32, i32* %n, align 4, !dbg !17
+[info]     %7 = icmp sle i32 %6, 2147483647, !dbg !19
+[info]     br label %8
+[info]   
+[info]   ; <label>:8
+[info]     %9 = phi i1 [ false, %0 ], [ %7, %5 ]
+[info]     %10 = zext i1 %9 to i32, !dbg !20
+[info]     %11 = call i32 (i32, ...) bitcast (i32 (...)* @__VERIFIER_assumeto i32 (i32, ...)*)(i32 %10) , !dbg !22
+[info]     br label %12, !dbg !23
+[info]   
+[info]   ; <label>:12
+[info]     %13 = load i32, i32* %i, align 4, !dbg !24
+[info]     %14 = load i32, i32* %n, align 4, !dbg !26
+[info]     %15 = icmp slt i32 %13, %14, !dbg !27
+[info]     br i1 %15, label %16, label %32, !dbg !23
+[info]   
+[info]   ; <label>:16
+[info]     %17 = call i32 (...) @__VERIFIER_nondet_int() , !dbg !28
+[info]     %18 = icmp ne i32 %17, 0, !dbg !28
+[info]     br i1 %18, label %19, label %24, !dbg !28
+[info]   
+[info]   ; <label>:19
+[info]     %20 = load i32, i32* %a, align 4, !dbg !29
+[info]     %21 = add nsw i32 %20, 1, !dbg !30
+[info]     store i32 %21, i32* %a, align 4, !dbg !31
+[info]     %22 = load i32, i32* %b, align 4, !dbg !32
+[info]     %23 = add nsw i32 %22, 2, !dbg !33
+[info]     store i32 %23, i32* %b, align 4, !dbg !34
+[info]     br label %29, !dbg !35
+[info]   
+[info]   ; <label>:24
+[info]     %25 = load i32, i32* %a, align 4, !dbg !36
+[info]     %26 = add nsw i32 %25, 2, !dbg !37
+[info]     store i32 %26, i32* %a, align 4, !dbg !38
+[info]     %27 = load i32, i32* %b, align 4, !dbg !39
+[info]     %28 = add nsw i32 %27, 1, !dbg !40
+[info]     store i32 %28, i32* %b, align 4, !dbg !41
+[info]     br label %29
+[info]   
+[info]   ; <label>:29
+[info]     %30 = load i32, i32* %i, align 4, !dbg !42
+[info]     %31 = add nsw i32 %30, 1, !dbg !43
+[info]     store i32 %31, i32* %i, align 4, !dbg !44
+[info]     br label %12, !dbg !23
+[info]   
+[info]   ; <label>:32
+[info]     %33 = load i32, i32* %a, align 4, !dbg !45
+[info]     %34 = load i32, i32* %b, align 4, !dbg !46
+[info]     %35 = add nsw i32 %33, %34, !dbg !47
+[info]     %36 = load i32, i32* %n, align 4, !dbg !48
+[info]     %37 = mul nsw i32 3, %36, !dbg !49
+[info]     %38 = icmp eq i32 %35, %37, !dbg !50
+[info]     br i1 %38, label %41, label %39, !dbg !51
+[info]   
+[info]   ; <label>:39
+[info]     br label %__error.39
+[info]   
+[info]   ; <label>:41
+[info]     ret i32 0, !dbg !53
+[info]   
+[info]   __error.39: 
+[info]     %40 = call i32 (...) @__VERIFIER_error() , !dbg !52
+[info]     br label %41, !dbg !52
+[info]   
+[info] } 
+[info] 
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@2 ) ,(%13@1  = %i@2 ) ,(%9@1  = %7@1 ) ,(%6@1  = %n@2 ) ,(%1@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) ,(%7@1  = (%6@1  <= 2147483647 ) ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) , Not( %15@1 ) ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@2 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 0
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 1, 1, 0)
+[info] List(0, 0, 0, 1, 1, 0)
+[info] no Repetitions, rtn linear automaton
+[info] linear auto created and about to return
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@3 ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%20@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = %7@1 ) ,(%6@1  = %n@2 ) ,(%1@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) ,(%7@1  = (%6@1  <= 2147483647 ) ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) ,%18@1 ,(%b@3  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@2 ) ,(%a@3  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) , Not( %15@2 ) ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@3 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 1
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 0 and mis is 1
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((3,7))
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 0
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@3 ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%25@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = %7@1 ) ,(%6@1  = %n@2 ) ,(%1@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) ,(%7@1  = (%6@1  <= 2147483647 ) ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) , Not( %18@1 ) ,(%b@3  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@2 ) ,(%a@3  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) , Not( %15@2 ) ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@3 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 2
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 1 and mis is 1
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((3,7))
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 0
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@4 ) ,(%13@3  = %i@4 ) ,(%30@2  = %i@3 ) ,(%25@1  = %a@3 ) ,(%18@2  =  Not( (%17@2  = 0 ) ) ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%20@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = %7@1 ) ,(%6@1  = %n@2 ) ,(%1@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) ,(%7@1  = (%6@1  <= 2147483647 ) ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) ,%18@1 ,(%b@3  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@2 ) ,(%a@3  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ,%15@2 ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) , Not( %18@2 ) ,(%b@4  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@3 ) ,(%a@4  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@4  = %31@2 ) ,(%31@2  = (%30@2  + 1 ) ) , Not( %15@3 ) ,(%15@3  = (%13@3  < %14@3 ) ) ,(%14@3  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@4 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 3
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 2 and mis is 1
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((3,7), (3,11), (7,11), (6,10), (4,8))
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 11 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 11 to 8 with choice(7) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 10 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) ,%18@1 ) , [false ]
+[info] new backedge found from 8 to 5 with choice(4) exitValue is 0
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@5 ) ,(%13@4  = %i@5 ) ,(%30@3  = %i@4 ) ,(%20@2  = %a@4 ) ,(%18@3  =  Not( (%17@3  = 0 ) ) ) ,(%13@3  = %i@4 ) ,(%30@2  = %i@3 ) ,(%25@1  = %a@3 ) ,(%18@2  =  Not( (%17@2  = 0 ) ) ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%20@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = %7@1 ) ,(%6@1  = %n@2 ) ,(%1@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) ,(%7@1  = (%6@1  <= 2147483647 ) ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) ,%18@1 ,(%b@3  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@2 ) ,(%a@3  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ,%15@2 ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) , Not( %18@2 ) ,(%b@4  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@3 ) ,(%a@4  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@4  = %31@2 ) ,(%31@2  = (%30@2  + 1 ) ) ,%15@3 ,(%15@3  = (%13@3  < %14@3 ) ) ,(%14@3  = %n@2 ) ,%18@3 ,(%b@5  = %23@2 ) ,(%23@2  = (%22@2  + 2 ) ) ,(%22@2  = %b@4 ) ,(%a@5  = %21@2 ) ,(%21@2  = (%20@2  + 1 ) ) ,(%i@5  = %31@3 ) ,(%31@3  = (%30@3  + 1 ) ) , Not( %15@4 ) ,(%15@4  = (%13@4  < %14@4 ) ) ,(%14@4  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@5 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 4
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 3 and mis is 1
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((5,13), (3,7), (3,11), (3,15), (7,11), (7,15), (11,15), (6,10), (6,14), (10,14), (4,8), (4,12), (8,12))
+[info] back edge checkPost [false ],  And( (%20@1  = %a@0 ) ,(%b@1  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@0 ) ,(%a@1  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 13 to 6 with choice(5) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 11 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 15 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 11 to 8 with choice(7) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 15 to 8 with choice(7) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 15 to 12 with choice(11) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 10 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 14 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 14 to 11 with choice(10) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) ,%18@1 ) , [false ]
+[info] new backedge found from 8 to 5 with choice(4) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) ,%18@1 ) , [false ]
+[info] new backedge found from 12 to 5 with choice(4) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) , Not( %18@1 ) ) , [false ]
+[info] new backedge found from 12 to 9 with choice(8) exitValue is 1
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@4 ) ,(%13@3  = %i@4 ) ,(%30@2  = %i@3 ) ,(%20@1  = %a@3 ) ,(%18@2  =  Not( (%17@2  = 0 ) ) ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%25@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = %7@1 ) ,(%6@1  = %n@2 ) ,(%1@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) ,(%7@1  = (%6@1  <= 2147483647 ) ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) , Not( %18@1 ) ,(%b@3  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@2 ) ,(%a@3  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ,%15@2 ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) ,%18@2 ,(%b@4  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@3 ) ,(%a@4  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@4  = %31@2 ) ,(%31@2  = (%30@2  + 1 ) ) , Not( %15@3 ) ,(%15@3  = (%13@3  < %14@3 ) ) ,(%14@3  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@4 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 5
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 4 and mis is 1
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((3,7), (3,11), (7,11), (6,10), (4,8))
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 11 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 11 to 8 with choice(7) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 10 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) , Not( %18@1 ) ) , [false ]
+[info] new backedge found from 8 to 5 with choice(4) exitValue is 1
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@5 ) ,(%13@4  = %i@5 ) ,(%30@3  = %i@4 ) ,(%25@2  = %a@4 ) ,(%18@3  =  Not( (%17@3  = 0 ) ) ) ,(%13@3  = %i@4 ) ,(%30@2  = %i@3 ) ,(%20@1  = %a@3 ) ,(%18@2  =  Not( (%17@2  = 0 ) ) ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%25@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = %7@1 ) ,(%6@1  = %n@2 ) ,(%1@2  = 0 ) ,%4@1 ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) ,(%7@1  = (%6@1  <= 2147483647 ) ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) , Not( %18@1 ) ,(%b@3  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@2 ) ,(%a@3  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ,%15@2 ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) ,%18@2 ,(%b@4  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@3 ) ,(%a@4  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@4  = %31@2 ) ,(%31@2  = (%30@2  + 1 ) ) ,%15@3 ,(%15@3  = (%13@3  < %14@3 ) ) ,(%14@3  = %n@2 ) , Not( %18@3 ) ,(%b@5  = %28@2 ) ,(%28@2  = (%27@2  + 1 ) ) ,(%27@2  = %b@4 ) ,(%a@5  = %26@2 ) ,(%26@2  = (%25@2  + 2 ) ) ,(%i@5  = %31@3 ) ,(%31@3  = (%30@3  + 1 ) ) , Not( %15@4 ) ,(%15@4  = (%13@4  < %14@4 ) ) ,(%14@4  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@5 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 6
+[info] using predicates abs
+[info] using predAbs on trace: List(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 5 and mis is 1
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((5,13), (3,7), (3,11), (3,15), (7,11), (7,15), (11,15), (6,10), (6,14), (10,14), (4,8), (4,12), (8,12))
+[info] back edge checkPost [false ],  And( (%25@1  = %a@0 ) ,(%b@1  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@0 ) ,(%a@1  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ) , [false ]
+[info] new backedge found from 13 to 6 with choice(5) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 11 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 15 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 11 to 8 with choice(7) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 15 to 8 with choice(7) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 15 to 12 with choice(11) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 10 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 14 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 14 to 11 with choice(10) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) , Not( %18@1 ) ) , [false ]
+[info] new backedge found from 8 to 5 with choice(4) exitValue is 1
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) , Not( %18@1 ) ) , [false ]
+[info] new backedge found from 12 to 5 with choice(4) exitValue is 1
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) ,%18@1 ) , [false ]
+[info] new backedge found from 12 to 9 with choice(8) exitValue is 0
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@2 ) ,(%13@1  = %i@2 ) ,(%9@1  = false ) ,(%1@2  = 0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) , Not( %15@1 ) ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@2 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 7
+[info] using predicates abs
+[info] using predAbs on trace: List(1, 0, 1, 1, 0)
+[info] List(1, 0, 1, 1, 0)
+[info] no Repetitions, rtn linear automaton
+[info] linear auto created and about to return
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@3 ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%20@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = false ) ,(%1@2  = 0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) ,%18@1 ,(%b@3  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@2 ) ,(%a@3  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) , Not( %15@2 ) ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@3 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 8
+[info] using predicates abs
+[info] using predAbs on trace: List(1, 0, 0, 0, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%i  = %b ) ) , Not( (%i  < %n ) ) , Not( (((%i  + 1 )  * 2 )  = %a ) ) , Not( ((%a  + %b )  = (%n  * 3 ) ) ) , Not( (%i  = %a ) ) ,(((%i  + 1 )  * 2 )  = %b ) ,(%n  >= 0 ) ) ,false ) 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 6 and mis is 2
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((2,6))
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 6 to 3 with choice(2) exitValue is 0
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@3 ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%25@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = false ) ,(%1@2  = 0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) , Not( %18@1 ) ,(%b@3  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@2 ) ,(%a@3  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) , Not( %15@2 ) ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@3 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 9
+[info] using predicates abs
+[info] using predAbs on trace: List(1, 0, 0, 1, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%i  = %b ) ) , Not( (%i  < %n ) ) , Not( (((%i  + 1 )  * 2 )  = %a ) ) , Not( ((%a  + %b )  = (%n  * 3 ) ) ) , Not( (%i  = %a ) ) ,(((%i  + 1 )  * 2 )  = %b ) ,(%n  >= 0 ) ) ,false ) 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 8 and mis is 2
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((2,6))
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 6 to 3 with choice(2) exitValue is 0
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@4 ) ,(%13@3  = %i@4 ) ,(%30@2  = %i@3 ) ,(%25@1  = %a@3 ) ,(%18@2  =  Not( (%17@2  = 0 ) ) ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%20@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = false ) ,(%1@2  = 0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) ,%18@1 ,(%b@3  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@2 ) ,(%a@3  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ,%15@2 ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) , Not( %18@2 ) ,(%b@4  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@3 ) ,(%a@4  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@4  = %31@2 ) ,(%31@2  = (%30@2  + 1 ) ) , Not( %15@3 ) ,(%15@3  = (%13@3  < %14@3 ) ) ,(%14@3  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@4 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 10
+[info] using predicates abs
+[info] using predAbs on trace: List(1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%i  = %b ) ) , Not( (%i  < %n ) ) , Not( (((%i  + 1 )  * 2 )  = %a ) ) , Not( ((%a  + %b )  = (%n  * 3 ) ) ) , Not( (%i  = %a ) ) ,(((%i  + 1 )  * 2 )  = %b ) ,(%n  >= 0 ) ) ,false ) 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 10 and mis is 2
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((2,6), (2,10), (6,10), (5,9), (3,7))
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 6 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 10 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 10 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 9 to 6 with choice(5) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) ,%18@1 ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 0
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@5 ) ,(%13@4  = %i@5 ) ,(%30@3  = %i@4 ) ,(%20@2  = %a@4 ) ,(%18@3  =  Not( (%17@3  = 0 ) ) ) ,(%13@3  = %i@4 ) ,(%30@2  = %i@3 ) ,(%25@1  = %a@3 ) ,(%18@2  =  Not( (%17@2  = 0 ) ) ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%20@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = false ) ,(%1@2  = 0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) ,%18@1 ,(%b@3  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@2 ) ,(%a@3  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ,%15@2 ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) , Not( %18@2 ) ,(%b@4  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@3 ) ,(%a@4  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@4  = %31@2 ) ,(%31@2  = (%30@2  + 1 ) ) ,%15@3 ,(%15@3  = (%13@3  < %14@3 ) ) ,(%14@3  = %n@2 ) ,%18@3 ,(%b@5  = %23@2 ) ,(%23@2  = (%22@2  + 2 ) ) ,(%22@2  = %b@4 ) ,(%a@5  = %21@2 ) ,(%21@2  = (%20@2  + 1 ) ) ,(%i@5  = %31@3 ) ,(%31@3  = (%30@3  + 1 ) ) , Not( %15@4 ) ,(%15@4  = (%13@4  < %14@4 ) ) ,(%14@4  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@5 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 11
+[info] using predicates abs
+[info] using predAbs on trace: List(1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%i  = %b ) ) , Not( (%i  < %n ) ) , Not( (((%i  + 1 )  * 2 )  = %a ) ) , Not( ((%a  + %b )  = (%n  * 3 ) ) ) , Not( (%i  = %a ) ) ,(((%i  + 1 )  * 2 )  = %b ) ,(%n  >= 0 ) ) ,false ) 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 12 and mis is 2
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((4,12), (2,6), (2,10), (2,14), (6,10), (6,14), (10,14), (5,9), (5,13), (9,13), (3,7), (3,11), (7,11))
+[info] back edge checkPost [false ],  And( (%20@1  = %a@0 ) ,(%b@1  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@0 ) ,(%a@1  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 12 to 5 with choice(4) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 6 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 10 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 14 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 10 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 14 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 14 to 11 with choice(10) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 9 to 6 with choice(5) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 13 to 6 with choice(5) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 13 to 10 with choice(9) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) ,%18@1 ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) ,%18@1 ) , [false ]
+[info] new backedge found from 11 to 4 with choice(3) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) , Not( %18@1 ) ) , [false ]
+[info] new backedge found from 11 to 8 with choice(7) exitValue is 1
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@4 ) ,(%13@3  = %i@4 ) ,(%30@2  = %i@3 ) ,(%20@1  = %a@3 ) ,(%18@2  =  Not( (%17@2  = 0 ) ) ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%25@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = false ) ,(%1@2  = 0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) , Not( %18@1 ) ,(%b@3  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@2 ) ,(%a@3  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ,%15@2 ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) ,%18@2 ,(%b@4  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@3 ) ,(%a@4  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@4  = %31@2 ) ,(%31@2  = (%30@2  + 1 ) ) , Not( %15@3 ) ,(%15@3  = (%13@3  < %14@3 ) ) ,(%14@3  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@4 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 12
+[info] using predicates abs
+[info] using predAbs on trace: List(1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%i  = %b ) ) , Not( (%i  < %n ) ) , Not( (((%i  + 1 )  * 2 )  = %a ) ) , Not( ((%a  + %b )  = (%n  * 3 ) ) ) , Not( (%i  = %a ) ) ,(((%i  + 1 )  * 2 )  = %b ) ,(%n  >= 0 ) ) ,false ) 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 14 and mis is 2
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((2,6), (2,10), (6,10), (5,9), (3,7))
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 6 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 10 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 10 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 9 to 6 with choice(5) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) , Not( %18@1 ) ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 1
+[info] ----------------------
+[info] ----------------
+[info]  And( true ,(%33@1  = %a@5 ) ,(%13@4  = %i@5 ) ,(%30@3  = %i@4 ) ,(%25@2  = %a@4 ) ,(%18@3  =  Not( (%17@3  = 0 ) ) ) ,(%13@3  = %i@4 ) ,(%30@2  = %i@3 ) ,(%20@1  = %a@3 ) ,(%18@2  =  Not( (%17@2  = 0 ) ) ) ,(%13@2  = %i@3 ) ,(%30@1  = %i@2 ) ,(%25@1  = %a@2 ) ,(%18@1  =  Not( (%17@1  = 0 ) ) ) ,(%13@1  = %i@2 ) ,(%9@1  = false ) ,(%1@2  = 0 ) , Not( %4@1 ) ,(%4@1  = (%3@1  >= 0 ) ) ,(%3@1  = %n@2 ) ,(%n@2  = %2@1 ) ,(%b@2  = 0 ) ,(%a@2  = 0 ) ,(%i@2  = 0 ) , Not( (%10@1  = 0 ) ) ,(%10@1  = (ite %9@1 1 0 ) ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@2 ) , Not( %18@1 ) ,(%b@3  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@2 ) ,(%a@3  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ,(%i@3  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ,%15@2 ,(%15@2  = (%13@2  < %14@2 ) ) ,(%14@2  = %n@2 ) ,%18@2 ,(%b@4  = %23@1 ) ,(%23@1  = (%22@1  + 2 ) ) ,(%22@1  = %b@3 ) ,(%a@4  = %21@1 ) ,(%21@1  = (%20@1  + 1 ) ) ,(%i@4  = %31@2 ) ,(%31@2  = (%30@2  + 1 ) ) ,%15@3 ,(%15@3  = (%13@3  < %14@3 ) ) ,(%14@3  = %n@2 ) , Not( %18@3 ) ,(%b@5  = %28@2 ) ,(%28@2  = (%27@2  + 1 ) ) ,(%27@2  = %b@4 ) ,(%a@5  = %26@2 ) ,(%26@2  = (%25@2  + 2 ) ) ,(%i@5  = %31@3 ) ,(%31@3  = (%30@3  + 1 ) ) , Not( %15@4 ) ,(%15@4  = (%13@4  < %14@4 ) ) ,(%14@4  = %n@2 ) , Not( %38@1 ) ,(%38@1  = (%35@1  = %37@1 ) ) ,(%37@1  = (3  * %36@1 ) ) ,(%36@1  = %n@2 ) ,(%35@1  = (%33@1  + %34@1 ) ) ,(%34@1  = %b@5 ) ) 
+[info] ----------------
+[info] #############>>>>>> current iteration is 13
+[info] using predicates abs
+[info] using predAbs on trace: List(1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+[info] running with predicates: 7
+[info] (%n  >= 0 ) ,
+[info] (%i  < %n ) ,
+[info] ((%a  + %b )  = (%n  * 3 ) ) ,
+[info] (%i  = %a ) ,
+[info] (((%i  + 1 )  * 2 )  = %a ) ,
+[info] (%i  = %b ) ,
+[info] (((%i  + 1 )  * 2 )  = %b ) 
+[info] 
+[info] Fixed point reached with Predicates ===============
+[info] true 
+[info]  Or(  And(  Not( (%i  = %b ) ) , Not( (%i  < %n ) ) , Not( (((%i  + 1 )  * 2 )  = %a ) ) , Not( ((%a  + %b )  = (%n  * 3 ) ) ) , Not( (%i  = %a ) ) ,(((%i  + 1 )  * 2 )  = %b ) ,(%n  >= 0 ) ) ,false ) 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] false 
+[info] ------------
+[info] simplify cache hit is 16 and mis is 2
+[info] last loc eq to false? >>>yes
+[info] ------------------safeBackEdges
+[info] candidate pairs Vector((4,12), (2,6), (2,10), (2,14), (6,10), (6,14), (10,14), (5,9), (5,13), (9,13), (3,7), (3,11), (7,11))
+[info] back edge checkPost [false ],  And( (%25@1  = %a@0 ) ,(%b@1  = %28@1 ) ,(%28@1  = (%27@1  + 1 ) ) ,(%27@1  = %b@0 ) ,(%a@1  = %26@1 ) ,(%26@1  = (%25@1  + 2 ) ) ) , [false ]
+[info] new backedge found from 12 to 5 with choice(4) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 6 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 10 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 14 to 3 with choice(2) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 10 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 14 to 7 with choice(6) exitValue is 0
+[info] back edge checkPost [false ],  And( (%13@1  = %i@0 ) ,%15@1 ,(%15@1  = (%13@1  < %14@1 ) ) ,(%14@1  = %n@0 ) ) , [false ]
+[info] new backedge found from 14 to 11 with choice(10) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 9 to 6 with choice(5) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 13 to 6 with choice(5) exitValue is 0
+[info] back edge checkPost [false ],  And( (%30@1  = %i@0 ) ,(%i@1  = %31@1 ) ,(%31@1  = (%30@1  + 1 ) ) ) , [false ]
+[info] new backedge found from 13 to 10 with choice(9) exitValue is 0
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) , Not( %18@1 ) ) , [false ]
+[info] new backedge found from 7 to 4 with choice(3) exitValue is 1
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) , Not( %18@1 ) ) , [false ]
+[info] new backedge found from 11 to 4 with choice(3) exitValue is 1
+[info] back edge checkPost [false ],  And( (%18@1  =  Not( (%17@1  = 0 ) ) ) ,%18@1 ) , [false ]
+[info] new backedge found from 11 to 8 with choice(7) exitValue is 0
+[info] ----------------------
+[info] TRUE
+[success] Total time: 25 s, completed 07/02/2018 2:19:35 PM

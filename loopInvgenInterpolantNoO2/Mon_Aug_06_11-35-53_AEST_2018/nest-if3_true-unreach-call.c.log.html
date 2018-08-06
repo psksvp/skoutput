@@ -1,0 +1,36 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/nest-if3_true-unreach-call.c,false,clang-4.0,10)</h3><hr>
+<pre>#define LARGE_INT 1000000
+#include "assert.h"
+int main() {
+  int i,k,n,l;
+
+  n = __VERIFIER_nondet_int();
+  l = __VERIFIER_nondet_int();
+  __VERIFIER_assume(l>0);
+  __VERIFIER_assume(l < LARGE_INT);
+  __VERIFIER_assume(n < LARGE_INT);
+  for (k=1;k<n;k++){
+    for (i=l;i<n;i++){  
+      if(!(1<=i)) __VERIFIER_error();
+    }
+    if(__VERIFIER_nondet_int())
+      l = l + 1;
+  }
+ }
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/OGJ4bEdB9u.c
+maximum number of iterations 10 reached
+
+config: -e Z3 -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/OGJ4bEdB9u.c
+maximum number of iterations 10 reached
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/OGJ4bEdB9u.c
+strange solver status: Failure(java.lang.IllegalArgumentException: requirement failed: Solver could not be initialised: Cannot run program "yices-smt2": error=2, No such file or directory)</pre><hr>
+</body>
+</html>
+      

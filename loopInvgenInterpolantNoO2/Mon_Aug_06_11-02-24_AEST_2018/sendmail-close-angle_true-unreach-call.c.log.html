@@ -1,0 +1,66 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/sendmail-close-angle_true-unreach-call.c,false,clang-4.0,20)</h3><hr>
+<pre>/*
+ * Variant: This one just blindly copies the input into buffer and writes '>''\0' at the end.
+ */
+
+#include "assert.h"
+
+
+int main ()
+{
+  int in;
+  int inlen = __VERIFIER_nondet_int();
+  int bufferlen = __VERIFIER_nondet_int();
+  int buf;
+  int buflim;
+
+  if(bufferlen >1);else goto END;
+  if(inlen > 0);else goto END;
+  if(bufferlen < inlen);else goto END;
+
+  buf = 0;
+  in = 0;
+  buflim = bufferlen - 2;
+
+  while (__VERIFIER_nondet_int())
+  {
+    if (buf == buflim)
+      break;
+    if(!(0<=buf)) __VERIFIER_error();
+    if(!(buf<bufferlen)) __VERIFIER_error(); 
+    buf++;
+out:
+    in++;
+    if(!(0<=in)) __VERIFIER_error();
+    if(!(in<inlen)) __VERIFIER_error();
+  }
+
+    if(!(0<=buf)) __VERIFIER_error();
+    if(!(buf<bufferlen)) __VERIFIER_error();
+    buf++;
+
+  /* OK */
+  if(!(0<=buf)) __VERIFIER_error();//6
+  if(!(buf<bufferlen)) __VERIFIER_error();
+
+  buf++;
+
+ END:  return 0;
+}
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/xxEwDvYcsO.c
+maximum number of iterations 20 reached
+
+config: -e Z3 -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/xxEwDvYcsO.c
+maximum number of iterations 20 reached
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 20 /tmp/xxEwDvYcsO.c
+strange solver status: Failure(java.lang.IllegalArgumentException: requirement failed: Solver could not be initialised: Cannot run program "yices-smt2": error=2, No such file or directory)</pre><hr>
+</body>
+</html>
+      

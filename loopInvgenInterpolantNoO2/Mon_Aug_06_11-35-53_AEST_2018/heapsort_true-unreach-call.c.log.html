@@ -1,0 +1,72 @@
+
+<html>
+<body>
+<h3>Code(/home/psksvp/workspace/sv-bench/c/loop-invgen/heapsort_true-unreach-call.c,false,clang-4.0,10)</h3><hr>
+<pre>#define LARGE_INT 1000000
+#include "assert.h"
+
+int main( int argc, char *argv[]){
+  int n,l,r,i,j;
+
+  n = __VERIFIER_nondet_int();
+  __VERIFIER_assume(1 <= n && n <= LARGE_INT);
+
+
+  l = n/2 + 1;
+  r = n;
+  if(l>1) {
+    l--;
+  } else {
+    r--;
+  }
+  while(r > 1) {
+    i = l;
+    j = 2*l;
+    while(j <= r) {
+      if( j < r) {
+	if(!(1 <= j)) __VERIFIER_error();
+	if(!(j <= n)) __VERIFIER_error();
+	if(!(1 <= j+1)) __VERIFIER_error();
+	if(!(j+1 <= n)) __VERIFIER_error();
+	if( __VERIFIER_nondet_int() )
+	  j = j + 1;
+      }
+      if(!(1 <= j)) __VERIFIER_error();
+      if(!(j <= n)) __VERIFIER_error();
+      if( __VERIFIER_nondet_int() ) { 
+      	break;
+      }
+      if(!(1 <= i)) __VERIFIER_error();
+      if(!(i <= n)) __VERIFIER_error();
+      if(!(1 <= j)) __VERIFIER_error();
+      if(!(j <= n)) __VERIFIER_error();
+      i = j;
+      j = 2*j;
+    }
+    if(l > 1) {
+      if(!(1 <= l)) __VERIFIER_error();
+      if(!(l <= n)) __VERIFIER_error();
+      l--;
+    } else {
+      if(!(1 <= r)) __VERIFIER_error();
+      if(!(r <= n)) __VERIFIER_error();
+      r--;
+    }
+  }
+  return 0;
+}
+
+</pre><hr>
+<pre>UNKNOWN
+
+config: -e Z3 -i bit -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/eESTboAF2m.c
+equality: unexpected equality: Local(5) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace()), Named(Local(1)) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace())
+
+config: -e Z3 -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/eESTboAF2m.c
+equality: unexpected equality: Local(5) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace()), Named(Local(1)) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace())
+
+config: -e Yices-nonIncr -v --use-predicate-abstraction --no-O2 --use-clang clang-4.0 -m 10 /tmp/eESTboAF2m.c
+equality: unexpected equality: Local(5) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace()), Named(Local(1)) : PointerT(PointerT(IntT(8),DefaultAddrSpace()),DefaultAddrSpace())</pre><hr>
+</body>
+</html>
+      

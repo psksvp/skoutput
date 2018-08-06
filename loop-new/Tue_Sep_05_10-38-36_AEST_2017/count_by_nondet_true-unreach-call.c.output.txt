@@ -1,0 +1,538 @@
+define i32 @main() local_unnamed_addr #0 !dbg !14 { 
+  
+    br label %1, !dbg !15
+  
+  ; <label>:1
+    %2 = phi i32 [ 0, %0 ], [ %8, %1 ]
+    %3 = phi i32 [ 0, %0 ], [ %9, %1 ]
+    %4 = tail call i32 (...) @__VERIFIER_nondet_int() #2 , !dbg !17
+    %5 = add i32 %4, -1, !dbg !18
+    %6 = icmp ult i32 %5, 999999, !dbg !18
+    %7 = zext i1 %6 to i32, !dbg !19
+    tail call void @__VERIFIER_assume(i32 %7) #2 , !dbg !21
+    %8 = add nsw i32 %4, %2, !dbg !22
+    %9 = add nuw nsw i32 %3, 1, !dbg !23
+    %10 = icmp slt i32 %8, 1000000, !dbg !24
+    br i1 %10, label %1, label %11, !dbg !15, !llvm.loop !25
+  
+  ; <label>:11
+    %12 = icmp slt i32 %9, 1000001, !dbg !28
+    br i1 %12, label %14, label %13, !dbg !29
+  
+  ; <label>:13
+    br label %__error.13
+  
+  ; <label>:14
+    ret i32 0, !dbg !33
+  
+  __error.13: 
+    tail call void @__VERIFIER_error() #2 , !dbg !31
+    br label %14, !dbg !32
+  
+} 
+
+using predicates abs
+List(0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+List(0, 0, 1, 1, 0)
+no Repetitions, rtn linear automaton
+linear auto created and about to return
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 18 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 55 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 112 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 196 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 315 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 478 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 695 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 977 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 1336 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 1785 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 2338 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 3010 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 3817 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 4776 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 5905 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 7223 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 8750 and mis is 5
+last loc eq to false? >>>no
+using predicates abs
+generating predicates for abstraction
+list of variables to quantify over is empty
+running with predicates: 3
+(%9  <= 1 ) ,
+(%9  >= 1 ) ,
+(1000001  <= %9 ) 
+I am doing the trace:List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+
+Fixed point reached with Predicates ===============
+true 
+ Or(  And(  Or(  Not( (%9  <= 1 ) ) , Not( (1000001  <= %9 ) ) ) , Or( (%9  <= 1 ) ,(%9  >= 1 ) ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) ,(%9  <= 1 ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) , And(  Not( (1000001  <= %9 ) ) , Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false , And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ) ,false ) 
+ Or(  And(  Not( (%9  <= 1 ) ) ,(%9  >= 1 ) ,(1000001  <= %9 ) ) ,false ) 
+------------
+simplify cache hit is 10507 and mis is 5
+last loc eq to false? >>>no
+UNKNOWN
+refinement failure: maximum number of iterations 20 reached
